@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+<defs><clipPath id="l"><path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z"/></clipPath></defs>
+<g clip-path="url(#l)"><ellipse cx="180" cy="140" rx="104" ry="46" fill="#F4D0CE" fill-opacity=".6"/><ellipse cx="180" cy="224" rx="112" ry="46" fill="#F4D0CE"/></g>
+<g fill="none" stroke="#C98A4E" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"><path d="M136,72 Q140,200 100,292"/><path d="M226,72 Q222,200 262,292"/></g>
+
+<path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z" fill="none" stroke="#3A3530" stroke-width="6" stroke-linejoin="round"/>
+<path d="M180,140 L360,120 M180,224 L360,260" fill="none" stroke="#3A3530" stroke-width="2" stroke-dasharray="2 6" stroke-opacity=".8"/>
+<circle cx="180" cy="140" r="5" fill="#3A3530"/>
+<circle cx="180" cy="224" r="5" fill="#3A3530"/>
+<g fill="none" stroke="#3A3530" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><rect x="380" y="102" width="50" height="32" rx="3"/><path d="M370,144 H440 L433,135 H377 Z"/><path d="M372,244 Q388,238 405,246 Q422,238 438,244 V280 Q422,274 405,282 Q388,274 372,280 Z M405,246 V282"/></g>
+<g font-family="'Zen Old Mincho','Yu Mincho','YuMincho','Hiragino Mincho ProN',serif" font-weight="700"><text x="456" y="120" font-size="36" fill="#3A3530">少し先</text><text x="456" y="154" font-size="28" fill="#5A524A" font-weight="400">パソコン</text><text x="456" y="260" font-size="36" fill="#3A3530">手元</text><text x="456" y="294" font-size="28" fill="#5A524A" font-weight="400">書類・本</text></g>
+</svg>

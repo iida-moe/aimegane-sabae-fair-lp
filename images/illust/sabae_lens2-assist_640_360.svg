@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+<defs><clipPath id="l"><path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z"/></clipPath></defs>
+<g clip-path="url(#l)"><rect x="0" y="0" width="400" height="360" fill="#D9E8F0"/></g>
+<g fill="none" stroke="#C98A4E" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"></g>
+<ellipse cx="180" cy="246" rx="86" ry="28" fill="none" stroke="#D0453A" stroke-width="3.5" stroke-dasharray="8 6"/>
+<path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z" fill="none" stroke="#3A3530" stroke-width="6" stroke-linejoin="round"/>
+<path d="M180,140 L360,120 M180,246 L360,260" fill="none" stroke="#3A3530" stroke-width="2" stroke-dasharray="2 6" stroke-opacity=".8"/>
+<circle cx="180" cy="140" r="5" fill="#3A3530"/>
+<circle cx="180" cy="246" r="5" fill="#3A3530"/>
+<g fill="none" stroke="#3A3530" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M372,136 L395,104 L409,122 L420,112 L442,136 Z"/><circle cx="432" cy="96" r="6"/><rect x="392" y="236" width="26" height="46" rx="5"/><path d="M401,274 H409"/></g>
+<g font-family="'Zen Old Mincho','Yu Mincho','YuMincho','Hiragino Mincho ProN',serif" font-weight="700"><text x="456" y="120" font-size="36" fill="#3A3530">遠く〜中間</text><text x="456" y="154" font-size="28" fill="#5A524A" font-weight="400">景色・運転</text><text x="456" y="260" font-size="36" fill="#3A3530">手元</text><text x="456" y="294" font-size="28" fill="#5A524A" font-weight="400">スマホを楽に</text></g>
+</svg>

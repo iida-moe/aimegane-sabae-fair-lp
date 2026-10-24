@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+<defs><clipPath id="l"><path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z"/></clipPath></defs>
+<g clip-path="url(#l)"><ellipse cx="180" cy="80" rx="80" ry="14" fill="#D9E8F0"/><ellipse cx="180" cy="166" rx="92" ry="42" fill="#F4E3A6"/><ellipse cx="180" cy="258" rx="72" ry="26" fill="#F4D0CE"/></g>
+<g fill="none" stroke="#C98A4E" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"><path d="M35,96 C78,96 116,112 120,170 S104,276 96,292"/><path d="M325,96 C282,96 244,112 240,170 S256,276 264,292"/></g>
+
+<path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z" fill="none" stroke="#3A3530" stroke-width="6" stroke-linejoin="round"/>
+<path d="M180,166 L360,120 M180,258 L360,260" fill="none" stroke="#3A3530" stroke-width="2" stroke-dasharray="2 6" stroke-opacity=".8"/>
+<circle cx="180" cy="166" r="5" fill="#3A3530"/>
+<circle cx="180" cy="258" r="5" fill="#3A3530"/>
+<g fill="none" stroke="#3A3530" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><rect x="374" y="98" width="62" height="38" rx="4"/><path d="M405,136 V146 M392,148 H418"/><rect x="392" y="236" width="26" height="46" rx="5"/><path d="M401,274 H409"/></g>
+<g font-family="'Zen Old Mincho','Yu Mincho','YuMincho','Hiragino Mincho ProN',serif" font-weight="700"><text x="456" y="120" font-size="36" fill="#3A3530">中間</text><text x="456" y="154" font-size="28" fill="#5A524A" font-weight="400">テレビ・家事</text><text x="456" y="260" font-size="36" fill="#3A3530">手元</text><text x="456" y="294" font-size="28" fill="#5A524A" font-weight="400">スマホ・本</text></g>
+</svg>

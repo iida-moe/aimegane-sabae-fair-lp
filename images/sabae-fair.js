@@ -18,7 +18,7 @@ const wrapPhrases=(()=>{
   };
   return root=>{
     const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{
-      for(let p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){ if(skip.has(p.nodeName)||p.dataset?.wrapped)return NodeFilter.FILTER_REJECT; }
+      for(let p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){ if(skip.has(p.nodeName)||p.dataset?.wrapped||p.dataset?.nowrap!==undefined)return NodeFilter.FILTER_REJECT; /* data-nowrap の中は区切らない（<wbr>は nowrap より強いため） */ }
       return /[\u3040-\u30FF\u4E00-\u9FFF]/.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
     }});
     const nodes=[]; while(w.nextNode())nodes.push(w.currentNode);

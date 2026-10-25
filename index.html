@@ -1034,16 +1034,21 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
 @media (max-width:389px){html[data-look] main #merit .mr-head p{letter-spacing:0!important}}
 @media (max-width:374px){html[data-look] main #merit .mr-head p{font-size:15px!important}}
 @media (max-width:389px){#care .ln-fig .lt-hint{font-size:14px!important;letter-spacing:.02em}}
-/* 10/25 FV直後のフェア概要 */
-.fs{background:#F7F3E8;padding:36px 24px 0}
-.fs-in{padding:22px 22px 18px;background:#FFFDF8;border:1px solid #E6DCCB;border-radius:10px}
-.fs-ttl{text-align:center;font-family:var(--mincho);font-size:15px;font-weight:500;letter-spacing:.1em;color:#5A524A}
-.fs-list{list-style:none;margin:10px 0 0;padding:0}
-.fs-list li{position:relative;padding:12px 2px 12px 20px;font-family:var(--mincho);font-size:17px;font-weight:500;line-height:1.6;letter-spacing:.06em;color:#3A3530}
-.fs-list li+li{border-top:1px solid #EFE7DA}
-.fs-list li::before{content:"";position:absolute;left:4px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:#C73E3A}
+/* 10/25 FV直後のフェア概要（朱の札＋線画アイコン） */
+.fs{background:#F7F3E8;padding:44px 24px 0}
+.fs-in{position:relative;padding:30px 20px 16px;background:#FFFDF8;border:1px solid #E6DCCB;border-radius:12px}
+.fs-ttl{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);margin:0;white-space:nowrap}
+.fs-ttl span{display:inline-block;white-space:nowrap;padding:7px 18px;background:#C73E3A;border-radius:999px;font-family:var(--mincho);font-size:14px;font-weight:500;letter-spacing:.1em;color:#fff}
+.fs-list{list-style:none;margin:0;padding:0}
+.fs-list li{display:flex;align-items:center;gap:12px;padding:12px 0;font-family:var(--mincho);font-size:16px;font-weight:500;line-height:1.5;letter-spacing:.04em;color:#3A3530}
+.fs-list li+li{border-top:1px dashed #E3D8C6}
+.fs-ic{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#F6E4DD}
+.fs-ic svg{width:26px;height:26px;fill:none;stroke:#C73E3A;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fs-tx{min-width:0}
 .fs-list em{font-style:normal;color:#C73E3A}
-.fs-note{margin-top:6px;font-size:13px;text-align:right;color:#4A433D}
+.fs-list em b{font-family:var(--mincho);font-size:24px;font-weight:500;line-height:1;letter-spacing:.02em;margin-right:1px}
+.fs-note{margin-top:4px;font-size:13px;text-align:right;color:#4A433D}
+@media (max-width:374px){.fs-list li{font-size:15px;letter-spacing:.02em;gap:10px}.fs-ic{width:36px;height:36px}}
 /* 10/25 遠近：タブ以下は開閉式 */
 .ln-more{margin-top:18px;padding-top:18px;border-top:1px dashed #DDD5C8}
 .ln-more>summary{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;background:#FDFBF6;border:1px solid #D9CDBB;border-radius:10px;font-family:var(--mincho);font-size:15px;font-weight:500;letter-spacing:.04em;color:#3A3530;list-style:none;cursor:pointer}
@@ -1060,7 +1065,6 @@ html[data-look] main #care .lens-chk li{font-size:14px!important;letter-spacing:
 @media (max-width:374px){html[data-look] main #care .lens-chk li{font-size:13px!important}}
 /* 10/25 13pxにした注記の最後が1〜2字落ちる幅だけ、字間をほんの少し詰める */
 @media (max-width:399px){html[data-look][lang] body :is(.mp-src,.bg-note,.bd-note,.rs-n,.rs-note,.hs-note,.shop-intro-note,.lt-zn){letter-spacing:-.02em!important}html[data-look][lang] body .rs-note{letter-spacing:-.04em!important}}
-@media (max-width:374px){.fs-list li{font-size:16px;letter-spacing:.04em}}
 @media (max-width:374px){html[data-look][lang] body :is(.lt-zn,.rs-note){font-size:12.5px!important}}
 /* 10/25 見やすさ（GWLPと比較）：①セクションの境目が分かるよう背景を交互に ②上下の余白を80pxにそろえる ③見出しを少し太く・字間を詰めて朱の短い線 ④リード文を500に。変更前 _保存/sabae-fair.before-1025-design.html */
 html[data-look][lang] :is(#merit,#brands,#corner,#care,#shop-search){padding-top:80px;padding-bottom:80px}
@@ -1162,12 +1166,13 @@ html[data-look][lang] main .sec-head p{font-weight:500}
 </section>
 <!-- 10/25 FVのすぐ下に「フェアで何があるか」を3行で（今までは下の「フェアのご案内」まで読まないと分からなかった） -->
 <section id="fair-sum" class="fs">
+  <!-- 10/25 デザイン：上に朱の札・各行に線画アイコン・「20」を大きく。変更前 _保存/sabae-fair.before-1025-fs.html -->
   <div class="fs-in rv">
-    <p class="fs-ttl">期間中、アイメガネ各店で</p>
+    <p class="fs-ttl"><span data-nowrap>期間中、アイメガネ各店で</span></p>
     <ul class="fs-list">
-      <li>鯖江のメガネの<em>コーナー</em>が登場</li>
-      <li><em>20以上</em>のブランドから選べる</li>
-      <li><em>試着だけ</em>のご来店も歓迎</li>
+      <li><span class="fs-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="12" cy="21" r="7.5"/><circle cx="28" cy="21" r="7.5"/><path d="M19.5 20q.5-1.5 1 0M4.5 19.5 2 16M35.5 19.5 38 16"/></svg></span><span class="fs-tx">鯖江のメガネの<em>コーナー</em>が登場</span></li>
+      <li><span class="fs-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 10h13l12 12-11 11L8 21Z"/><circle cx="14" cy="16" r="2"/></svg></span><span class="fs-tx"><em><b>20</b>以上</em>のブランドから選べる</span></li>
+      <li><span class="fs-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><ellipse cx="20" cy="15" rx="8" ry="9.5"/><path d="M20 24.5V35M16 35h8M15.5 11.5q1.5-3 4.5-3.2"/></svg></span><span class="fs-tx"><em>試着だけ</em>のご来店も歓迎</span></li>
     </ul>
     <p class="fs-note">※本庄南大通り店を除く</p>
   </div>

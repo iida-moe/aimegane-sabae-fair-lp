@@ -1063,6 +1063,13 @@ html[data-look][lang] :is(#care .rs-no,#merit .mr-fig .mr-no){font-family:'Shipp
 .fs-map svg{width:320px;-webkit-mask-image:linear-gradient(90deg,#000 45%,rgba(0,0,0,.45) 68%,rgba(0,0,0,.35));mask-image:linear-gradient(90deg,#000 45%,rgba(0,0,0,.45) 68%,rgba(0,0,0,.35))}
 .fs-pct{position:absolute;left:14px;top:286px;width:170px;margin:0}
 @media (max-width:374px){.fs-map svg{width:290px}.fs-pct{top:262px;width:150px}}
+/* 10/25 「見づらい」→地図を一段薄く・文字の下はさらに薄く／93.5%は地図の下へ（九州に重ねない） */
+.fs-land{fill:#EDE5D7;stroke:#DDD2C0}
+.fs-map svg{-webkit-mask-image:linear-gradient(90deg,#000 40%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.22))!important;mask-image:linear-gradient(90deg,#000 40%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.22))!important}
+.fs-tate{min-height:404px}
+@media (max-width:374px){.fs-tate{min-height:376px}}
+.fs-pct{position:static;width:170px;margin:4px 0 0 14px;text-align:center}
+.fs-map{position:absolute;top:-6px}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1160,7 +1167,7 @@ html[data-look][lang] :is(#care .rs-no,#merit .mr-fig .mr-no){font-family:'Shipp
     </div>
     <h2 class="fs-v"><span class="c1"><b>福井県鯖江市</b>で作られた</span><span class="c2">有名ブランドのメガネが集まる</span><span class="c3">贅沢な期間</span></h2>
   </div>
-  <p class="fs-note">※本庄南大通り店を除く<br>※店舗により取り扱いブランドが異なります<br>※93.5%：経済産業省「2023年経済構造実態調査」<br>（眼鏡枠の出荷額・2022年）</p>
+  <p class="fs-note">※93.5%：経済産業省「2023年経済構造実態調査」<br>（眼鏡枠の出荷額・2022年）</p>
 </section>
 <!-- 10/16 FV下の文字（SABAE EYEWEAR FAIR／眼鏡の聖地、鯖江から。／ブランドを見る）と②メッセージ（HTML版）は、FV＋メッセージの画像にまとめたので削除。元は _保存/sabae-fair.before-1016-renketsu.html -->
 

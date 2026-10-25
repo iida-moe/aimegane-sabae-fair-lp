@@ -1029,7 +1029,7 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
 :is(h2,h3,summary,.sec-head p,.mr-bridge p,.mr-head p,.bd-catch,.bd-desc,.ln-for,.lens-chk li,.hs-catch,.hs-note,.hc3 li,.hc-grid li,.rs-one,.cn-welcome p,.shop-intro,.shop-filter-check,footer p){word-break:keep-all;overflow-wrap:break-word}
 /* 長い注記は文節で切ると右端がガタガタになるので、ふつうの改行＋最後の行を短くしすぎない */
 :is(.rs-note,.bd-note,.mp-src,.bg-note){text-wrap:pretty}
-.shop-intro-note{text-wrap:balance} /* 2文の注記は行の長さをそろえる */
+.shop-intro-note{word-break:keep-all;overflow-wrap:break-word} /* 10/25 2文目の前で改行＋文節で改行（balanceは右が不自然に空いた） */
 /* 10/25 選ばれる理由01〜03の本文は1行20字前後→375px以下は字間を詰める・360px以下は15pxに（390px以上は今のまま） */
 @media (max-width:389px){html[data-look] main #merit .mr-head p{letter-spacing:0!important}}
 @media (max-width:374px){html[data-look] main #merit .mr-head p{font-size:15px!important}}
@@ -1062,6 +1062,17 @@ html[data-look] main #care .lens-chk li{font-size:14px!important;letter-spacing:
 @media (max-width:399px){html[data-look][lang] body :is(.mp-src,.bg-note,.bd-note,.rs-n,.rs-note,.hs-note,.shop-intro-note,.lt-zn){letter-spacing:-.02em!important}html[data-look][lang] body .rs-note{letter-spacing:-.04em!important}}
 @media (max-width:374px){.fs-list li{font-size:16px;letter-spacing:.04em}}
 @media (max-width:374px){html[data-look][lang] body :is(.lt-zn,.rs-note){font-size:12.5px!important}}
+/* 10/25 見やすさ（GWLPと比較）：①セクションの境目が分かるよう背景を交互に ②上下の余白を80pxにそろえる ③見出しを少し太く・字間を詰めて朱の短い線 ④リード文を500に。変更前 _保存/sabae-fair.before-1025-design.html */
+html[data-look][lang] :is(#merit,#brands,#corner,#care,#shop-search){padding-top:80px;padding-bottom:80px}
+html[data-look][lang] #merit{padding-top:56px}
+html[data-look][lang] #fcta{padding-top:80px;padding-bottom:88px}
+html[data-look][lang] :is(#brands,#shop-search){background:#FFFDF8}
+html[data-look][lang] #corner{background:#F7F3E8}
+html[data-look][lang] #care{background:#EFE9DE}
+html[data-look][lang] .sec-title{font-weight:500;letter-spacing:.08em}
+html[data-look][lang] .sec-title::after{content:"";display:block;width:28px;height:2px;margin-top:14px;background:#C73E3A}
+html[data-look][lang] #shop-search .sec-title::after{margin-left:auto;margin-right:auto}
+html[data-look][lang] main .sec-head p{font-weight:500}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1464,7 +1475,7 @@ html[data-look] main #care .lens-chk li{font-size:14px!important;letter-spacing:
       <h2 class="sec-title rv">お近くの店舗を探す</h2>
     </div>
     <p class="shop-intro">現在地、または郵便番号(上3桁)で<br>お近くの店舗を探せます</p>
-    <p class="shop-intro-note">※WEB予約は、本日から3日後以降の日程でお取りいただけます。お急ぎの場合はお電話にてお問い合わせください。</p>
+    <p class="shop-intro-note">※WEB予約は、本日から3日後以降の日程でお取りいただけます。<br>お急ぎの場合はお電話にてお問い合わせください。</p>
 
     <div class="shop-search-box">
       <div class="shop-geo-wrap">

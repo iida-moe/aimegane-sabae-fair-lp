@@ -1028,11 +1028,40 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
 /* 10/25 1文字落ち対策：文章は文節の切れ目でだけ改行（<wbr>はJSのwrapPhrasesで入れる）。アイコン下の短いラベルは対象外 */
 :is(h2,h3,summary,.sec-head p,.mr-bridge p,.mr-head p,.bd-catch,.bd-desc,.ln-for,.lens-chk li,.hs-catch,.hs-note,.hc3 li,.hc-grid li,.rs-one,.cn-welcome p,.shop-intro,.shop-filter-check,footer p){word-break:keep-all;overflow-wrap:break-word}
 /* 長い注記は文節で切ると右端がガタガタになるので、ふつうの改行＋最後の行を短くしすぎない */
-:is(.shop-intro-note,.rs-note,.bd-note,.mp-src,.bg-note){text-wrap:pretty}
+:is(.rs-note,.bd-note,.mp-src,.bg-note){text-wrap:pretty}
+.shop-intro-note{text-wrap:balance} /* 2文の注記は行の長さをそろえる */
 /* 10/25 選ばれる理由01〜03の本文は1行20字前後→375px以下は字間を詰める・360px以下は15pxに（390px以上は今のまま） */
 @media (max-width:389px){html[data-look] main #merit .mr-head p{letter-spacing:0!important}}
 @media (max-width:374px){html[data-look] main #merit .mr-head p{font-size:15px!important}}
 @media (max-width:389px){#care .ln-fig .lt-hint{font-size:14px!important;letter-spacing:.02em}}
+/* 10/25 FV直後のフェア概要 */
+.fs{background:#F7F3E8;padding:36px 24px 0}
+.fs-in{padding:22px 22px 18px;background:#FFFDF8;border:1px solid #E6DCCB;border-radius:10px}
+.fs-ttl{text-align:center;font-family:var(--mincho);font-size:15px;font-weight:500;letter-spacing:.1em;color:#5A524A}
+.fs-list{list-style:none;margin:10px 0 0;padding:0}
+.fs-list li{position:relative;padding:12px 2px 12px 20px;font-family:var(--mincho);font-size:17px;font-weight:500;line-height:1.6;letter-spacing:.06em;color:#3A3530}
+.fs-list li+li{border-top:1px solid #EFE7DA}
+.fs-list li::before{content:"";position:absolute;left:4px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:#C73E3A}
+.fs-list em{font-style:normal;color:#C73E3A}
+.fs-note{margin-top:6px;font-size:13px;text-align:right;color:#4A433D}
+/* 10/25 遠近：タブ以下は開閉式 */
+.ln-more{margin-top:18px;padding-top:18px;border-top:1px dashed #DDD5C8}
+.ln-more>summary{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;background:#FDFBF6;border:1px solid #D9CDBB;border-radius:10px;font-family:var(--mincho);font-size:15px;font-weight:500;letter-spacing:.04em;color:#3A3530;list-style:none;cursor:pointer}
+.ln-more>summary::-webkit-details-marker{display:none}
+.ln-more>summary::after{content:"+";flex:none;width:24px;height:24px;border:1px solid #C73E3A;border-radius:50%;color:#C73E3A;font-size:17px;line-height:22px;text-align:center}
+.ln-more[open]>summary::after{content:"−"}
+#care .ln-more .ln-fig{margin-top:14px}
+/* 10/25 地図の演出を短く（200→150svh） */
+html .mp-stage{height:150svh}
+/* 10/25 小さい注記は13px・少し濃い色に（40代以上でも読める大きさ） */
+:is(.mp-src,.bg-note,.bd-note,.rs-n,.rs-note,.hs-note,.cn-info .cn-note,.shop-intro-note,.shop-count-note,.lt-zn){font-size:13px!important;color:#4A433D!important}
+/* 10/25 「こんな方におすすめ」は1行に収める（15px→14px・字間なし） */
+html[data-look] main #care .lens-chk li{font-size:14px!important;letter-spacing:0!important}
+@media (max-width:374px){html[data-look] main #care .lens-chk li{font-size:13px!important}}
+/* 10/25 13pxにした注記の最後が1〜2字落ちる幅だけ、字間をほんの少し詰める */
+@media (max-width:399px){html[data-look][lang] body :is(.mp-src,.bg-note,.bd-note,.rs-n,.rs-note,.hs-note,.shop-intro-note,.lt-zn){letter-spacing:-.02em!important}html[data-look][lang] body .rs-note{letter-spacing:-.04em!important}}
+@media (max-width:374px){.fs-list li{font-size:16px;letter-spacing:.04em}}
+@media (max-width:374px){html[data-look][lang] body :is(.lt-zn,.rs-note){font-size:12.5px!important}}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1084,9 +1113,9 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
     <li><a href="#hero">トップ</a></li>
     <li><a href="#merit">鯖江のメガネが選ばれる理由</a></li>
     <li><a href="#brands">商品ラインナップ</a></li>
-    <li><a href="#care">アイメガネが選ばれる理由</a></li>
-    <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#corner">フェアのご案内</a></li>
+    <li><a href="#care">アイメガネで買う安心</a></li>
+    <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#shop-search">お近くの店舗</a></li>
   </ul>
   <a href="#shop-search" class="side-btn line">店舗一覧へ</a>
@@ -1101,9 +1130,9 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
     <li><a href="#hero">トップ</a></li>
     <li><a href="#merit">鯖江のメガネが選ばれる理由</a></li>
     <li><a href="#brands">商品ラインナップ</a></li>
-    <li><a href="#care">アイメガネが選ばれる理由</a></li>
-    <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#corner">フェアのご案内</a></li>
+    <li><a href="#care">アイメガネで買う安心</a></li>
+    <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#shop-search">お近くの店舗</a></li>
   </ul>
   <a href="#shop-search" class="sp-menu-btn">来店予約はこちら</a>
@@ -1118,6 +1147,18 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
     <div class="fv-v5">
       <img class="v5-img" src="images/fv/sabae_fv_1206_2240.jpg" width="1206" height="2240" alt="鯖江フェア　福井県鯖江市の技が光る上質なメガネをあなたの毎日に　10月30日（金）〜2月19日（金）">
     </div>
+  </div>
+</section>
+<!-- 10/25 FVのすぐ下に「フェアで何があるか」を3行で（今までは下の「フェアのご案内」まで読まないと分からなかった） -->
+<section id="fair-sum" class="fs">
+  <div class="fs-in rv">
+    <p class="fs-ttl">期間中、アイメガネ各店で</p>
+    <ul class="fs-list">
+      <li>鯖江のメガネの<em>コーナー</em>が登場</li>
+      <li><em>20以上</em>のブランドから選べる</li>
+      <li><em>試着だけ</em>のご来店も歓迎</li>
+    </ul>
+    <p class="fs-note">※本庄南大通り店を除く</p>
   </div>
 </section>
 <!-- 10/16 FV下の文字（SABAE EYEWEAR FAIR／眼鏡の聖地、鯖江から。／ブランドを見る）と②メッセージ（HTML版）は、FV＋メッセージの画像にまとめたので削除。元は _保存/sabae-fair.before-1016-renketsu.html -->
@@ -1283,12 +1324,37 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
 </section>
 
 
-<!-- ④ 購入後も、ずっと安心。（10/19 HPのアフターサービス https://www.aimegane.com/service/after/ に合わせて作り直し・選ばれる理由と同じ「アイコン＋見出し＋ひとこと」の形に。変更前 _保存/sabae-fair.before-1019-care.html） -->
+<!-- ④ フェアのご案内（10/25 商品ラインナップの次へ移動。変更前 _保存/sabae-fair.before-1025-kousei.html） -->
+<section id="corner">
+  <!-- 10/19 作り直し：見出し→写真→楽しみ方3ステップ→試着歓迎→期間/会場カード。変更前 _保存/sabae-fair.before-1019-corner.html -->
+  <div class="sec-head">
+    <h2 class="sec-title rv">鯖江のメガネを<br>いつもより多く</h2>
+    <p class="rv">フェア期間中は、アイメガネ各店に<br>鯖江のメガネのコーナーができます。</p>
+  </div>
+  <!-- 10/19 イラスト（Gemini・背景を白に補正）。メッセージのメガネのカードと同じく、右端にくっつけて左側だけ大きな角丸。画面に入ったら右からしゅっと入る -->
+  <div class="cn-illust cn-slide"><img src="images/corner/sabae_corner-illust_1206_690.jpg" width="1206" height="690" alt="メガネ店で、夫婦が並んでメガネを選んでいるイラスト" loading="lazy"></div>
+  <p class="cn-sub rv">楽しみ方</p>
+  <ol class="cn-steps rv">
+    <li><span class="cn-no">1</span><b>手に取る</b><small>ブランドごとの<br>つくりの違いを</small></li>
+    <li><span class="cn-no">2</span><b>掛けてみる</b><small>軽さや<br>なじみ方を</small></li>
+    <li><span class="cn-no">3</span><b>見比べる</b><small>鏡の前で<br>似合う一本を</small></li>
+  </ol>
+  <div class="cn-welcome rv">
+    <p class="cn-welcome-ttl">試着だけのご来店も、歓迎です。</p>
+    <p>お顔立ちや普段の使い方に合わせて、<br>スタッフが一緒にお選びします。</p>
+  </div>
+  <dl class="cn-info rv">
+    <div><dt>期間</dt><dd><b>2026.10.30</b><small>（金）</small> 〜 <b>2027.2.19</b><small>（金）</small></dd></div>
+    <div><dt>会場</dt><dd><b>アイメガネ各店</b><small class="cn-note">※本庄南大通り店を除く</small></dd></div>
+  </dl>
+</section>
+
+<!-- ⑤ 購入後も、ずっと安心。（10/19 HPのアフターサービス https://www.aimegane.com/service/after/ に合わせて作り直し・選ばれる理由と同じ「アイコン＋見出し＋ひとこと」の形に。変更前 _保存/sabae-fair.before-1019-care.html） -->
 <section id="care">
   <!-- 10/24 BFLPの「選ばれる3つの理由」と同じ構成に：①遠近0円 ②技能士（会話） ③保証（タブ＋3つのカード）＋点検・クリーニング。変更前 _保存/sabae-fair.before-1024-bfreason.html -->
   <div class="cb">
     <div class="sec-head cb-head">
-      <h2 class="sec-title rv">アイメガネが選ばれる<br><em class="st-num">3</em>つの理由</h2>
+      <h2 class="sec-title rv">アイメガネで買う<br><em class="st-num">3</em>つの安心</h2>
       <p class="rv">レンズ選びから、ご購入後まで。<br>安心してお任せください。</p>
     </div>
   </div>
@@ -1311,9 +1377,9 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
     <!-- 10/24 条件の箱は文章が多くて見づらい→BFLPのように短い一言＋小さい注記に -->
     <!-- 10/19 レンズもタブで切り替え（BFの図4枚を鯖江の色に：images/illust/sabae_lens2-*.svg） -->
     <!-- 10/23 タブ＋図はそのまま、図の下に「おすすめ」と見える距離のアイコン（タブで一緒に切り替え）。変更前 _保存/sabae-fair.before-1023-lens-list.html -->
+    <!-- 10/25 タブ以下は長いので開閉式に（開くとBFLPと同じ中身） -->
+    <details class="ln-more"><summary>あなたに合うレンズを見つけよう</summary>
     <div class="ln-fig">
-      
-      <p class="ln-q lt-hint">＼&nbsp;あなたに合うレンズを見つけよう&nbsp;／</p>
       <div class="ln-tabs" role="tablist" aria-label="レンズの種類">
         <button type="button" role="tab" aria-selected="true" data-lens="enkin">遠近両用</button>
         <button type="button" role="tab" aria-selected="false" data-lens="chukin">中近</button>
@@ -1330,6 +1396,7 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
         <ul class="lens-scene" id="lensScene"></ul>
       </div>
     </div>
+    </details>
   </div>
   <div class="rs rv">
     <span class="rs-no">2</span>
@@ -1390,30 +1457,6 @@ html[data-look] main .shop-intro-note{text-align:left;line-height:1.8}
   <div class="care-cta rv"><a href="#shop-search" class="fcta-btn" data-cta-location="care">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>
 </section>
 
-<!-- ⑤ フェアのご案内 → すぐ下の店舗検索へつなぐ -->
-<section id="corner">
-  <!-- 10/19 作り直し：見出し→写真→楽しみ方3ステップ→試着歓迎→期間/会場カード。変更前 _保存/sabae-fair.before-1019-corner.html -->
-  <div class="sec-head">
-    <h2 class="sec-title rv">鯖江のメガネを<br>いつもより多く</h2>
-    <p class="rv">フェア期間中は、アイメガネ各店に<br>鯖江のメガネのコーナーができます。</p>
-  </div>
-  <!-- 10/19 イラスト（Gemini・背景を白に補正）。メッセージのメガネのカードと同じく、右端にくっつけて左側だけ大きな角丸。画面に入ったら右からしゅっと入る -->
-  <div class="cn-illust cn-slide"><img src="images/corner/sabae_corner-illust_1206_690.jpg" width="1206" height="690" alt="メガネ店で、夫婦が並んでメガネを選んでいるイラスト" loading="lazy"></div>
-  <p class="cn-sub rv">楽しみ方</p>
-  <ol class="cn-steps rv">
-    <li><span class="cn-no">1</span><b>手に取る</b><small>ブランドごとの<br>つくりの違いを</small></li>
-    <li><span class="cn-no">2</span><b>掛けてみる</b><small>軽さや<br>なじみ方を</small></li>
-    <li><span class="cn-no">3</span><b>見比べる</b><small>鏡の前で<br>似合う一本を</small></li>
-  </ol>
-  <div class="cn-welcome rv">
-    <p class="cn-welcome-ttl">試着だけのご来店も、歓迎です。</p>
-    <p>お顔立ちや普段の使い方に合わせて、<br>スタッフが一緒にお選びします。</p>
-  </div>
-  <dl class="cn-info rv">
-    <div><dt>期間</dt><dd><b>2026.10.30</b><small>（金）</small> 〜 <b>2027.2.19</b><small>（金）</small></dd></div>
-    <div><dt>会場</dt><dd><b>アイメガネ各店</b><small class="cn-note">※本庄南大通り店を除く</small></dd></div>
-  </dl>
-</section>
 
 <!-- ⑥ 店舗検索（10/16 ザセールLPと同じ仕組み：現在地・郵便番号・都道府県タブ・取扱/資格/設備の絞り込み） -->
 <section id="shop-search">

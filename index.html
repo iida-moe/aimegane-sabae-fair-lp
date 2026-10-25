@@ -1080,6 +1080,16 @@ html[data-look][lang] .sec-title{font-weight:500;letter-spacing:.08em}
 html[data-look][lang] .sec-title::after{content:"";display:block;width:28px;height:2px;margin-top:14px;background:#C73E3A}
 html[data-look][lang] #shop-search .sec-title::after{margin-left:auto;margin-right:auto}
 html[data-look][lang] main .sec-head p{font-weight:500}
+/* 10/25 フェア概要：縦書き3行＋左端にイラスト */
+.fs-tate{display:flex;align-items:flex-start;justify-content:space-between;margin:28px 28px 0 20px}
+.fs-ill{position:relative;flex:none;align-self:center;width:130px;height:300px}
+.fs-ill img{position:absolute;left:50%;top:50%;width:290px;max-width:none;height:auto;transform:translate(-50%,-50%) rotate(90deg);opacity:.9}
+.fs-v{writing-mode:vertical-rl;font-family:var(--mincho);font-size:22px;font-weight:500;line-height:2;letter-spacing:.14em;color:#3A3530;text-align:start}
+.fs-v span{display:block}
+.fs-v .c1 b{font-size:32px;font-weight:500;letter-spacing:.1em}
+.fs-v .c2{margin-right:6px}
+.fs-v .c3{margin-right:14px}
+@media (max-width:374px){.fs-v{font-size:20px}.fs-v .c1 b{font-size:29px}.fs-ill{width:112px}.fs-ill img{width:260px}}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1171,7 +1181,11 @@ html[data-look][lang] main .sec-head p{font-weight:500}
 <section id="fair-sum" class="fs">
   <!-- 10/25 Iさん「ただのリストみたい」→ひとことで言い切る見出し型に：ことば→20ブランド以上→ブランド名が流れる帯→試着歓迎。変更前 _保存/sabae-fair.before-1025-fs2.html -->
   <p class="fs-lbl rv"><span data-nowrap>期間中、アイメガネ各店で</span></p>
-  <h2 class="fs-copy rv">福井県鯖江市でつくられた<br><em>有名ブランド</em>のメガネが<br>集まる、贅沢な期間です。</h2>
+  <!-- 10/25 Iさんのモック：シンプルな縦書き3行＋左端にイラスト（イラストは仮：朱の線画メガネを縦向きに）。変更前 _保存/sabae-fair.before-1025-fs3.html -->
+  <div class="fs-tate rv">
+    <div class="fs-ill" aria-hidden="true"><img src="images/fv/sabae_glasses-line-shu_1384_584.png" width="1384" height="584" alt=""></div>
+    <h2 class="fs-v"><span class="c1"><b>福井県鯖江市</b>で作られた</span><span class="c2">有名ブランドのメガネが集まる</span><span class="c3">贅沢な期間</span></h2>
+  </div>
   <p class="fs-num rv"><b>20</b><span>ブランド以上</span></p>
   <div class="fs-flow" aria-label="取り扱いブランドの一部"><div class="fs-flow-in"><span>Yohji Yamamoto</span><span>CHARMANT</span><span>Chopard</span><span>HANAE MORI</span><span>LANVIN</span><span>TUMI</span><span>RODENSTOCK</span><span>tonysame</span><span>ORIENS</span><span>TITANOS TOKYO</span><span>S.T. Dupont</span><span>JOHN LENNON</span><span>Y's</span><span>Farben HUSKY NOISE</span><span aria-hidden="true">Yohji Yamamoto</span><span aria-hidden="true">CHARMANT</span><span aria-hidden="true">Chopard</span><span aria-hidden="true">HANAE MORI</span><span aria-hidden="true">LANVIN</span><span aria-hidden="true">TUMI</span><span aria-hidden="true">RODENSTOCK</span><span aria-hidden="true">tonysame</span><span aria-hidden="true">ORIENS</span><span aria-hidden="true">TITANOS TOKYO</span><span aria-hidden="true">S.T. Dupont</span><span aria-hidden="true">JOHN LENNON</span><span aria-hidden="true">Y's</span><span aria-hidden="true">Farben HUSKY NOISE</span></div></div>
   <p class="fs-try rv">試着だけのご来店も、歓迎です。</p>

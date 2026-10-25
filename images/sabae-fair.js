@@ -1,3 +1,37 @@
+// 10/25 日本語を文節（意味のまとまり）の切れ目でだけ改行する（「す。」など1〜2文字だけ次の行に落ちるのを防ぐ）
+// ブラウザの単語区切り（Intl.Segmenter）で分けて、ひらがな・記号は前の語にくっつけ、切れ目に<wbr>を入れる。CSSは word-break:keep-all
+const wrapPhrases=(()=>{
+  if(!window.Intl||!Intl.Segmenter)return ()=>{};
+  const seg=new Intl.Segmenter('ja',{granularity:'word'});
+  const glue=/^[\u3041-\u309F\u30FC、。，．・：！？!?…」』）)〕】％%／〜]+$/; // ひらがな・句読点・閉じかっこ・／〜は前にくっつける
+  const kan1=/^[一-鿿]$/, kanEnd=/[一-鿿]$/; // 「分業」＋「制」のような漢字1文字も前にくっつける
+  const open=/[「『（(〔【＼]$/; // 開きかっこの後ろでは切らない
+  const skip=new Set(['SCRIPT','STYLE','svg','TEXTAREA','INPUT','BUTTON','TITLE']);
+  const split=t=>{
+    const out=[];
+    for(const {segment:s} of seg.segment(t)){
+      const prev=out[out.length-1]||'';
+      const afterPunct=/[、。！？]$/.test(prev)&&!/^[、。，．・：！？!?…」』）)〕】％%／〜]/.test(s); // 句読点の後ろでは区切れるようにする
+      if(out.length&&!afterPunct&&(glue.test(s)||open.test(prev)||(kan1.test(s)&&kanEnd.test(prev))))out[out.length-1]+=s; else out.push(s);
+    }
+    return out;
+  };
+  return root=>{
+    const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{
+      for(let p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){ if(skip.has(p.nodeName)||p.dataset?.wrapped)return NodeFilter.FILTER_REJECT; }
+      return /[\u3040-\u30FF\u4E00-\u9FFF]/.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+    }});
+    const nodes=[]; while(w.nextNode())nodes.push(w.currentNode);
+    nodes.forEach(n=>{
+      const parts=split(n.nodeValue); if(parts.length<2)return;
+      const f=document.createDocumentFragment();
+      parts.forEach((s,i)=>{ if(i)f.appendChild(document.createElement('wbr')); f.appendChild(document.createTextNode(s)); });
+      n.parentNode.replaceChild(f,n);
+    });
+  };
+})();
+wrapPhrases(document.body);
+
 // scroll reveal
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
@@ -258,7 +292,7 @@ function showInitialShops(){
     </div>
     `:''}
   `;
-  updateFloatingBar();
+  updateFloatingBar(); wrapPhrases(resEl);
 }
 function toggleMoreShops(){
   const list=document.getElementById('shopMoreList');
@@ -407,81 +441,6 @@ window.addEventListener('scroll',()=>{
   fc.classList.toggle('visible',passedHero&&beforeFcta&&!nearShop);
 },{passive:true});
 
-// 横スライド（ブランド・コレクション）
-document.querySelectorAll('[data-slider]').forEach(root=>{
-  const track=root.querySelector('.sl-track');
-  const items=[...track.children];
-  const countEl=root.querySelector('.sl-count .c');
-  const bar=root.querySelector('.sl-bar i');
-  const prev=root.querySelector('.sl-prev');
-  const next=root.querySelector('.sl-next');
-  const chipsEl=root.querySelector('.chips');
-  const chips=chipsEl?[...chipsEl.querySelectorAll('.chip')]:[];
-  const pad=n=>String(n).padStart(2,'0');
-  let idx=0;
-
-  function currentIndex(){
-    const center=track.scrollLeft+track.clientWidth/2;
-    let best=0,dist=Infinity;
-    items.forEach((it,i)=>{
-      const d=Math.abs(it.offsetLeft+it.offsetWidth/2-center);
-      if(d<dist){dist=d;best=i;}
-    });
-    return best;
-  }
-  function go(i){
-    i=Math.max(0,Math.min(items.length-1,i));
-    const it=items[i];
-    track.scrollTo({left:it.offsetLeft-(track.clientWidth-it.offsetWidth)/2,behavior:'smooth'});
-  }
-  function update(){
-    idx=currentIndex();
-    countEl.textContent=pad(idx+1);
-    bar.style.width=(100/items.length)+'%';
-    bar.style.left=(100*idx/items.length)+'%';
-    prev.disabled=idx===0;
-    next.disabled=idx===items.length-1;
-    if(chips.length){
-      const brand=items[idx].dataset.brand;
-      chips.forEach(c=>{
-        const on=c.dataset.brand===brand;
-        if(on&&!c.classList.contains('on')){
-          // ページ全体は動かさず、チップ列だけ横に寄せる
-          chipsEl.scrollTo({left:c.offsetLeft-24,behavior:'smooth'});
-        }
-        c.classList.toggle('on',on);
-      });
-    }
-  }
-  let ticking=false;
-  track.addEventListener('scroll',()=>{
-    if(ticking)return;
-    ticking=true;
-    requestAnimationFrame(()=>{update();ticking=false;});
-  },{passive:true});
-  prev.addEventListener('click',()=>go(idx-1));
-  next.addEventListener('click',()=>go(idx+1));
-  chips.forEach(c=>c.addEventListener('click',()=>{
-    go(items.findIndex(it=>it.dataset.brand===c.dataset.brand));
-  }));
-  window.addEventListener('resize',update);
-  update();
-});
-
-// FVレンズ内の写真：画像があるときだけ表示
-document.querySelectorAll(".fv-lens-img").forEach(el=>{
-  const src=el.dataset.src;
-  const test=new Image();
-  test.onload=()=>el.setAttribute("href",src);
-  test.src=src;
-});
-
-// FV左レンズの切替（?fv=photo で写真版を表示）
-(()=>{
-  const fv=new URLSearchParams(location.search).get('fv');
-  if(fv) document.getElementById('hero').dataset.fv=fv;
-})();
-
 // スマホのハンバーガーメニュー：開閉（リンクを押す・Escで閉じる）
 (()=>{
   const btn=document.querySelector('.sp-burger'), menu=document.getElementById('sp-menu');
@@ -530,7 +489,7 @@ document.querySelectorAll(".fv-lens-img").forEach(el=>{
     const lg=$('.bd-logo'); if(b.logo){ lg.src='images/brands/logo/'+b.logo[0]; lg.width=b.logo[1]; lg.height=b.logo[2]; lg.hidden=false; lg.classList.toggle('pad',b.logo[1]===200&&b.logo[2]===160); lg.classList.toggle('tall',b.logo[1]/b.logo[2]<1.5&&!(b.logo[1]===200)); } else { lg.hidden=true; lg.removeAttribute('src'); }
     $('.bd-kana').textContent=b.kana||''; $('.bd-kana').hidden=!b.kana;
     $('.bd-catch').textContent=b.catch;
-    $('.bd-desc').textContent=b.desc;
+    $('.bd-desc').textContent=b.desc; wrapPhrases($('.bd-desc')); wrapPhrases($('.bd-catch'));
     track.innerHTML=b.imgs.map(([f,w,h,cut],i)=>'<figure class="'+(cut?'is-cut':'is-photo')+'"><img src="images/brands/modal/'+f+'" width="'+w+'" height="'+h+'" alt="'+b.name+'の商品画像 '+(i+1)+'"></figure>').join('');
     dots.innerHTML=b.imgs.length>1?b.imgs.map(()=>'<i></i>').join(''):'';
     thumbs.innerHTML=b.imgs.length>1?b.imgs.map(([f],i)=>'<button type="button" aria-label="'+(i+1)+'枚目を見る"><img src="images/brands/modal/'+f+'" alt=""></button>').join(''):'';
@@ -550,14 +509,6 @@ document.querySelectorAll(".fv-lens-img").forEach(el=>{
   next.addEventListener('click',()=>go(idx()+1));
   track.addEventListener('scroll',()=>requestAnimationFrame(paint),{passive:true});
   document.addEventListener('keydown',e=>{ if(d.hidden)return; if(e.key==='Escape')close(); if(e.key==='ArrowRight')next.click(); if(e.key==='ArrowLeft')prev.click(); });
-})();
-
-// FV下の職人さん・メガネのカード：画面に入ったらふわっと表示
-(()=>{
-  const pops=document.querySelectorAll('.v5-pop'); if(!pops.length)return;
-  if(!('IntersectionObserver' in window)){ pops.forEach(p=>p.classList.add('is-in')); return; }
-  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } }),{threshold:.35});
-  pops.forEach(p=>io.observe(p));
 })();
 
 // PCサイドナビ：いま見ているセクションを朱で表示
@@ -596,18 +547,14 @@ document.querySelectorAll(".fv-lens-img").forEach(el=>{
   };
   if(still){ st.classList.add('is-static','is-zoom','is-pin','is-num'); setVB(1); return; }
   // スクロール位置にそのまま合わせず、少し遅れてなめらかに追いかける（cur→target）
-  const num=st.querySelector('.mp-num b'), TO=parseFloat(num?.dataset.to||0);
-  let target=0, cur=0, run=false, counted=false;
-  const countUp=()=>{ if(counted||!num)return; counted=true; const t0=performance.now(), D=1800;
-    const f=now=>{ const k=Math.min(1,(now-t0)/D), e=1-Math.pow(1-k,3); num.textContent=(TO*e).toFixed(1); if(k<1)requestAnimationFrame(f); };
-    num.textContent='0.0'; requestAnimationFrame(f); };
+  let target=0, cur=0, run=false;
   const read=()=>{ const r=st.getBoundingClientRect(), h=r.height-innerHeight; target=clamp(-r.top/(h||1)); };
   const frame=()=>{
     cur+=(target-cur)*.08; if(Math.abs(target-cur)<.0005)cur=target;
     setVB(ease(clamp((cur-.1)/.55)));
     st.classList.toggle('is-zoom',cur>.06);
     st.classList.toggle('is-pin',cur>.66);
-    st.classList.toggle('is-num',cur>.72); // 10/20 カウントアップはやめて、答えの数字をスッと出す（countUpは未使用）
+    st.classList.toggle('is-num',cur>.72); // 10/20 カウントアップはやめて、答えの数字をスッと出す
     if(cur!==target)requestAnimationFrame(frame); else run=false;
   };
   const req=()=>{ read(); if(!run){ run=true; requestAnimationFrame(frame); } };
@@ -622,15 +569,6 @@ document.querySelectorAll(".fv-lens-img").forEach(el=>{
   if(!('IntersectionObserver' in window)){ el.forEach(e=>e.classList.add('is-in')); return; }
   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } }),{threshold:.3});
   el.forEach(e=>io.observe(e));
-})();
-
-// 10/19 保証のタブ（ふだんのメガネ／お子さま／白内障の手術後）
-(()=>{
-  const tabs=[...document.querySelectorAll('.cr-tabs button')]; if(!tabs.length)return;
-  tabs.forEach(b=>b.addEventListener('click',()=>{
-    tabs.forEach(x=>x.setAttribute('aria-selected',x===b?'true':'false'));
-    document.querySelectorAll('#care [data-hs-panel]').forEach(p=>p.hidden=p.dataset.hsPanel!==b.dataset.hs);
-  }));
 })();
 
 // 10/19 レンズのタブ（遠近両用／中近／近々／アシスト）
@@ -671,18 +609,7 @@ document.querySelectorAll(".fv-lens-img").forEach(el=>{
   tabs.forEach(b=>b.addEventListener('click',()=>{
     tabs.forEach(x=>x.setAttribute('aria-selected',x===b?'true':'false'));
     const d=LENS[b.dataset.lens]; img.src=d.src; img.alt=d.alt; if(fr)fr.innerHTML=d.forText;
-    renderLensRec(d);
+    renderLensRec(d); wrapPhrases(fr); wrapPhrases(document.getElementById('lensChk'));
   }));
 })();
-
-// 10/22 保証の左列：数字（6・1など）の字形の左の余白を測って、保証名の左端にぴったりそろえる
-(()=>{
-  const nums=[...document.querySelectorAll('#care .gr-l .gr-num b')]; if(!nums.length)return;
-  const ctx=document.createElement('canvas').getContext('2d');
-  const fit=()=>nums.forEach(b=>{
-    const cs=getComputedStyle(b); ctx.font=cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;
-    const m=ctx.measureText(b.textContent); b.style.marginLeft=(m.actualBoundingBoxLeft)+'px';
-  });
-  fit(); addEventListener('load',fit); if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
-  addEventListener('resize',fit);
-})();
+wrapPhrases(document.getElementById('lensChk'));

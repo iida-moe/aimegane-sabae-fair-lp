@@ -243,13 +243,6 @@ html[data-look] #brands .bg-catch{letter-spacing:.06em;color:#463F39}
 .cn-slide{opacity:0;transform:translateX(60px);transition:opacity .5s ease,transform .7s cubic-bezier(.2,.9,.25,1)}
 .cn-slide.is-in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.cn-slide{opacity:1;transform:none;transition:none}}
-.cn-sub{margin:36px 24px 0;font-size:13px;letter-spacing:.3em;color:#C73E3A;text-align:center}
-.cn-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin:12px 24px 0;padding:0}
-.cn-steps li{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 4px}
-.cn-steps li+li{border-left:1px solid var(--line)}
-.cn-no{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #C73E3A;border-radius:50%;font-family:var(--en);font-size:17px;color:#C73E3A;font-variant-numeric:lining-nums}
-.cn-steps b{margin-top:8px;font-weight:500;font-size:15px;letter-spacing:.08em;color:#3A3530}
-.cn-steps small{margin-top:4px;font-size:12px;line-height:1.6;color:#544D46}
 
 .cn-info{margin:20px 24px 0;padding:0}
 .cn-info>div{display:grid;grid-template-columns:48px 1fr;align-items:baseline;padding:14px 4px;border-top:1px solid var(--line)}
@@ -1147,16 +1140,12 @@ html[data-look][lang] .bd-catch{margin-top:28px} /* 10/25 朱の線を消した�
 /* 10/25 フェアのご案内のイラストを差し替え（Iさん支給）：右寄せの丸い背景はやめて、選ばれる理由の画像と同じ見せ方（左右24px・角丸8px・うっすら影） */
 html[data-look][lang] .cn-illust{margin:0 24px;padding:0;background:none;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(58,53,48,.08)}
 html[data-look][lang] #corner .sec-head{margin-bottom:24px}
-/* 10/25 フェアのご案内の改善：見出し「フェアの楽しみ方」を墨で大きく／番号はページ共通の朱の塗り丸／試着歓迎は白カード＋細いベージュ枠・見出しを大きく本文を小さく（強弱が逆だった） */
-html[data-look][lang] .cn-sub{margin-top:44px;font-family:var(--mincho);font-size:18px;font-weight:500;letter-spacing:.12em;color:#3A3530}
-html[data-look][lang] .cn-steps{margin-top:18px}
-html[data-look][lang] .cn-no{width:30px;height:30px;border:0;background:#C73E3A;color:#fff;font-family:'Shippori Mincho B1',serif;font-size:16px;font-weight:600;box-shadow:0 2px 6px rgba(199,62,58,.22)}
-html[data-look][lang] .cn-steps b{margin-top:10px;font-size:16px}
 
 /* 10/25 試着歓迎はカードをやめて、3ステップの下に1行だけ（説明は「3つの安心」の技能士とかぶるので削除） */
 .cn-try{margin:26px 24px 0;font-family:var(--mincho);font-size:17px;font-weight:500;letter-spacing:.06em;color:#3A3530;text-align:center}
 .cn-try em{font-style:normal;color:#C73E3A}
 @media (max-width:374px){.cn-try{font-size:16px;letter-spacing:.02em}}
+html[data-look][lang] .cn-try{margin-top:32px} /* 10/25 楽しみ方3ステップを削除（どの店でもする当たり前の内容のため） */
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1403,12 +1392,6 @@ html[data-look][lang] .cn-steps b{margin-top:10px;font-size:16px}
   </div>
   <!-- 10/19 イラスト（Gemini・背景を白に補正）。メッセージのメガネのカードと同じく、右端にくっつけて左側だけ大きな角丸。画面に入ったら右からしゅっと入る -->
   <div class="cn-illust rv"><img src="images/corner/sabae_corner-shop_1206_689.jpg" width="1206" height="689" alt="メガネ店で、夫婦がスタッフと一緒にメガネを選んでいるイラスト" loading="lazy"></div>
-  <p class="cn-sub rv">フェアの楽しみ方</p>
-  <ol class="cn-steps rv">
-    <li><span class="cn-no">1</span><b>手に取る</b><small>ブランドごとの<br>つくりの違いを</small></li>
-    <li><span class="cn-no">2</span><b>掛けてみる</b><small>軽さや<br>なじみ方を</small></li>
-    <li><span class="cn-no">3</span><b>見比べる</b><small>鏡の前で<br>似合う一本を</small></li>
-  </ol>
   <p class="cn-try rv"><em>試着だけ</em>のご来店も、歓迎です。</p>
   <dl class="cn-info rv">
     <div><dt>期間</dt><dd><b>2026.10.30</b><small>（金）</small> 〜 <b>2027.2.19</b><small>（金）</small></dd></div>

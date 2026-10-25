@@ -1149,6 +1149,16 @@ html[data-look][lang] .bd-catch{margin-top:28px} /* 10/25 朱の線を消した�
 /* 10/25 フェアのご案内のイラストを差し替え（Iさん支給）：右寄せの丸い背景はやめて、選ばれる理由の画像と同じ見せ方（左右24px・角丸8px・うっすら影） */
 html[data-look][lang] .cn-illust{margin:0 24px;padding:0;background:none;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(58,53,48,.08)}
 html[data-look][lang] #corner .sec-head{margin-bottom:24px}
+/* 10/25 フェアのご案内の改善：見出し「フェアの楽しみ方」を墨で大きく／番号はページ共通の朱の塗り丸／試着歓迎は白カード＋細いベージュ枠・見出しを大きく本文を小さく（強弱が逆だった） */
+html[data-look][lang] .cn-sub{margin-top:44px;font-family:var(--mincho);font-size:18px;font-weight:500;letter-spacing:.12em;color:#3A3530}
+html[data-look][lang] .cn-steps{margin-top:18px}
+html[data-look][lang] .cn-no{width:30px;height:30px;border:0;background:#C73E3A;color:#fff;font-family:'Shippori Mincho B1',serif;font-size:16px;font-weight:600;box-shadow:0 2px 6px rgba(199,62,58,.22)}
+html[data-look][lang] .cn-steps b{margin-top:10px;font-size:16px}
+html[data-look][lang] .cn-welcome{margin-top:36px;padding:22px 18px;border:1px solid #E6DCCB;border-radius:12px;background:#FFFDF8}
+html[data-look][lang] .cn-welcome-ttl{font-size:19px;letter-spacing:.06em;color:#3A3530}
+html[data-look][lang] .cn-welcome-ttl em{font-style:normal;color:#C73E3A}
+html[data-look][lang] main .cn-welcome p:not(.cn-welcome-ttl){margin-top:8px;font-size:14px!important;line-height:1.9!important;color:#4A433D}
+@media (max-width:389px){html[data-look][lang] .cn-welcome-ttl{font-size:17px;letter-spacing:.03em}}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1395,14 +1405,14 @@ html[data-look][lang] #corner .sec-head{margin-bottom:24px}
   </div>
   <!-- 10/19 イラスト（Gemini・背景を白に補正）。メッセージのメガネのカードと同じく、右端にくっつけて左側だけ大きな角丸。画面に入ったら右からしゅっと入る -->
   <div class="cn-illust rv"><img src="images/corner/sabae_corner-shop_1206_689.jpg" width="1206" height="689" alt="メガネ店で、夫婦がスタッフと一緒にメガネを選んでいるイラスト" loading="lazy"></div>
-  <p class="cn-sub rv">楽しみ方</p>
+  <p class="cn-sub rv">フェアの楽しみ方</p>
   <ol class="cn-steps rv">
     <li><span class="cn-no">1</span><b>手に取る</b><small>ブランドごとの<br>つくりの違いを</small></li>
     <li><span class="cn-no">2</span><b>掛けてみる</b><small>軽さや<br>なじみ方を</small></li>
     <li><span class="cn-no">3</span><b>見比べる</b><small>鏡の前で<br>似合う一本を</small></li>
   </ol>
   <div class="cn-welcome rv">
-    <p class="cn-welcome-ttl">試着だけのご来店も、歓迎です。</p>
+    <p class="cn-welcome-ttl"><em>試着だけ</em>のご来店も、歓迎です。</p>
     <p>お顔立ちや普段の使い方に合わせて、<br>スタッフが一緒にお選びします。</p>
   </div>
   <dl class="cn-info rv">

@@ -528,41 +528,6 @@ window.addEventListener('scroll',()=>{
   addEventListener("resize",update); update();
 })();
 
-// 10/19 選ばれる理由：スクロールに合わせて日本地図→鯖江にズーム→ピン→93.5%（数字は表示時にカウントアップ）
-(()=>{
-  const st=document.getElementById('mp-stage'); if(!st)return;
-  const svg=st.querySelector('.mp-map');
-  const SX=314.5, SY=511.5, FULL=[0,0,740,800], ZW=170; // 鯖江の位置と、ズーム後に見せる幅
-  const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
-  const clamp=v=>Math.min(1,Math.max(0,v));
-  // 最初：日本全体を画面の上12%〜に、最後：鯖江を画面の38%の高さに（どちらも画面の縦横比のまま）
-  const setVB=z=>{
-    const r=svg.getBoundingClientRect(), asp=r.height/r.width||1;
-    const still1=st.classList.contains('is-static');
-    const w0=FULL[2], h0=w0*asp, x0=0, y0=-.12*h0;
-    const w1=ZW, h1=ZW*asp, x1=SX-ZW/2, y1=SY-(still1?.5:.38)*h1;
-    const L=(a,b)=>a+(b-a)*z;
-    svg.setAttribute('viewBox',`${L(x0,x1).toFixed(1)} ${L(y0,y1).toFixed(1)} ${L(w0,w1).toFixed(1)} ${L(h0,h1).toFixed(1)}`);
-  };
-  if(still){ st.classList.add('is-static','is-zoom','is-pin','is-num'); setVB(1); return; }
-  // スクロール位置にそのまま合わせず、少し遅れてなめらかに追いかける（cur→target）
-  let target=0, cur=0, run=false;
-  const read=()=>{ const r=st.getBoundingClientRect(), h=r.height-innerHeight; target=clamp(-r.top/(h||1)); };
-  const frame=()=>{
-    cur+=(target-cur)*.08; if(Math.abs(target-cur)<.0005)cur=target;
-    setVB(ease(clamp((cur-.1)/.55)));
-    st.classList.toggle('is-zoom',cur>.06);
-    st.classList.toggle('is-pin',cur>.66);
-    st.classList.toggle('is-num',cur>.72); // 10/20 カウントアップはやめて、答えの数字をスッと出す
-    if(cur!==target)requestAnimationFrame(frame); else run=false;
-  };
-  const req=()=>{ read(); if(!run){ run=true; requestAnimationFrame(frame); } };
-  addEventListener('scroll',req,{passive:true});
-  addEventListener('resize',req);
-  read(); cur=target; frame();
-})();
-
 // 10/19 フェアのご案内のイラスト：画面に入ったら右からしゅっと入る
 (()=>{
   const el=document.querySelectorAll('.cn-slide'); if(!el.length)return;

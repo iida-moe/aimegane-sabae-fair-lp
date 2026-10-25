@@ -1147,6 +1147,12 @@ html[data-look][lang] #corner .sec-head{margin-bottom:24px}
 @media (max-width:374px){.cn-try{font-size:16px;letter-spacing:.02em}}
 html[data-look][lang] .cn-try{margin-top:32px} /* 10/25 楽しみ方3ステップを削除（どの店でもする当たり前の内容のため） */
 html[data-look][lang] .cn-try{text-align:left} /* 10/25 見出し・リード・期間と軸をそろえて左揃え */
+/* 10/25 Iさん「同じ大きさで緩急がない」→期間の数字を主役（24px・2段）／会場17px／試着の一言は添える15px */
+html[data-look][lang] .cn-info dd b{font-size:24px;line-height:1.5}
+html[data-look][lang] .cn-info dd b:only-of-type{font-size:17px;line-height:1.6}
+html[data-look][lang] .cn-kara{margin:0 6px 0 2px;font-size:16px;color:#5A524A}
+html[data-look][lang] .cn-info>div{align-items:center;padding:16px 4px}
+html[data-look][lang] .cn-try{font-size:15px;letter-spacing:.05em}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1395,7 +1401,7 @@ html[data-look][lang] .cn-try{text-align:left} /* 10/25 見出し・リード・
   <div class="cn-illust rv"><img src="images/corner/sabae_corner-shop_1206_689.jpg" width="1206" height="689" alt="メガネ店で、夫婦がスタッフと一緒にメガネを選んでいるイラスト" loading="lazy"></div>
   <p class="cn-try rv"><em>試着だけ</em>のご来店も、歓迎です。</p>
   <dl class="cn-info rv">
-    <div><dt>期間</dt><dd><b>2026.10.30</b><small>（金）</small> 〜 <b>2027.2.19</b><small>（金）</small></dd></div>
+    <div><dt>期間</dt><dd><b>2026.10.30</b><small>（金）</small><br><span class="cn-kara">〜</span><b>2027.2.19</b><small>（金）</small></dd></div>
     <div><dt>会場</dt><dd><b>アイメガネ各店</b><small class="cn-note">※本庄南大通り店を除く</small></dd></div>
   </dl>
   <!-- 10/25 期間・会場を読んだところで店舗検索へ（3つの安心の最後と同じボタン） -->

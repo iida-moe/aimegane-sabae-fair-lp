@@ -358,7 +358,7 @@ html[data-look] #merit{padding-top:48px} /* 10/20 FVのすぐ下に移動 */
 .bd-name{margin-top:6px;font-family:var(--en);font-size:30px;font-weight:500;letter-spacing:.06em;line-height:1.2;color:#3A3530}
 .bd-name.jp{font-family:var(--mincho);font-size:24px}
 .bd-kana{margin-top:4px;font-size:12px;letter-spacing:.18em;color:#6E665D}
-.bd-rule{display:block;width:28px;height:1.5px;margin:18px 0;background:#C73E3A}
+
 .bd-catch{font-size:17px;font-weight:500;letter-spacing:.08em;line-height:1.8;color:#3A3530}
 .bd-desc{margin-top:10px;font-size:14px;line-height:2;letter-spacing:.04em;color:#3A3530}
 .bd-view{position:relative;margin-top:26px;background:#fff;border:1px solid #E6DED0;border-radius:8px;padding:14px 0 12px}
@@ -779,7 +779,7 @@ html[data-look] :is(.gr-txt,.cr-ask,.cr-common,.cr-lens-txt,.cn-welcome p,.mr-he
 #brands .bg-tile .bg-img.is-photo img{object-fit:contain}
 /* 10/22 詳細画面：名前・フリガナ → 商品画像 → キャッチ・説明 の順に。変更前 _保存/sabae-fair.before-1022-bd.html */
 .bd-body .bd-view{margin-top:18px}
-.bd-body .bd-rule{margin-top:24px}
+
 .bd-body .bd-desc{font-family:var(--sans);font-size:14px;line-height:1.9;letter-spacing:.04em}
 .bd-body .bd-note{margin-top:14px;font-family:var(--sans)}
 /* 10/22 詳細画面の頭：ロゴ（なければ名前）＋フリガナを中央ぞろえ・名前の重複なし・フレーム画像の枠は横長に。変更前 _保存/sabae-fair.before-1022-bdhead.* */
@@ -1145,6 +1145,7 @@ html[data-look][lang] #merit .mr-head{margin:18px 0 0}
 html[data-look][lang] main #merit .mr-head p{text-align:center;line-height:1.85!important}
 #merit .mr-head p em{font-style:normal;color:#C73E3A}
 @media (max-width:374px){html[data-look][lang] main #merit .mr-head p{font-size:14px!important;letter-spacing:0!important}}
+html[data-look][lang] .bd-catch{margin-top:28px} /* 10/25 朱の線を消したぶんの間 */
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1622,7 +1623,6 @@ html[data-look][lang] main #merit .mr-head p{text-align:center;line-height:1.85!
       <div class="bd-dots" aria-hidden="true"></div>
     </div>
     <div class="bd-thumbs"></div>
-    <span class="bd-rule" aria-hidden="true"></span>
     <p class="bd-catch"></p>
     <p class="bd-desc"></p>
     <p class="bd-note">※画像はイメージです。<br>※店舗により取り扱い商品が異なります。</p>

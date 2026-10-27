@@ -1164,6 +1164,22 @@ html[data-look][lang] #care .lt-rh{justify-content:center}
 /* 10/25 遠近の入口：文字を中央にそろえる・イラストの背景をカードに溶かす（四角が浮かないように） */
 html[data-look][lang] .lt-rh-txt{text-align:center}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:center}
+/* 10/27 差し色に藍を追加（Iさん「赤ばかりだと見づらい」）。朱＝数字・値段・強調語・予約ボタン／藍＝番号の丸・ラベル・タブ・開閉の＋・チェック */
+:root{--ai:#3E5573}
+html[data-look][lang] :is(#care .rs-no,#merit .mr-fig .mr-no){background:var(--ai);box-shadow:0 3px 8px rgba(62,85,115,.25)}
+html[data-look][lang] :is(.cn-info dt,.cr-lens-tag,.bd-pn small,#brands .bg-catch::before){color:var(--ai);border-color:var(--ai)}
+html[data-look][lang] .bg-catch::after{border-color:var(--ai)}
+html[data-look][lang] :is(.ln-tabs button[aria-selected="true"],.hs-item[open] summary){background:var(--ai);border-color:var(--ai)}
+html[data-look][lang] :is(.ln-more>summary,.hs-item summary)::after{color:var(--ai);border-color:var(--ai)}
+html[data-look][lang] .lens-chk li::before,html[data-look][lang] .lens-chk li::after{border-color:var(--ai)}
+html[data-look][lang] .shop-pref-tab.active{background:var(--ai);border-color:var(--ai)}
+html[data-look][lang] .shop-pref-tab:hover{border-color:var(--ai);color:var(--ai)}
+html[data-look][lang] :is(.shop-filter-toggle-icon,.shop-filter-count-num,.shop-count-zip){color:var(--ai)}
+html[data-look][lang] .shop-filter-check input[type="checkbox"]{accent-color:var(--ai)}
+html[data-look][lang] .shop-filter-check:hover{border-color:var(--ai)}
+/* 10/27 「— 小さい文字が見にくくなった方へ —」の最後の線だけ次の行に落ちる→1行に収める */
+html[data-look][lang] .lt-to{white-space:nowrap;font-size:min(15px,3.9vw);letter-spacing:.02em}
+html[data-look][lang] .lt-to::before,html[data-look][lang] .lt-to::after{width:12px;margin:0 6px}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1277,7 +1293,7 @@ html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:center}
     </article>
     <article class="mr-item rv">
       <div class="mr-fig"><img class="mr-img" src="images/merit/sabae_merit-cell_1042_516.jpg" width="1042" height="516" alt="セルのメガネフレームを、白い布でていねいに磨いているイラスト" loading="lazy"><span class="mr-no">2</span></div>
-      <div class="mr-head"><div><h3>長く付き合える、確かな仕上げ</h3><p>職人の手で、時間をかけて<em>磨き上げる</em>。<br>セルの色に、深みとツヤが生まれます。</p></div></div>
+      <div class="mr-head"><div><h3>長く付き合える、<br>確かな仕上げ</h3><p>職人の手で、時間をかけて<em>磨き上げる</em>。<br>セルの色に、深みとツヤが生まれます。</p></div></div>
     </article>
     <article class="mr-item rv">
       <div class="mr-fig"><img class="mr-img" src="images/merit/sabae_merit-titan_995_493.jpg" width="995" height="493" alt="メガネ店で、細いチタンフレームのメガネを試着している女性のイラスト" loading="lazy"><span class="mr-no">3</span></div>

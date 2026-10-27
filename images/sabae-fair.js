@@ -566,9 +566,9 @@ window.addEventListener('scroll',()=>{
       scene:[['car','運転'],['tv','テレビ'],['phone','スマホ'],['book','読書']]}
   };
   function renderLensRec(d){
-    const c=document.getElementById('lensChk'),sc=document.getElementById('lensScene'); if(!c||!sc)return;
+    const c=document.getElementById('lensChk'),sc=document.getElementById('lensScene'); if(!c)return;
     c.innerHTML=d.chk.map(x=>'<li>'+x+'</li>').join('');
-    sc.innerHTML=d.scene.map(([k,x])=>'<li><svg viewBox="0 0 40 40" aria-hidden="true">'+SCENE_ICON[k]+'</svg>'+x+'</li>').join('');
+    if(sc)sc.innerHTML= /* 10/27 使うシーンはHTMLから削除済み（データは残置） */d.scene.map(([k,x])=>'<li><svg viewBox="0 0 40 40" aria-hidden="true">'+SCENE_ICON[k]+'</svg>'+x+'</li>').join('');
   }
   renderLensRec(LENS.enkin);
   const tabs=[...document.querySelectorAll('.ln-tabs button')]; const img=document.getElementById('lnImg'); const fr=document.getElementById('lnFor');

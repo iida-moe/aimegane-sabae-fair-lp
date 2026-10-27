@@ -1219,6 +1219,11 @@ html[data-look][lang] #care .ln-for{margin-top:14px;padding:12px 8px;font-family
 #care img.rs-ava{width:72px;height:auto}
 #care img.talk-face{width:44px;height:auto}
 #care img.talk-face-staff{width:52px}
+/* 10/27 見出しは文字だけ・中央／吹き出しの顔は3人とも同じ大きさの丸（お客さまはベージュ・スタッフは淡い藍） */
+#care .rs-h{justify-content:center;text-align:center}
+#care img.talk-face,#care img.talk-face-staff{width:48px;height:48px;border-radius:50%;background:#F4ECE2}
+#care .talk-staff img.talk-face-staff{background:#EEF1F5}
+#care .talk-row{align-items:center}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1549,15 +1554,16 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <span class="rs-no">2</span>
     <!-- 10/27 カード1に合わせて：上にひと言・見出しは墨・人物はIさん支給の手描き風（Downloads\透明背景の穏やかな人物アバターたち.png を切り分け・チェックは藍）。変更前 _保存\変更前\1027\sabae-fair.before-1027-card23.html -->
     <p class="lt-to">レンズ選びが不安な方へ</p>
+    <!-- 10/27 Iさん支給 Downloads\考える三人の人物イラスト.png（背景透明）を2:1に。顔は同じ絵から丸く切り抜き。変更前 _保存\変更前\1027\sabae-fair.before-1027-soudan.html -->
+    <div class="lt-fig"><img src="images/care/sabae_care-soudan_1206_603.jpg" width="1206" height="603" alt="メガネに悩むお客さま2人と、眼鏡作製技能士のスタッフのイラスト" loading="lazy"></div>
     <div class="rs-h">
-      <img class="rs-ico rs-ava" src="images/care/sabae_care-staff_240_232.png" width="240" height="232" alt="" loading="lazy">
       <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
     </div>
     <p class="rs-one">国家検定資格のスタッフがお聞きします</p>
     <div class="talk">
-<div class="talk-row"><img class="talk-face" src="images/care/sabae_care-man_160_199.png" width="160" height="199" alt="" loading="lazy"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
-<div class="talk-row"><img class="talk-face" src="images/care/sabae_care-woman_160_212.png" width="160" height="212" alt="" loading="lazy"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
-<div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face talk-face-staff" src="images/care/sabae_care-staff-l_240_232.png" width="240" height="232" alt="" loading="lazy"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
+<div class="talk-row"><img class="talk-face" src="images/care/sabae_care-face-man_160_160.png" width="160" height="160" alt="" loading="lazy"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
+<div class="talk-row"><img class="talk-face" src="images/care/sabae_care-face-woman_160_160.png" width="160" height="160" alt="" loading="lazy"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
+<div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face talk-face-staff" src="images/care/sabae_care-face-staff_160_160.png" width="160" height="160" alt="" loading="lazy"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
     </div>
     <p class="rs-n">※不在の日もあるため、ご予約がおすすめです</p>
     <p class="rs-link"><a href="#shop-search" data-cta-location="reason_staff">来店予約はこちら ›</a></p>
@@ -1566,7 +1572,6 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <span class="rs-no">3</span>
     <p class="lt-to">長く使いたい方へ</p>
     <div class="rs-h">
-      <svg class="rs-ico" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="60" rx="22" ry="3.5" fill="#EDE5D8"/><path d="M32,4 L55,12 Q55,43 32,57 Q9,43 9,12 Z" fill="#E3E8EF"/><path d="M32,4 L55,12 Q55,43 32,57 Z" fill="#D3DBE6"/><path d="M21,30 L29,38 L43,23" fill="none" stroke="#3A3530" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3>ご購入でついてくる<em>充実の保証</em></h3>
     </div>
     <!-- 10/24 BFLPに合わせて：タブ→アコーディオン（通常保証だけ最初から開く）・保証は横長の行（左に数字） -->

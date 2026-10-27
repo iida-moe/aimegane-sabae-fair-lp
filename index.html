@@ -1230,6 +1230,20 @@ html[data-look][lang] #care .ln-for{margin-top:14px;padding:12px 8px;font-family
 /* 10/27 目立たせたいのは「眼鏡作製技能士」（Iさん）→大きい行と小さい行を入れかえ */
 #care .rs-h-ginou{font-size:16px}
 #care .rs-h-ginou em{margin-bottom:2px;font-size:min(24px,6.2vw);letter-spacing:.02em;white-space:nowrap}
+/* 10/27 技能士カード（BFLP型）：メダル＋見出し／お客さま右・スタッフ左の大きな上半身＋枠線の吹き出し */
+#care .rs-h-staff{gap:14px;text-align:left;align-items:center}
+#care .rs-medal{flex:none;width:60px;height:auto}
+#care .rs-h-txt .rs-one{margin-top:8px;font-size:14px!important;line-height:1.7!important;letter-spacing:0!important;text-align:left}
+#care .tk2{display:flex;flex-direction:column;gap:16px;margin-top:22px}
+#care .tk2-row{display:flex;align-items:center;gap:14px}
+#care .tk2-cus{justify-content:flex-end}
+#care .tk2-fig{flex:none;width:80px;height:auto}
+#care .tk2-bub{position:relative;padding:12px;border:1.5px solid #C9B8A3;border-radius:14px;background:#FFFDF8;font-family:var(--sans);font-size:14px;font-weight:500;line-height:1.7;letter-spacing:0;text-align:left;color:#3A3530;white-space:nowrap}
+#care .tk2-staff .tk2-bub{border-color:#3E5573;background:#F6F8FA}
+#care .tk2-bub b{font-family:'Shippori Mincho B1',serif;font-size:15px;font-weight:600;color:#2B2B2B}
+#care .tk2-bub::after{content:"";position:absolute;top:50%;width:12px;height:12px;background:inherit;border:inherit;border-width:0 1.5px 1.5px 0;transform:translateY(-50%) rotate(-45deg)}
+#care .tk2-cus .tk2-bub::after{right:-7.5px}
+#care .tk2-staff .tk2-bub::after{left:-7.5px;transform:translateY(-50%) rotate(135deg)}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1562,15 +1576,14 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <p class="lt-to">レンズ選びが不安な方へ</p>
     <!-- 10/27 Iさん支給 Downloads\考える三人の人物イラスト.png（背景透明）を2:1に。顔は同じ絵から丸く切り抜き。変更前 _保存\変更前\1027\sabae-fair.before-1027-soudan.html -->
     <!-- 10/27 Iさん案：3人の横長の絵はやめて、見出しの左にスタッフだけ・見出しは右。変更前 _保存\変更前\1027\sabae-fair.before-1027-staffleft.html -->
+    <!-- 10/27 Iさんイメージ（BFLP型）：左にメダル・右に見出し＋リード／会話はお客さま1人（右）とスタッフ（左）の2つ・上半身を大きく。変更前 _保存\変更前\1027\sabae-fair.before-1027-ginou2.html -->
     <div class="rs-h rs-h-staff">
-      <img class="rs-staff" src="images/care/sabae_care-staff-half_300_366.png" width="300" height="366" alt="眼鏡作製技能士のスタッフのイラスト" loading="lazy">
-      <h3 class="rs-h-ginou"><em data-nowrap>眼鏡作製技能士</em>が、全店に在籍</h3>
+      <svg class="rs-medal" viewBox="0 0 64 72" aria-hidden="true"><path d="M20,40 L12,68 L22,62 L27,71 L32,46 Z" fill="#C2A66B"/><path d="M44,40 L52,68 L42,62 L37,71 L32,46 Z" fill="#B0935A"/><circle cx="32" cy="28" r="24" fill="#3E5573"/><circle cx="32" cy="28" r="18.5" fill="none" stroke="#C2A66B" stroke-width="2"/><path d="M23,28 L30,35 L42,22" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="rs-h-txt"><h3 class="rs-h-ginou"><em data-nowrap>眼鏡作製技能士</em>が全店に在籍</h3><p class="rs-one" data-nowrap>国家検定資格をもつスタッフが、<br>お悩みをお聞きします。</p></div>
     </div>
-    <p class="rs-one">国家検定資格のスタッフがお聞きします</p>
-    <div class="talk">
-<div class="talk-row"><img class="talk-face" src="images/care/sabae_care-face-man_160_160.png" width="160" height="160" alt="" loading="lazy"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
-<div class="talk-row"><img class="talk-face" src="images/care/sabae_care-face-woman_160_160.png" width="160" height="160" alt="" loading="lazy"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
-<div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face talk-face-staff" src="images/care/sabae_care-face-staff_160_160.png" width="160" height="160" alt="" loading="lazy"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
+    <div class="tk2">
+      <div class="tk2-row tk2-cus"><p class="tk2-bub" data-nowrap>最近、手元が<br>見えにくくて…<br>遠近両用ははじめてで不安</p><img class="tk2-fig" src="images/care/sabae_care-woman-half_300_392.png" width="300" height="392" alt="" loading="lazy"></div>
+      <div class="tk2-row tk2-staff"><img class="tk2-fig" src="images/care/sabae_care-staff-half_300_366.png" width="300" height="366" alt="" loading="lazy"><p class="tk2-bub" data-nowrap>見え方をしっかり測って、<br><b>ぴったりのレンズを<br>ご提案します！</b></p></div>
     </div>
     <p class="rs-n">※不在の日もあるため、ご予約がおすすめです</p>
     <p class="rs-link"><a href="#shop-search" data-cta-location="reason_staff">来店予約はこちら ›</a></p>

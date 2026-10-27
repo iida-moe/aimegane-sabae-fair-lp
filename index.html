@@ -1187,6 +1187,11 @@ html[data-look][lang] .cn-info>div:first-child{border-top:0}
 html[data-look][lang] .cn-info>div:last-child{border-bottom:0}
 html[data-look][lang] .cn-info dt{justify-self:start;padding:1px 6px 1px 8px;border:1px solid var(--ai);border-radius:3px;font-size:12px;letter-spacing:.16em;line-height:1.6}
 html[data-look][lang] .cn-info dd.cn-date{white-space:nowrap}
+/* 10/27 ラベルの枠を、中身の1行目の上下真ん中にそろえる（ベースラインだと数字が大きいぶん下がって見えた） */
+html[data-look][lang] .cn-info>div{align-items:start}
+html[data-look][lang] .cn-info dd b{display:inline-block}
+html[data-look][lang] .cn-info>div:first-child dt{margin-top:calc((24px*1.4 - 1.6em - 4px)/2)}
+html[data-look][lang] .cn-info>div:last-child dt{margin-top:calc((17px*1.6 - 1.6em - 4px)/2)}
 html[data-look][lang] .cn-info dd.cn-date .cn-kara{margin:0 4px 0 -4px} /* 「）」の後ろの空きぶん、〜を左へ */
 html[data-look][lang] .cn-try{margin-top:20px;text-align:center}
 html[data-look][lang] .cn-cta{margin-top:28px}

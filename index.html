@@ -1276,6 +1276,12 @@ html[data-look][lang] #care .ln-more>summary{padding:12px 10px;font-size:min(15p
 /* ブランドの「詳しく見る」・遠近の札・ブランド詳細の前後は藍（:is() の中に ::before を入れていたので効いていなかった） */
 html[data-look][lang] #brands .bg-catch::before{color:var(--ai)}
 html[data-look][lang] :is(.cr-lens-tag,.bd-pn small){color:var(--ai);border-color:var(--ai)}
+/* 10/27 そのほかの取り扱いブランド（名前だけ）：「すべてのブランドを見る」を開いたときだけ */
+.bg-names{display:none;margin:22px 20px 0;padding:18px 16px;background:#FFFDF8;border:1px solid #E6DED0;border-radius:10px}
+.bg-grid.is-all~.bg-names{display:block}
+.bg-names-t{font-family:'Shippori Mincho B1',serif;font-size:15px;font-weight:600;letter-spacing:.08em;color:#2B2B2B;text-align:center}
+.bg-names ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 6px;margin:12px 0 0;padding:0}
+.bg-names li{padding:4px 10px;border:1px solid #E0D5C3;border-radius:999px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;color:#3A3530;white-space:nowrap}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1421,7 +1427,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <div class="sec-head">
     <h2 class="sec-title rv">商品ラインナップ</h2>
     <!-- 10/19 FV下の横書きの帯をやめて、ここで「何があるか」を伝える（A案） -->
-    <p class="rv">アイメガネ各店に、鯖江のメガネを<br>20ブランド以上取り揃えています。</p>
+    <p class="rv">アイメガネ各店に、鯖江のメガネを<br>約40ブランド取り揃えています。</p>
   </div>
   <!-- 10/22 並びは1段ごとに写真どうし・フレームどうし（変更前 _保存/sabae-fair.before-1022-order.html）。10/20 PICK UP 6ブランド（B案）のタイル→押すと全画面の詳細（#brand-detail）。残りは下にブランド名だけ。変更前 _保存/sabae-fair.before-1020-pickup.html -->
   <ul class="bg-grid">
@@ -1435,15 +1441,15 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <span class="bg-img is-photo" style="aspect-ratio:595/842"><img src="images/brands/sabae_brand-hanaemori_595_842.jpg" alt="" width="595" height="842" loading="lazy"></span>
       <span class="bg-catch">やわらかなオーバル</span>
     </button></li>
-    <li><button type="button" class="bg-tile" data-brand="charmant" aria-label="CHARMANTの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">CHARMANT</span>
+    <li><button type="button" class="bg-tile" data-brand="lineart" aria-label="ラインアートの商品を見る" data-cta-location="brand_tile">
+      <span class="bg-name jp">ラインアート</span>
       <span class="bg-img is-cut"><img src="images/brands/sabae_brand-charmant-2_440_167.jpg" alt="" width="440" height="167" loading="lazy"></span>
       <span class="bg-catch">細く、しなやかな線のフレーム</span>
     </button></li>
-    <li><button type="button" class="bg-tile" data-brand="chopard" aria-label="Chopardの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">Chopard</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-chopard-2_570_250.jpg" alt="" width="570" height="250" loading="lazy"></span>
-      <span class="bg-catch">宝飾のような華やかさ</span>
+    <li><button type="button" class="bg-tile" data-brand="lanvin" aria-label="LANVINの商品を見る" data-cta-location="brand_tile">
+      <span class="bg-name">LANVIN</span>
+      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-lanvin_570_250.jpg" alt="" width="570" height="250" loading="lazy"></span>
+      <span class="bg-catch">曲線が描く上品さ</span>
     </button></li>
     <li><button type="button" class="bg-tile" data-brand="tonysame" aria-label="tonysameの商品を見る" data-cta-location="brand_tile">
       <span class="bg-name">tonysame</span>
@@ -1495,30 +1501,15 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <span class="bg-img is-photo" style="aspect-ratio:860/574"><img src="images/brands/sabae_brand-titanos_860_574.jpg" alt="" width="860" height="574" loading="lazy"></span>
       <span class="bg-catch">チタンで描くクラシック</span>
     </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="tumi" aria-label="TUMIの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">TUMI</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-tumi_570_250.jpg" alt="" width="570" height="250" loading="lazy"></span>
-      <span class="bg-catch">すっきり端正な大人の一本</span>
-    </button></li>
     <li class="is-more"><button type="button" class="bg-tile" data-brand="rodenstock" aria-label="RODENSTOCKの商品を見る" data-cta-location="brand_tile">
       <span class="bg-name">RODENSTOCK</span>
       <span class="bg-img is-cut"><img src="images/brands/sabae_brand-rodenstock_570_250.jpg" alt="" width="570" height="250" loading="lazy"></span>
       <span class="bg-catch">知的で落ち着いた印象</span>
     </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="lanvin" aria-label="LANVINの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">LANVIN</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-lanvin_570_250.jpg" alt="" width="570" height="250" loading="lazy"></span>
-      <span class="bg-catch">曲線が描く上品さ</span>
-    </button></li>
     <li class="is-more"><button type="button" class="bg-tile" data-brand="johnlennon" aria-label="JOHN LENNONの商品を見る" data-cta-location="brand_tile">
       <span class="bg-name">JOHN LENNON</span>
       <span class="bg-img is-cut"><img src="images/brands/sabae_brand-johnlennon_860_344.jpg" alt="" width="860" height="344" loading="lazy"></span>
       <span class="bg-catch">細いメタルの丸メガネ</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="eclage" aria-label="エクラージュの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name jp">エクラージュ</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-eclage_600_256.jpg" alt="" width="600" height="256" loading="lazy"></span>
-      <span class="bg-catch">女性らしい細身のオーバル</span>
     </button></li>
     <li class="is-more"><button type="button" class="bg-tile" data-brand="ys" aria-label="Y'sの商品を見る" data-cta-location="brand_tile">
       <span class="bg-name">Y's</span>
@@ -1526,6 +1517,11 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <span class="bg-catch">軽やかなラウンドとボストン</span>
     </button></li>
   </ul>
+  <!-- 10/27 取り扱いは「日本製ブランド一覧」（Iさん支給）に載っているものだけ。画像のないブランドは名前だけ（一覧の表記のまま）。Chopard・TUMI・エクラージュは一覧にないので削除、CHARMANT は一覧の「ラインアート」に。変更前 _保存\変更前\1027\sabae-fair.before-1027-brands.html -->
+  <div class="bg-names">
+    <p class="bg-names-t">そのほかの取り扱いブランド</p>
+    <ul><li>BALANCER</li><li>EIGHTER</li><li>GROK</li><li>HAMAMOTO</li><li>JKIDS</li><li>REEGO</li><li>SABIO</li><li>アーバントレイル</li><li>アクアリバティ</li><li>アンティミテ</li><li>オロビアンコ</li><li>グラシックジュニア</li><li>サムライショウ</li><li>ダックス</li><li>丹羽雅彦</li><li>ヒロココシノ</li><li>マサキマツシマ</li><li>ミルフィーユ</li><li>メンズマーク</li><li>モダンタイムス</li><li>ユキコハナイ</li><li>ユミ・カツラ</li><li>リンカーン</li></ul>
+  </div>
   <button type="button" class="bg-all" aria-expanded="false" data-cta-location="brand_all">すべてのブランドを見る</button>
   <p class="bg-note">※店舗により取り扱いブランド・商品が異なります。</p>
 </section>

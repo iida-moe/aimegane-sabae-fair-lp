@@ -1261,6 +1261,11 @@ html[data-look][lang] .care-cta .fcta-btn:hover{background:#EEF1F5}
 .shop-map{text-decoration-color:var(--ai)!important}
 /* 最終CTA：「Made in SABAE」だけ朱で先に目に入っていた→墨に */
 #fcta .fcta-sub .q{color:inherit}
+/* 10/27 保証の見出し：カード2（眼鏡作製技能士）と同じ大きさ・左に盾 */
+#care .rs-h h3.rs-h-hosho{font-size:16px;line-height:1.35}
+#care .rs-h h3.rs-h-hosho em{margin-top:2px;font-size:min(27px,7vw);letter-spacing:.02em;color:#C73E3A}
+#care .rs-shield{width:56px}
+#care .rs-h-staff+.hs-acc{margin-top:18px}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1608,17 +1613,18 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <div class="rs rv">
     <span class="rs-no">3</span>
     <p class="lt-to">長く使いたい方へ</p>
-    <div class="rs-h">
-      <h3>ご購入でついてくる<em>充実の保証</em></h3>
+    <!-- 10/27 BFLPの保証部分に合わせた：左に盾・見出しはカード2と同じ大きさ／通常保証のキャッチ文は削除／破損補償→アイ情補償。変更前 _保存\変更前\1027\sabae-fair.before-1027-bfhosho.html -->
+    <div class="rs-h rs-h-staff">
+      <svg class="rs-medal rs-shield" viewBox="0 0 64 64" aria-hidden="true"><path d="M32,4 L55,12 Q55,43 32,57 Q9,43 9,12 Z" fill="#3E5573"/><path d="M32,4 L55,12 Q55,43 32,57 Z" fill="#33475F"/><path d="M21,30 L29,38 L43,23" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="rs-h-txt"><h3 class="rs-h-hosho">ご購入でついてくる<em data-nowrap>充実の保証</em></h3></div>
     </div>
     <!-- 10/24 BFLPに合わせて：タブ→アコーディオン（通常保証だけ最初から開く）・保証は横長の行（左に数字） -->
     <div class="hs-acc">
       <details class="hs-item" open><summary><span>通常保証<small>どなたでも</small></span></summary>
-        <p class="hs-catch">買ったあとも、<em>しっかり安心</em></p>
         <ul class="hc3">
           <li><p class="hc-t">視え方保証</p><p class="hc-n">6<small>か月</small></p><p class="hc-d">度数交換が<span class="hc-u">何度でも無料</span></p></li>
           <li><p class="hc-t">品質保証</p><p class="hc-n">1<small>年</small></p><p class="hc-d">不具合は無料で交換</p></li>
-          <li><p class="hc-t">破損補償</p><p class="hc-n">1<small>年</small></p><p class="hc-d">うっかり破損50%引き</p></li>
+          <li><p class="hc-t">アイ情補償</p><p class="hc-n">1<small>年</small></p><p class="hc-d">うっかり破損50%引き</p></li>
         </ul>
       </details>
       <details class="hs-item"><summary><span>キッズ＆ジュニア保証<small>中学生以下</small></span></summary>
@@ -1643,7 +1649,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       </details>
     </div>
     <p class="hs-svc"><svg class="hs-svc-ic" viewBox="0 0 64 44" aria-hidden="true"><path d="M44 6l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#F6DCD7" stroke="#3A3530" stroke-width="1.5" stroke-linejoin="round"/><path d="M55 2l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z" fill="#3A3530"/><g fill="none" stroke="#3A3530" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="20" width="18" height="15" rx="7"/><rect x="34" y="20" width="18" height="15" rx="7"/><path d="M24 25c2.5-2 7.5-2 10 0M6 24l-4-3M52 24l4-3"/></g><path d="M11 25l4-3M39 25l4-3" stroke="#bbb" stroke-width="2" stroke-linecap="round"/></svg>メガネの点検・クリーニングは<br><em>いつでも無料</em>です<small>ご家族のメガネや、<br>他店で買ったメガネもお気軽にどうぞ</small></p>
-    <p class="rs-note">※品質保証は、通常のお取り扱いで生じた損傷が対象です（現品と交換のため、ご持参ください）。<br>※破損補償は、ほかの割引との併用はできません。<br>※くわしい条件は店頭でご確認ください。</p>
+    <p class="rs-note">※品質保証は、通常のお取り扱いで生じた損傷が対象です（現品と交換のため、ご持参ください）。<br>※アイ情補償の50%引きは、ほかの割引と併用できません。<br>※くわしい条件は店頭でご確認ください。</p>
   </div>
   <!-- 10/24 読んで気持ちが動いたところで店舗検索へ -->
   <div class="care-cta rv"><a href="#shop-search" class="fcta-btn" data-cta-location="care">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>

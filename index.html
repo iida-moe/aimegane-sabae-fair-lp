@@ -1224,6 +1224,9 @@ html[data-look][lang] #care .ln-for{margin-top:14px;padding:12px 8px;font-family
 #care img.talk-face,#care img.talk-face-staff{width:48px;height:48px;border-radius:50%;background:#F4ECE2}
 #care .talk-staff img.talk-face-staff{background:#EEF1F5}
 #care .talk-row{align-items:center}
+/* 10/27 技能士カード：見出しの左にスタッフ・右に見出し（左ぞろえ） */
+#care .rs-h-staff{justify-content:center;gap:14px;text-align:left;margin-top:8px}
+#care img.rs-staff{flex:none;width:96px;height:auto}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1555,8 +1558,9 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <!-- 10/27 カード1に合わせて：上にひと言・見出しは墨・人物はIさん支給の手描き風（Downloads\透明背景の穏やかな人物アバターたち.png を切り分け・チェックは藍）。変更前 _保存\変更前\1027\sabae-fair.before-1027-card23.html -->
     <p class="lt-to">レンズ選びが不安な方へ</p>
     <!-- 10/27 Iさん支給 Downloads\考える三人の人物イラスト.png（背景透明）を2:1に。顔は同じ絵から丸く切り抜き。変更前 _保存\変更前\1027\sabae-fair.before-1027-soudan.html -->
-    <div class="lt-fig"><img src="images/care/sabae_care-soudan_1206_603.jpg" width="1206" height="603" alt="メガネに悩むお客さま2人と、眼鏡作製技能士のスタッフのイラスト" loading="lazy"></div>
-    <div class="rs-h">
+    <!-- 10/27 Iさん案：3人の横長の絵はやめて、見出しの左にスタッフだけ・見出しは右。変更前 _保存\変更前\1027\sabae-fair.before-1027-staffleft.html -->
+    <div class="rs-h rs-h-staff">
+      <img class="rs-staff" src="images/care/sabae_care-staff-half_300_366.png" width="300" height="366" alt="眼鏡作製技能士のスタッフのイラスト" loading="lazy">
       <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
     </div>
     <p class="rs-one">国家検定資格のスタッフがお聞きします</p>

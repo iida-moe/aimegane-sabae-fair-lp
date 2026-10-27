@@ -1198,6 +1198,9 @@ html[data-look][lang] .cn-info dd.cn-date{white-space:nowrap}
 #care .lt-rh .cr-lens-ttl b{font-size:96px}
 #care .lt-rh .cr-lens-ttl .lt-yen{font-size:26px}
 #care .lt-rh .lt-zn{margin-top:14px}
+/* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
+html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
+html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
 #care .lt-zn i{display:block;font-style:normal;padding-left:1em;text-indent:-1em} /* ※の後ろで2行目をそろえる */
 /* 10/27 ラベルの枠を、中身の1行目の上下真ん中にそろえる（ベースラインだと数字が大きいぶん下がって見えた） */
 html[data-look][lang] .cn-info>div{align-items:start}

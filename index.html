@@ -1300,6 +1300,12 @@ html[data-look][lang] .fs-map svg{width:214px}
 #fcta .fcta-sub .q,#fcta .fcta-sub .fn{color:#2B2B2B}
 #fcta .fcta-sub .fn{font-family:'Shippori Mincho B1',serif;font-size:17px;font-weight:600;letter-spacing:.2em}
 #fcta .fcta-gl{margin-bottom:40px}
+/* 10/27 最終CTAを横書きに（Iさん）：小さい前置き→フェア名（大）→主コピー */
+#fcta .fcta-gl{margin-bottom:28px}
+.fcta-yoko{margin-bottom:36px}
+.fcta-y-sub{font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.16em;color:#544D46}
+.fcta-y-fn{margin-top:4px;font-family:'Shippori Mincho B1',serif;font-size:32px;font-weight:600;letter-spacing:.12em;color:#2B2B2B;line-height:1.4}
+.fcta-y-main{margin-top:20px;font-family:var(--mincho);font-size:17px;font-weight:500;letter-spacing:.1em;line-height:1.9;color:#3A3530}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1763,9 +1769,11 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 <!-- 10/23 生成り地に作り直し（濃い墨の帯は重い・期間の注記が見えなかった）。文言はそのまま。変更前 _保存/sabae-fair.before-1023-fcta.html -->
 <section id="fcta">
   <img class="fcta-gl rv" src="images/fv/sabae_glasses-line-shu_1384_584.png" width="1384" height="584" alt="" loading="lazy">
-  <div class="fcta-tate rv">
-    <h2 class="fcta-main tate">いい眼鏡と過ごす時間は<br>心地いい。</h2>
-    <p class="fcta-sub tate">職人の魂が息づく<br><span class="fn">鯖江フェア</span></p>
+  <!-- 10/27 Iさん「横書きでもいい」→横書き・中央：サブ（職人の魂が息づく／鯖江フェア）→主コピー。変更前 _保存\変更前\1027\sabae-fair.before-1027-fcta-yoko.html -->
+  <div class="fcta-yoko rv">
+    <p class="fcta-y-sub">職人の魂が息づく</p>
+    <p class="fcta-y-fn">鯖江フェア</p>
+    <h2 class="fcta-y-main">いい眼鏡と過ごす時間は、<br>心地いい。</h2>
   </div>
   <p class="fcta-period rv"><b>2026/10/30</b><small class="fcta-dw">（金）</small>〜<b>2027/2/19</b><small class="fcta-dw">（金）</small><small>アイメガネ各店にて開催<br>※本庄南大通り店を除く</small></p>
   <div class="rv"><a href="#shop-search" class="fcta-btn" data-cta-location="final">来店予約はこちら<span class="fc-arw" aria-hidden="true"></span></a></div>

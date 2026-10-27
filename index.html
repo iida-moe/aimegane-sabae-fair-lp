@@ -1205,6 +1205,11 @@ html[data-look][lang] .cn-info dd.cn-date{white-space:nowrap}
 #care .lens-rec-t{margin-top:28px;font-family:'Shippori Mincho B1',serif;font-size:15px;font-weight:600;letter-spacing:.08em;color:#2B2B2B} /* 10/27 Iさん「太くするか」→薄く小さく、から太字に */
 #care .lens-chk li::after{top:13px} /* 10/27 チェックが箱の上に寄っていた→箱の真ん中へ */
 #care .lens-rec-t:first-child{margin-top:4px}
+/* 10/27 レンズのタブをBFLPと同じ2×2に（名前＋用途のひと言）。選んでいるタブは藍 */
+html[data-look][lang] #care .ln-tabs{grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 14px}
+html[data-look][lang] #care .ln-tabs button{display:flex;align-items:baseline;justify-content:center;gap:4px;padding:11px 2px;font-family:'Shippori Mincho B1',serif;font-size:min(15px,3.8vw);font-weight:600;letter-spacing:-.04em;white-space:nowrap} /* 「アシスト 手元サポート」が端ぎりぎりだったので字間を少し詰める */
+html[data-look][lang] #care .ln-tabs button small{font-family:var(--sans);font-size:min(11px,2.9vw);font-weight:500;letter-spacing:-.04em;color:#5A524A}
+html[data-look][lang] #care .ln-tabs button[aria-selected="true"] small{color:rgba(255,255,255,.85)}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1512,10 +1517,11 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <details class="ln-more"><summary>あなたに合うレンズを見つけよう</summary>
     <div class="ln-fig">
       <div class="ln-tabs" role="tablist" aria-label="レンズの種類">
-        <button type="button" role="tab" aria-selected="true" data-lens="enkin">遠近</button>
-        <button type="button" role="tab" aria-selected="false" data-lens="chukin">中近</button>
-        <button type="button" role="tab" aria-selected="false" data-lens="kinkin">近々</button>
-        <button type="button" role="tab" aria-selected="false" data-lens="assist">アシスト</button>
+        <!-- 10/27 BFLPと同じ2×2・名前の横に用途のひと言 -->
+        <button type="button" role="tab" aria-selected="true" data-lens="enkin">遠近両用<small>遠く〜手元</small></button>
+        <button type="button" role="tab" aria-selected="false" data-lens="chukin">中近<small>室内用</small></button>
+        <button type="button" role="tab" aria-selected="false" data-lens="kinkin">近々<small>デスクワーク用</small></button>
+        <button type="button" role="tab" aria-selected="false" data-lens="assist">アシスト<small>手元サポート</small></button>
       </div>
       <img id="lnImg" src="images/illust/sabae_lens2-enkin_640_360.svg" alt="遠近両用レンズの見え方" width="660" height="340">
       <!-- 10/27 「誰向け」が3回重なっていた→ベージュの箱（ln-for）は削除。こんな方におすすめ・使うシーンは残す。点線の意味を1行で説明 -->

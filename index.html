@@ -1187,6 +1187,12 @@ html[data-look][lang] .cn-info>div:first-child{border-top:0}
 html[data-look][lang] .cn-info>div:last-child{border-bottom:0}
 html[data-look][lang] .cn-info dt{justify-self:start;padding:1px 6px 1px 8px;border:1px solid var(--ai);border-radius:3px;font-size:12px;letter-spacing:.16em;line-height:1.6}
 html[data-look][lang] .cn-info dd.cn-date{white-space:nowrap}
+/* 10/27 遠近0円：朱は0だけ（追加料金・円は墨）／「遠近両用」は字間をふつうにして左そろえ（バラバラに見えた） */
+#care .cr-lens-ttl .lt-l,#care .cr-lens-ttl .lt-yen{color:#2B2B2B}
+#care .cr-lens-ttl .lt-l small{align-self:flex-start;text-align:left;text-align-last:auto;letter-spacing:.06em}
+/* 10/27 条件の注記を2つの※に分けた。2行なので左そろえのかたまりを中央に置く */
+#care .lt-zn span{display:inline-block;text-align:left}
+#care .lt-zn i{display:block;font-style:normal;padding-left:1em;text-indent:-1em} /* ※の後ろで2行目をそろえる */
 /* 10/27 ラベルの枠を、中身の1行目の上下真ん中にそろえる（ベースラインだと数字が大きいぶん下がって見えた） */
 html[data-look][lang] .cn-info>div{align-items:start}
 html[data-look][lang] .cn-info dd b{display:inline-block}
@@ -1479,7 +1485,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <div class="lt-rh-txt">
         <p class="cr-lens-ttl"><span class="lt-l"><small>遠近両用</small>追加料金</span><b>0</b><span class="lt-yen">円</span></p>
         <p class="lt-also">中近・近々・アシストも！</p>
-        <p class="lt-zn">※「選べるレンズ付き」のフレーム・<br>標準レンズの場合</p>
+        <p class="lt-zn"><span><i>※「選べるレンズ付き」と記載のある<br>セットが対象</i><i>※標準レンズの場合</i></span></p>
       </div>
     </div>
     <!-- 10/19 遠近の説明：3つのレンズで「よく見える距離」をバーで見せる -->

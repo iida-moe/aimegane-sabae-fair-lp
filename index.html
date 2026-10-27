@@ -1248,6 +1248,19 @@ html[data-look][lang] #care .ln-for{margin-top:14px;padding:12px 8px;font-family
 #care .rs-tag{display:inline-block;margin:0 0 6px;padding:2px 10px;border-radius:3px;background:#3E5573;color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;line-height:1.6}
 #care .rs-h h3.rs-h-ginou{font-size:16px;line-height:1.35}
 #care .rs-h h3.rs-h-ginou em{margin:0 0 2px;font-size:min(27px,7vw);letter-spacing:.02em;color:#C73E3A}
+/* 10/27 全体の見直し（Iさん「直して」） */
+/* 3つの安心：カード3の「充実の保証」もカード2（眼鏡作製技能士）と同じ朱にそろえる */
+#care .rs-h h3:not(.rs-h-ginou) em{color:#C73E3A}
+/* 「お近くの店舗を探す」はフェアのご案内と同じ白地＋藍の枠に統一（下の固定の予約ボタンと赤が2つ並ばないように） */
+html[data-look][lang] .care-cta .fcta-btn{background:#FFFDF8;color:var(--ai);border:1.5px solid var(--ai);box-shadow:none}
+html[data-look][lang] .care-cta .fc-arw{border-color:var(--ai)}
+html[data-look][lang] .care-cta .fcta-btn:hover{background:#EEF1F5}
+/* 店舗カード：店名の＞・地図のピンと下線は藍（赤はWEB予約・電話だけ） */
+.shop-name-link::after{border-color:var(--ai)!important}
+.shop-map::before{background:var(--ai)!important}
+.shop-map{text-decoration-color:var(--ai)!important}
+/* 最終CTA：「Made in SABAE」だけ朱で先に目に入っていた→墨に */
+#fcta .fcta-sub .q{color:inherit}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}

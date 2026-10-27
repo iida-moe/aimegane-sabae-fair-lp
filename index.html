@@ -1180,6 +1180,19 @@ html[data-look][lang] .shop-filter-check:hover{border-color:var(--ai)}
 /* 10/27 「— 小さい文字が見にくくなった方へ —」の最後の線だけ次の行に落ちる→1行に収める */
 html[data-look][lang] .lt-to{white-space:nowrap;font-size:min(15px,3.9vw);letter-spacing:.02em}
 html[data-look][lang] .lt-to::before,html[data-look][lang] .lt-to::after{width:12px;margin:0 6px}
+/* 10/27 フェアのご案内：期間・会場を白いカードに・ラベルは藍の枠囲み／試着の一言はカードの下で中央／ボタンは白地＋藍の枠（下の固定の予約ボタンと赤が2つ並ばないように） */
+html[data-look][lang] .cn-info{margin:28px 24px 0;padding:6px 14px;background:#FFFDF8;border:1px solid #E6DCCB;border-radius:12px}
+html[data-look][lang] .cn-info>div{grid-template-columns:52px 1fr;align-items:baseline;padding:16px 0;border-top:1px dashed #E0D5C3}
+html[data-look][lang] .cn-info>div:first-child{border-top:0}
+html[data-look][lang] .cn-info>div:last-child{border-bottom:0}
+html[data-look][lang] .cn-info dt{justify-self:start;padding:1px 6px 1px 8px;border:1px solid var(--ai);border-radius:3px;font-size:12px;letter-spacing:.16em;line-height:1.6}
+html[data-look][lang] .cn-info dd.cn-date{white-space:nowrap}
+html[data-look][lang] .cn-info dd.cn-date .cn-kara{margin:0 4px}
+html[data-look][lang] .cn-try{margin-top:20px;text-align:center}
+html[data-look][lang] .cn-cta{margin-top:28px}
+html[data-look][lang] .cn-cta .fcta-btn{background:#FFFDF8;color:var(--ai);border:1.5px solid var(--ai);box-shadow:none}
+html[data-look][lang] .cn-cta .fc-arw{border-color:var(--ai)}
+html[data-look][lang] .cn-cta .fcta-btn:hover{background:#EEF1F5}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1426,11 +1439,12 @@ html[data-look][lang] .lt-to::before,html[data-look][lang] .lt-to::after{width:1
   </div>
   <!-- 10/19 イラスト（Gemini・背景を白に補正）。メッセージのメガネのカードと同じく、右端にくっつけて左側だけ大きな角丸。画面に入ったら右からしゅっと入る -->
   <div class="cn-illust rv"><img src="images/corner/sabae_corner-shop_1206_689.jpg" width="1206" height="689" alt="メガネ店で、夫婦がスタッフと一緒にメガネを選んでいるイラスト" loading="lazy"></div>
-  <p class="cn-try rv"><em>試着だけ</em>のご来店も、歓迎です。</p>
+  <!-- 10/27 期間・会場を白いカードに入れ、試着の一言はカードの下（ボタンの前）へ -->
   <dl class="cn-info rv">
     <div><dt>期間</dt><dd class="cn-date"><b>10/30</b><small>（金）</small><span class="cn-kara">〜</span><b>2/19</b><small>（金）</small></dd></div>
     <div><dt>会場</dt><dd><b>アイメガネ各店</b><small class="cn-note">※本庄南大通り店を除く</small></dd></div>
   </dl>
+  <p class="cn-try rv"><em>試着だけ</em>のご来店も、歓迎です。</p>
   <!-- 10/25 期間・会場を読んだところで店舗検索へ（3つの安心の最後と同じボタン） -->
   <div class="care-cta cn-cta rv"><a href="#shop-search" class="fcta-btn" data-cta-location="corner">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>
 </section>

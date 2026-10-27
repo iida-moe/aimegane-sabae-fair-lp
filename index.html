@@ -1292,6 +1292,14 @@ html[data-look][lang] .fs-pct{margin-left:40px}
 html[data-look][lang] .fs-tate{min-height:540px}
 html[data-look][lang] .fs-map svg{width:214px}
 @media (max-width:374px){html[data-look][lang] .fs-map svg{width:196px}}
+/* 10/27 最終CTA：列の頭をそろえる（中央ぞろえで2列目が下がっていた）・サブは少し下から・「鯖江フェア」はフェア名として少し大きく墨・高さは中身に合わせる */
+#fcta .fcta-tate{height:auto;gap:18px;align-items:flex-start;margin-bottom:44px}
+#fcta .fcta-tate .tate{height:auto;text-align:start}
+#fcta .fcta-main{line-height:1.9}
+#fcta .fcta-sub{margin-top:5em;line-height:1.9}
+#fcta .fcta-sub .q,#fcta .fcta-sub .fn{color:#2B2B2B}
+#fcta .fcta-sub .fn{font-family:'Shippori Mincho B1',serif;font-size:17px;font-weight:600;letter-spacing:.2em}
+#fcta .fcta-gl{margin-bottom:40px}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1757,7 +1765,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <img class="fcta-gl rv" src="images/fv/sabae_glasses-line-shu_1384_584.png" width="1384" height="584" alt="" loading="lazy">
   <div class="fcta-tate rv">
     <h2 class="fcta-main tate">いい眼鏡と過ごす時間は<br>心地いい。</h2>
-    <p class="fcta-sub tate">職人の魂が息づく<br><span class="q">鯖江</span>フェア</p>
+    <p class="fcta-sub tate">職人の魂が息づく<br><span class="fn">鯖江フェア</span></p>
   </div>
   <p class="fcta-period rv"><b>2026/10/30</b><small class="fcta-dw">（金）</small>〜<b>2027/2/19</b><small class="fcta-dw">（金）</small><small>アイメガネ各店にて開催<br>※本庄南大通り店を除く</small></p>
   <div class="rv"><a href="#shop-search" class="fcta-btn" data-cta-location="final">来店予約はこちら<span class="fc-arw" aria-hidden="true"></span></a></div>

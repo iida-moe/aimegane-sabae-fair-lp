@@ -547,21 +547,23 @@ window.addEventListener('scroll',()=>{
     pot:'<path d="M7,17 H33 V27 Q33,33 27,33 H13 Q7,33 7,27 Z"/><path d="M3,19 H7 M33,19 H37 M15,12 Q17,9 15,6 M21,12 Q23,9 21,6 M27,12 Q29,9 27,6"/>',
     tv:'<rect x="4" y="9" width="32" height="20" rx="2"/><path d="M14,34 H26 M20,29 V34"/>',
     pc:'<rect x="8" y="7" width="24" height="17" rx="2"/><path d="M4,30 H36 L33,25 H7 Z"/>',
-    hand:'<path d="M6,32 Q20,24 34,32"/><path d="M14,16 L26,16 L24,26 L16,26 Z"/><path d="M20,8 V12"/>'
+    hand:'<path d="M6,32 Q20,24 34,32"/><path d="M14,16 L26,16 L24,26 L16,26 Z"/><path d="M20,8 V12"/>',
+    cart:'<path d="M3,8 H8 L12,26 H31 L35,13 H10"/><circle cx="14" cy="32" r="2.5"/><circle cx="29" cy="32" r="2.5"/>'
   };
+  // 10/27 ひと言・おすすめ・シーンはBFLPと同じ中身に（Iさん「丸パクリでいい」）
   const LENS={
-    enkin:{src:'images/illust/sabae_lens2-enkin_640_360.svg',alt:'遠近両用レンズの見え方',forText:'老眼が気になってきて、<br>1本で遠くも手元も見たい方に',
-      chk:['メガネのかけ外しが面倒になってきた','老眼鏡を持ち歩きたくない','外出先でも手元を見たい'],
-      scene:[['car','運転'],['walk','お出かけ'],['phone','スマホ'],['book','読書']]},
-    chukin:{src:'images/illust/sabae_lens2-chukin_640_360.svg',alt:'中近両用レンズの見え方',forText:'運転はしないので、<br>家や職場で楽に見たい方に',
-      chk:['家の中で過ごす時間が長い','料理や家事を楽にしたい','会話やテレビと手元を両方見たい'],
+    enkin:{src:'images/illust/sabae_lens2-enkin_640_360.svg',alt:'遠近両用レンズの見え方',forText:'遠くも手元も、これ1本で',
+      chk:['メガネのかけ外しが面倒になってきた','手元用のメガネを持ち歩きたくない','外出先でも手元を見たい'],
+      scene:[['car','運転'],['cart','買い物'],['phone','スマホ'],['book','読書']]},
+    chukin:{src:'images/illust/sabae_lens2-chukin_640_360.svg',alt:'中近両用レンズの見え方',forText:'お部屋の中で、テレビも手元も',
+      chk:['家の中で過ごす時間が長い','料理や家事を楽にしたい','遠近両用より、手元を広く見たい'],
       scene:[['pot','料理・家事'],['tv','テレビ'],['pc','デスクワーク'],['phone','スマホ']]},
-    kinkin:{src:'images/illust/sabae_lens2-kinkin_640_360.svg',alt:'近々レンズの見え方',forText:'デスクワークや読書など、<br>手元の作業が中心の方に',
-      chk:['パソコン作業が長い','デスクまわりを広く見たい','手元の細かい作業が多い'],
+    kinkin:{src:'images/illust/sabae_lens2-kinkin_640_360.svg',alt:'近々レンズの見え方',forText:'デスクまわりを広く、見やすく',
+      chk:['パソコン作業が長い','パソコンの画面がぼやけやすい','手元の細かい作業が多い'],
       scene:[['pc','パソコン'],['book','書類・読書'],['hand','手作業'],['phone','スマホ']]},
-    assist:{src:'images/illust/sabae_lens2-assist_640_360.svg',alt:'アシストレンズの見え方',forText:'老眼の手前、<br>スマホを見ると目が疲れやすい方に',
-      chk:['夕方になると目が疲れる','スマホの文字が見えにくいときがある','老眼鏡はまだ早いかなと思う'],
-      scene:[['phone','スマホ'],['pc','パソコン'],['book','読書'],['walk','ふだん使い']]}
+    assist:{src:'images/illust/sabae_lens2-assist_640_360.svg',alt:'アシストレンズの見え方',forText:'遠くもスマホも、ゆがみ少なく',
+      chk:['スマホをよく見る','手元が少し見えにくくなってきた','遠近両用はまだ早いかなと思う'],
+      scene:[['car','運転'],['tv','テレビ'],['phone','スマホ'],['book','読書']]}
   };
   function renderLensRec(d){
     const c=document.getElementById('lensChk'),sc=document.getElementById('lensScene'); if(!c||!sc)return;

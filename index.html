@@ -1198,9 +1198,6 @@ html[data-look][lang] .cn-info dd.cn-date{white-space:nowrap}
 #care .lt-rh .cr-lens-ttl b{font-size:96px}
 #care .lt-rh .cr-lens-ttl .lt-yen{font-size:26px}
 #care .lt-rh .lt-zn{margin-top:14px}
-/* 10/27 レンズ図の点線の説明（図と同じ色の点線＋1行） */
-.ln-leg{display:flex;align-items:center;justify-content:center;gap:8px;margin:4px 0 0;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.04em;color:#4A433D}
-.ln-leg i{width:22px;border-top:2px dashed #C98A4E}
 /* 10/27 こんな方におすすめ／使うシーン：線や色は足さず、まとまりの間を広げて小見出しを少しだけ小さく・薄く（中身を主役に） */
 #care .lens-rec-t{margin-top:28px;font-family:'Shippori Mincho B1',serif;font-size:15px;font-weight:600;letter-spacing:.08em;color:#2B2B2B} /* 10/27 Iさん「太くするか」→薄く小さく、から太字に */
 #care .lens-chk li::after{top:13px} /* 10/27 チェックが箱の上に寄っていた→箱の真ん中へ */
@@ -1210,6 +1207,8 @@ html[data-look][lang] #care .ln-tabs{grid-template-columns:1fr 1fr;gap:8px;margi
 html[data-look][lang] #care .ln-tabs button{display:flex;align-items:baseline;justify-content:center;gap:4px;padding:11px 2px;font-family:'Shippori Mincho B1',serif;font-size:min(15px,3.8vw);font-weight:600;letter-spacing:-.04em;white-space:nowrap} /* 「アシスト 手元サポート」が端ぎりぎりだったので字間を少し詰める */
 html[data-look][lang] #care .ln-tabs button small{font-family:var(--sans);font-size:min(11px,2.9vw);font-weight:500;letter-spacing:-.04em;color:#5A524A}
 html[data-look][lang] #care .ln-tabs button[aria-selected="true"] small{color:rgba(255,255,255,.85)}
+/* 10/27 図の下の短いひと言（1行・少し太め） */
+html[data-look][lang] #care .ln-for{margin-top:14px;padding:12px 8px;font-family:'Shippori Mincho B1',serif!important;font-size:16px!important;font-weight:600!important;letter-spacing:.06em!important;line-height:1.6!important;white-space:nowrap}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1525,10 +1524,11 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       </div>
       <img id="lnImg" src="images/illust/sabae_lens2-enkin_640_360.svg" alt="遠近両用レンズの見え方" width="660" height="340">
       <!-- 10/27 「誰向け」が3回重なっていた→ベージュの箱（ln-for）は削除。こんな方におすすめ・使うシーンは残す。点線の意味を1行で説明 -->
-      <p class="ln-leg"><i aria-hidden="true"></i>点線の外側は、ぼやけやすい部分</p>
+      <!-- 10/27 BFLPと同じ短いひと言（タブで切りかえ・JSのLENS.forText） -->
+      <p class="ln-for" id="lnFor">遠くも手元も、これ1本で</p>
       <!-- 10/23 ブラックフライデーLPと同じ：こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS） -->
       <div class="lens-rec">
-        <p class="lens-rec-t">こんな方におすすめ</p>
+        <p class="lens-rec-t">こんな方におすすめ！</p>
         <ul class="lens-chk" id="lensChk"></ul>
         <p class="lens-rec-t">使うシーン</p>
         <ul class="lens-scene" id="lensScene"></ul>

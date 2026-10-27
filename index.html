@@ -1268,6 +1268,14 @@ html[data-look][lang] .care-cta .fcta-btn:hover{background:#EEF1F5}
 #care .rs-h-staff+.hs-acc{margin-top:18px}
 /* 10/27 意味の正確さ：「日本の」→「国産」（輸入品を含むと読めるため）・福井県と鯖江をつなぐ一言・縦書きは「有名ブランドのメガネが集まる」（鯖江で作られるのはメガネ） */
 html[data-look][lang] .fs-pct small.fs-pct-sabae{display:block;margin-top:6px;font-size:15px;letter-spacing:.08em;color:#3A3530}
+/* 10/27 全体の見直し2 */
+/* 保証の注記：言葉の途中（でき／ません 等）で切れないように文節で改行 */
+.rs-note{word-break:keep-all;overflow-wrap:break-word}
+/* 「あなたに合うレンズを見つけよう」を1行に */
+html[data-look][lang] #care .ln-more>summary{padding:12px 10px;font-size:min(15px,3.8vw);letter-spacing:.02em;white-space:nowrap}
+/* ブランドの「詳しく見る」・遠近の札・ブランド詳細の前後は藍（:is() の中に ::before を入れていたので効いていなかった） */
+html[data-look][lang] #brands .bg-catch::before{color:var(--ai)}
+html[data-look][lang] :is(.cr-lens-tag,.bd-pn small){color:var(--ai);border-color:var(--ai)}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1654,7 +1662,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <p class="rs-note">※品質保証は、通常のお取り扱いで生じた損傷が対象です（現品と交換のため、ご持参ください）。<br>※アイ情補償の50%引きは、ほかの割引と併用できません。<br>※くわしい条件は店頭でご確認ください。</p>
   </div>
   <!-- 10/24 読んで気持ちが動いたところで店舗検索へ -->
-  <div class="care-cta rv"><a href="#shop-search" class="fcta-btn" data-cta-location="care">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>
+  <!-- 10/27 「お近くの店舗を探す」ボタンは削除（すぐ下が同じ名前のセクション）。変更前 _保存\変更前\1027\sabae-fair.before-1027-fix5.html -->
 </section>
 
 
@@ -1664,7 +1672,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <h2 class="sec-title rv">お近くの店舗を探す</h2>
     </div>
     <p class="shop-intro">現在地、または郵便番号(上3桁)で<br>お近くの店舗を探せます</p>
-    <p class="shop-intro-note">※WEB予約は、本日から3日後以降の日程でお取りいただけます。<br>お急ぎの場合はお電話にてお問い合わせください。</p>
+    <p class="shop-intro-note">※WEB予約は、本日から3日後以降の日程で<span data-nowrap>お取りいただけます。</span><br>お急ぎの場合はお電話にてお問い合わせください。</p>
 
     <div class="shop-search-box">
       <div class="shop-geo-wrap">
@@ -1742,7 +1750,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <img class="fcta-gl rv" src="images/fv/sabae_glasses-line-shu_1384_584.png" width="1384" height="584" alt="" loading="lazy">
   <div class="fcta-tate rv">
     <h2 class="fcta-main tate">いい眼鏡と過ごす時間は<br>心地いい。</h2>
-    <p class="fcta-sub tate">職人の魂が息づく<br><span class="q">「Made in SABAE」</span>フェア</p>
+    <p class="fcta-sub tate">職人の魂が息づく<br><span class="q">鯖江</span>フェア</p>
   </div>
   <p class="fcta-period rv"><b>2026/10/30</b><small class="fcta-dw">（金）</small>〜<b>2027/2/19</b><small class="fcta-dw">（金）</small><small>アイメガネ各店にて開催<br>※本庄南大通り店を除く</small></p>
   <div class="rv"><a href="#shop-search" class="fcta-btn" data-cta-location="final">来店予約はこちら<span class="fc-arw" aria-hidden="true"></span></a></div>

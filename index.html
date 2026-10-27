@@ -1227,6 +1227,9 @@ html[data-look][lang] #care .ln-for{margin-top:14px;padding:12px 8px;font-family
 /* 10/27 技能士カード：見出しの左にスタッフ・右に見出し（左ぞろえ） */
 #care .rs-h-staff{justify-content:center;gap:14px;text-align:left;margin-top:8px}
 #care img.rs-staff{flex:none;width:96px;height:auto}
+/* 10/27 目立たせたいのは「眼鏡作製技能士」（Iさん）→大きい行と小さい行を入れかえ */
+#care .rs-h-ginou{font-size:16px}
+#care .rs-h-ginou em{margin-bottom:2px;font-size:min(24px,6.2vw);letter-spacing:.02em;white-space:nowrap}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1561,7 +1564,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <!-- 10/27 Iさん案：3人の横長の絵はやめて、見出しの左にスタッフだけ・見出しは右。変更前 _保存\変更前\1027\sabae-fair.before-1027-staffleft.html -->
     <div class="rs-h rs-h-staff">
       <img class="rs-staff" src="images/care/sabae_care-staff-half_300_366.png" width="300" height="366" alt="眼鏡作製技能士のスタッフのイラスト" loading="lazy">
-      <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
+      <h3 class="rs-h-ginou"><em data-nowrap>眼鏡作製技能士</em>が、全店に在籍</h3>
     </div>
     <p class="rs-one">国家検定資格のスタッフがお聞きします</p>
     <div class="talk">

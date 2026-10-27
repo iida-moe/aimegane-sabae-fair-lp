@@ -1193,6 +1193,9 @@ html[data-look][lang] .cn-cta{margin-top:28px}
 html[data-look][lang] .cn-cta .fcta-btn{background:#FFFDF8;color:var(--ai);border:1.5px solid var(--ai);box-shadow:none}
 html[data-look][lang] .cn-cta .fc-arw{border-color:var(--ai)}
 html[data-look][lang] .cn-cta .fcta-btn:hover{background:#EEF1F5}
+/* 10/27 日付の書き方を「10/30（金）」にそろえた（下の固定バー・最終CTAは「10.30 金」だった）。かっこに空きがあるので左右の余白は詰める */
+html[data-look][lang] .fc-date small{margin:0}
+html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1645,7 +1648,7 @@ html[data-look][lang] .cn-cta .fcta-btn:hover{background:#EEF1F5}
     <h2 class="fcta-main tate">いい眼鏡と過ごす時間は<br>心地いい。</h2>
     <p class="fcta-sub tate">職人の魂が息づく<br><span class="q">「Made in SABAE」</span>フェア</p>
   </div>
-  <p class="fcta-period rv"><b>2026.10.30</b><small class="fcta-dw">金</small>〜<b>2027.2.19</b><small class="fcta-dw">金</small><small>アイメガネ各店にて開催<br>※本庄南大通り店を除く</small></p>
+  <p class="fcta-period rv"><b>2026/10/30</b><small class="fcta-dw">（金）</small>〜<b>2027/2/19</b><small class="fcta-dw">（金）</small><small>アイメガネ各店にて開催<br>※本庄南大通り店を除く</small></p>
   <div class="rv"><a href="#shop-search" class="fcta-btn" data-cta-location="final">来店予約はこちら<span class="fc-arw" aria-hidden="true"></span></a></div>
 </section>
 
@@ -1694,7 +1697,7 @@ html[data-look][lang] .cn-cta .fcta-btn:hover{background:#EEF1F5}
 <!-- 10/19 スマホの下に出る固定CTAを鯖江のトーンに作り直し（生成り地・朱のボタン）。変更前 _保存/sabae-fair.before-1019-spcta.html -->
 <div class="float-cta" id="floatCta">
   <div class="float-cta-inner">
-    <p class="float-cta-label"><span class="fc-ttl">鯖江フェア</span><span class="fc-date"><b>10.30</b><small>金</small>〜<b>2.19</b><small>金</small></span></p>
+    <p class="float-cta-label"><span class="fc-ttl">鯖江フェア</span><span class="fc-date"><b>10/30</b><small>（金）</small>〜<b>2/19</b><small>（金）</small></span></p>
     <a href="#shop-search" class="float-cta-btn" data-cta-location="float">来店予約はこちら<span class="fc-arw" aria-hidden="true"></span></a>
   </div>
 </div>

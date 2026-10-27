@@ -1198,6 +1198,9 @@ html[data-look][lang] .cn-info dd.cn-date{white-space:nowrap}
 #care .lt-rh .cr-lens-ttl b{font-size:96px}
 #care .lt-rh .cr-lens-ttl .lt-yen{font-size:26px}
 #care .lt-rh .lt-zn{margin-top:14px}
+/* 10/27 レンズ図の点線の説明（図と同じ色の点線＋1行） */
+.ln-leg{display:flex;align-items:center;justify-content:center;gap:8px;margin:4px 0 0;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.04em;color:#4A433D}
+.ln-leg i{width:22px;border-top:2px dashed #C98A4E}
 /* 10/27 見出しと注記の左端をそろえる（かたまりごと中央に置く） */
 html[data-look][lang] #care .lt-rh-txt{display:flex;flex-direction:column;align-items:flex-start}
 html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
@@ -1505,13 +1508,14 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <details class="ln-more"><summary>あなたに合うレンズを見つけよう</summary>
     <div class="ln-fig">
       <div class="ln-tabs" role="tablist" aria-label="レンズの種類">
-        <button type="button" role="tab" aria-selected="true" data-lens="enkin">遠近両用</button>
+        <button type="button" role="tab" aria-selected="true" data-lens="enkin">遠近</button>
         <button type="button" role="tab" aria-selected="false" data-lens="chukin">中近</button>
         <button type="button" role="tab" aria-selected="false" data-lens="kinkin">近々</button>
         <button type="button" role="tab" aria-selected="false" data-lens="assist">アシスト</button>
       </div>
       <img id="lnImg" src="images/illust/sabae_lens2-enkin_640_360.svg" alt="遠近両用レンズの見え方" width="660" height="340">
-      <p class="ln-for" id="lnFor">老眼が気になってきて、<br>1本で遠くも手元も見たい方に</p>
+      <!-- 10/27 「誰向け」が3回重なっていた→ベージュの箱（ln-for）は削除。こんな方におすすめ・使うシーンは残す。点線の意味を1行で説明 -->
+      <p class="ln-leg"><i aria-hidden="true"></i>点線の外側は、ぼやけやすい部分</p>
       <!-- 10/23 ブラックフライデーLPと同じ：こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS） -->
       <div class="lens-rec">
         <p class="lens-rec-t">こんな方におすすめ</p>

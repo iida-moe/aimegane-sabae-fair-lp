@@ -574,7 +574,7 @@ window.addEventListener('scroll',()=>{
   tabs.forEach(b=>b.addEventListener('click',()=>{
     tabs.forEach(x=>x.setAttribute('aria-selected',x===b?'true':'false'));
     const d=LENS[b.dataset.lens]; img.src=d.src; img.alt=d.alt; if(fr)fr.innerHTML=d.forText;
-    renderLensRec(d); wrapPhrases(fr); wrapPhrases(document.getElementById('lensChk'));
+    renderLensRec(d); if(fr)wrapPhrases(fr); wrapPhrases(document.getElementById('lensChk')); // 10/27 ベージュの箱(lnFor)は削除済み
   }));
 })();
 wrapPhrases(document.getElementById('lensChk'));

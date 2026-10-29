@@ -206,9 +206,9 @@ function setupShopFilterBarVisibility(){
   if(!bar||!shopSection)return;
   function check(){
     const r=shopSection.getBoundingClientRect();
-    // 見出し(セクション上端)が画面の下半分まで入ってきてから表示し、
-    // 次のセクションがある程度見えてきたら少し早めに消す
-    const visible = r.top < window.innerHeight*0.5 && r.bottom > window.innerHeight*0.35;
+    // 10/29 検索フォームに重ならないよう、店舗一覧（都道府県タブ以下）が画面に入ってから表示する
+    const list=document.getElementById('shopPrefTabs')||shopSection;
+    const visible = list.getBoundingClientRect().top < window.innerHeight*0.7 && r.bottom > window.innerHeight*0.35;
     bar.classList.toggle('visible', visible);
   }
   window.addEventListener('scroll', check, {passive:true});

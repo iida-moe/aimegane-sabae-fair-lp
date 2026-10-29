@@ -1355,6 +1355,13 @@ html[data-look][lang] #shop-search .shop-intro-note{margin-top:12px;padding:0 24
 #shop-search .shop-intro-note>span+span{margin-top:2px}
 html[data-look][lang] main #shop-search .shop-intro{line-height:1.8!important}
 html[data-look][lang] #shop-search .shop-intro-note{margin-top:16px;line-height:1.7}
+/* 10/29 店舗検索を分かりやすく：探すボタンは藍（朱は予約ボタンだけ）・入力欄の下にひと言 */
+html[data-look][lang] #shop-search .shop-geo-btn{background:#3E5573}
+html[data-look][lang] #shop-search .shop-geo-btn:hover{background:#33475F}
+html[data-look][lang] #shop-search .shop-search-btn{background:#3E5573}
+html[data-look][lang] #shop-search .shop-search-btn:hover{background:#33475F}
+html[data-look][lang] #shop-search .shop-search-box{margin-top:20px}
+#shop-search .shop-zip-hint{margin:10px 0 0;font-family:var(--sans);font-size:13px;color:#5A524A;text-align:left}
 /* 10/29 保証の注記「ご／持参ください」の途中改行→1項目ずつ※ぶら下げ・言葉の途中で切らない */
 #care .rs-note{word-break:keep-all}
 #care .rs-note span{display:block;padding-left:1em;text-indent:-1em}
@@ -1815,8 +1822,8 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     </div>
     <!-- 10/29 Iさん「見づらい」→見出し・リード・注記をほかのセクションと同じ左ぞろえに／注記は※ごとに分けてぶら下げ -->
     <!-- 10/29 Iさん「読みづらい」2回目→見出しと同じ言葉（お近くの店舗を探せます）をくり返さず1行に・注記も1行ずつに短く -->
-    <p class="shop-intro">現在地か、郵便番号（上3桁）で探せます。</p>
-    <p class="shop-intro-note"><span>※WEB予約は、3日後以降の日程から選べます。</span><span>※お急ぎの場合は、お電話でお問い合わせください。</span></p>
+    <!-- 10/29 Iさん「分かりやすくできる？」→リードは「上3桁」をやめて短く（入力欄は7桁なので食い違っていた）・「後ろ4桁はなくてもOK」は入力欄のすぐ下へ・WEB予約の注記は予約ボタンの並ぶ店舗一覧の前へ -->
+    <p class="shop-intro">現在地、または郵便番号から探せます。</p>
 
     <div class="shop-search-box">
       <div class="shop-geo-wrap">
@@ -1831,7 +1838,9 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
         <input type="text" id="zip2" maxlength="4" placeholder="0846" class="shop-zip-input shop-zip-input-lg" inputmode="numeric" autocomplete="off" aria-label="郵便番号の後4桁(任意)">
         <button type="button" class="shop-search-btn" data-cta-location="search_submit" onclick="searchShop()">検索</button>
       </div>
+      <p class="shop-zip-hint">※後ろの4桁は、なくても探せます。</p>
     </div>
+    <p class="shop-intro-note"><span>※WEB予約は、3日後以降の日程から選べます。</span><span>※お急ぎの場合は、お電話でお問い合わせください。</span></p>
 
     <div class="shop-pref-tabs" id="shopPrefTabs"></div>
 

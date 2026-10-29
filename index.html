@@ -1392,6 +1392,7 @@ html[data-look][lang] #shop-search .shop-search-box{margin-top:28px}
 @media (prefers-reduced-motion:reduce){.tk2 .tk2-row{opacity:1;transform:none;transition:none}}
 /* 10/29 Iさん：「来店予約はこちら」を右ぞろえ・矢印を左右にゆっくり揺らす（下線は文字だけ） */
 #care .rs-link{text-align:right}
+.side-logo-link,.footer-logo-link{display:inline-block} /* 10/29 ロゴ→HPへのリンク（見た目は変えない） */
 /* 10/29 技能士カードの予約ボタンは朱の塗り（予約＝朱のルール） */
 html[data-look][lang] #care .rs-cta{margin-top:20px}
 html[data-look][lang] .fcta-btn{font-family:'Shippori Mincho B1',serif;font-weight:700} /* 10/29 Iさん「文字細い」→ボタンの文字を太く（LPのボタン全部：技能士カード・フェアの概要・最終CTA） */
@@ -1585,7 +1586,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 
 <!-- PC表示：左サイド -->
 <aside class="side side-l" aria-label="フェア情報">
-  <img src="images/logo/logo-aimegane-header.gif" alt="アイメガネ" class="side-logo">
+  <a href="https://www.aimegane.com/" class="side-logo-link" data-cta-location="logo_side"><img src="images/logo/logo-aimegane-header.gif" alt="アイメガネ（公式サイトへ）" class="side-logo"></a><!-- 10/29 Iさん：ロゴを押すとアイメガネのHPへ -->
 </aside>
 <!-- PC表示：右サイド（セクションナビ） -->
 <nav class="side side-r" aria-label="ページ内メニュー">
@@ -1602,7 +1603,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 </nav>
 <div class="page">
 <!-- 10/16 スマホ：FV左上にロゴ・右上にハンバーガー（PCは左右サイドがあるので非表示） -->
-<a href="#hero" class="sp-logo"><img src="images/logo/aimegane_logo.png" alt="アイメガネ" width="454" height="122"></a>
+<a href="https://www.aimegane.com/" class="sp-logo" data-cta-location="logo_sp"><img src="images/logo/aimegane_logo.png" alt="アイメガネ（公式サイトへ）" width="454" height="122"></a><!-- 10/29 ページ先頭→HPへ -->
 <button type="button" class="sp-burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="sp-menu"><span></span><span></span><span></span></button>
 <nav class="sp-menu" id="sp-menu" aria-label="ページ内メニュー" hidden>
   <ul>
@@ -1959,7 +1960,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 </main>
 
 <footer>
-  <img src="images/logo/aimegane_yoko_2.jpg" alt="アイメガネ" class="footer-logo">
+  <a href="https://www.aimegane.com/" class="footer-logo-link" data-cta-location="logo_footer"><img src="images/logo/aimegane_yoko_2.jpg" alt="アイメガネ（公式サイトへ）" class="footer-logo"></a>
   <p>アイジャパン株式会社</p>
   <p>〒331-0812 埼玉県さいたま市北区宮原町1丁目505番地1</p>
   <div class="footer-links">

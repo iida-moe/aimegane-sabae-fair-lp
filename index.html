@@ -1474,6 +1474,11 @@ html[data-look][lang] .bd-note{margin-top:20px}
 .bl-item{aspect-ratio:1/1} /* 10/29 Iさん：ロゴの枠を正方形に */
 /* 10/29 角丸なし・すき間なしの版も試したが、Iさん「すき間がある方が良い」で前の形（正方形・角丸・すき間12px）に戻した */ /* ORIENSは文字が太く大きいので、ほかと見た目の強さをそろえて少し小さめに */
 .bl-item.is-wait span{font-family:'Shippori Mincho B1',serif;font-size:min(15px,3.9vw);font-weight:500;letter-spacing:.02em;color:#6E665D;text-align:center;white-space:nowrap}
+.fs-note{margin:10px 24px 0;font-family:var(--sans);font-size:13px;line-height:1.7;color:#4A433D;text-align:center}
+.fs-note span{display:block}
+#brands .bl-cta{margin-top:28px}
+html[data-look][lang] #brands .bl-cta .fcta-btn{background:#3E5573;color:#fff;border-color:#3E5573;box-shadow:0 4px 12px rgba(62,85,115,.2)}
+html[data-look][lang] #brands .bl-cta .fcta-btn .fc-arw{filter:brightness(0) invert(1)}
 #brands .bg-more-line{margin:22px 24px 0;font-family:var(--mincho);font-size:16px;font-weight:500;line-height:1.8;letter-spacing:.06em;color:#3A3530;text-align:center}
 /* 10/29 Iさん「ブランド名が詳しく見るに負けている」→少しだけ大きく・濃く（15→17px・日本語名は14→16px） */
 html[data-look][lang] #brands .bg-name{font-size:17px;font-weight:500;color:#3A3530}
@@ -1637,8 +1642,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <div class="mr2">
     <div class="sec-head">
       <h2 class="sec-title rv">鯖江のメガネが<br>選ばれる理由</h2>
-      <!-- 10/29 Iさん：フェアの説明の一文をリード文として（ほかのセクションと同じ見出し下の位置） -->
-      <p class="rv">メガネの町、福井県鯖江市で作られた<br>上質なメガネを集めた「鯖江フェア」。</p>
+      <!-- 10/29 リード文「メガネの町、福井県鯖江市で作られた上質なメガネを集めた「鯖江フェア」。」はIさん「消していい」で削除 -->
     </div>
     <!-- 10/29 写真：写真AC 35118582（鯖江駅・めがねのまちさばえの塔）。商用OK・クレジット不要・加工OK。道路と人が入らないよう上半分を切り出し -->
     <div class="mr2-photo"><img src="images/merit/sabae_merit-station_1000_800.jpg" width="1000" height="800" alt="鯖江駅と「めがねのまちさばえ」の塔、うしろに山並み" loading="lazy"></div>
@@ -1682,7 +1686,8 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   </ul>
   <!-- 10/29 Iさん：名前だけの枠は出さず、「ほかにもある」ことを1行で -->
   <p class="bg-more-line">このほかにも、鯖江のメガネを<br>数多く取り揃えています。</p>
-  <p class="bg-note">※店舗によっては、お取り扱いのないブランド・商品があります。<br>ご来店前に、店舗へお問い合わせください。</p>
+  <!-- 10/29 Iさん：注記はフェアの概要へ移し、ここには店舗を探すボタン -->
+  <div class="care-cta bl-cta"><a href="#shop-search" class="fcta-btn" data-cta-location="brands">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>
 </section>
 
 
@@ -1706,6 +1711,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <div><dt>内容</dt><dd class="cn-brand">鯖江のメガネ 約<b>40</b>ブランド</dd></div>
     </dl>
     <p class="cn-try rv"><em>試着だけ</em>のご来店も、歓迎です。</p>
+    <p class="fs-note"><span>※店舗によっては、お取り扱いのない</span><span>ブランド・商品があります。</span><span>ご来店前に、店舗へお問い合わせください。</span></p>
     <div class="care-cta cn-cta rv"><a href="#shop-search" class="fcta-btn" data-cta-location="corner">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>
   </div>
 </section>

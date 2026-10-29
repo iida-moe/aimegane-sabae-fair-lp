@@ -467,7 +467,7 @@ window.addEventListener('scroll',()=>{
     const open=!grid.classList.contains('is-all');
     grid.classList.toggle('is-all',open);
     all.setAttribute('aria-expanded',open);
-    all.firstChild.textContent=open?'閉じる':'すべてのブランドを見る';
+    all.firstChild.textContent=open?'閉じる':'ほかのブランドも見る'; // 10/29 Iさん：「すべて」→「ほかのブランドも見る」
     if(!open)document.getElementById('brands').scrollIntoView({behavior:'smooth'});
   });
   const $=s=>d.querySelector(s);

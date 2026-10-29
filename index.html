@@ -1353,6 +1353,8 @@ html[data-look][lang] #shop-search .shop-intro{text-align:left;padding:0 24px;ma
 html[data-look][lang] #shop-search .shop-intro-note{margin-top:12px;padding:0 24px}
 #shop-search .shop-intro-note>span{display:block;padding-left:1em;text-indent:-1em}
 #shop-search .shop-intro-note>span+span{margin-top:2px}
+html[data-look][lang] main #shop-search .shop-intro{line-height:1.8!important}
+html[data-look][lang] #shop-search .shop-intro-note{margin-top:16px;line-height:1.7}
 /* 10/29 保証の注記「ご／持参ください」の途中改行→1項目ずつ※ぶら下げ・言葉の途中で切らない */
 #care .rs-note{word-break:keep-all}
 #care .rs-note span{display:block;padding-left:1em;text-indent:-1em}
@@ -1811,8 +1813,9 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <h2 class="sec-title rv">お近くの店舗を探す</h2>
     </div>
     <!-- 10/29 Iさん「見づらい」→見出し・リード・注記をほかのセクションと同じ左ぞろえに／注記は※ごとに分けてぶら下げ -->
-    <p class="shop-intro">現在地、または郵便番号（上3桁）で<br>お近くの店舗を探せます。</p>
-    <p class="shop-intro-note"><span>※WEB予約は、本日から3日後以降の日程で<wbr><span data-nowrap>お取りいただけます。</span></span><span>※お急ぎの場合は、お電話でお問い合わせください。</span></p>
+    <!-- 10/29 Iさん「読みづらい」2回目→見出しと同じ言葉（お近くの店舗を探せます）をくり返さず1行に・注記も1行ずつに短く -->
+    <p class="shop-intro">現在地か、郵便番号（上3桁）で探せます。</p>
+    <p class="shop-intro-note"><span>※WEB予約は、3日後以降の日程から選べます。</span><span>※お急ぎの場合は、お電話でお問い合わせください。</span></p>
 
     <div class="shop-search-box">
       <div class="shop-geo-wrap">

@@ -1330,11 +1330,24 @@ html[data-look][lang] .fs{padding-top:16px}
 html[data-look][lang] .fs-info{margin-top:28px} /* Iさん「カードと離れすぎ」48→28 */
 /* 10/29 構成変更：概要は商品の次へ→上下の余白をほかのセクションと同じ80に・理由はFV直後なので上を少し広く */
 html[data-look][lang] .fs{padding-top:80px;padding-bottom:80px}
+/* 10/29 見出し「フェアの概要」を足したので、キャッチもほかのセクションと同じ左ぞろえに */
+html[data-look][lang] .fs{text-align:left}
+html[data-look][lang] .fs-yoko{text-align:left}
+/* 見出し（28px）より大きいと逆転するので、キャッチはリード文として一段小さく */
+html[data-look][lang] .fs-yoko .y1{font-size:15px}
+html[data-look][lang] .fs-yoko .y1 b{font-size:24px}
+html[data-look][lang] .fs-yoko :is(.y2,.y3){font-size:18px}
+html[data-look][lang] .fs-yoko em{font-size:21px}
 html[data-look][lang] #merit{padding-top:80px}
 /* 10/29 Iさん：理由カードのタイトル下に点線（下の説明文と差をつける）。点線は3つの安心のカードと同じ色 */
 html[data-look][lang] #merit .mr-head h3{padding-bottom:12px;border-bottom:1px dashed #D9CDBB}
 html[data-look][lang] #merit .mr-head h3+p{margin-top:12px}
-html[data-look][lang] #merit{background:#F7F3E8;padding-top:48px} /* Iさん：FVの下と同じ色に（境目をなくす）。FVの下にもともと空きがあるので上は48 */
+html[data-look][lang] #merit{background:#F7F3E8;padding-top:48px}
+/* 10/29 Iさん「ブランド詳細が読みづらい」→説明文の行間を詰める／注記は※を飛び出させて2行目以降を字下げ（全角スペースはやめた）・言葉の途中で切らない */
+html[data-look] main .bd-desc,html[data-look] .bd-body .bd-desc{line-height:1.8!important}
+.bd-note{word-break:keep-all}
+.bd-note span{display:block;padding-left:1em;text-indent:-1em}
+.bd-note span+span{margin-top:4px} /* Iさん：FVの下と同じ色に（境目をなくす）。FVの下にもともと空きがあるので上は48 */
 /* 10/29 期間・会場のカードに「内容 鯖江のメガネ 約40ブランド」（数字はラインナップのリード文と同じ） */
 html[data-look][lang] .cn-info dd.cn-brand{font-size:17px}
 html[data-look][lang] .cn-info dd.cn-brand b{margin:0 2px;font-family:'Shippori Mincho B1',serif;font-size:24px;font-weight:600;line-height:1.4;color:#C73E3A}
@@ -1423,7 +1436,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <li><a href="#hero">トップ</a></li>
     <li><a href="#merit">鯖江のメガネが選ばれる理由</a></li>
     <li><a href="#brands">商品ラインナップ</a></li>
-    <li><a href="#fair-sum">フェアのご案内</a></li>
+    <li><a href="#fair-sum">フェアの概要</a></li>
     <li><a href="#care">アイメガネで買う安心</a></li>
     <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#shop-search">お近くの店舗</a></li>
@@ -1440,7 +1453,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <li><a href="#hero">トップ</a></li>
     <li><a href="#merit">鯖江のメガネが選ばれる理由</a></li>
     <li><a href="#brands">商品ラインナップ</a></li>
-    <li><a href="#fair-sum">フェアのご案内</a></li>
+    <li><a href="#fair-sum">フェアの概要</a></li>
     <li><a href="#care">アイメガネで買う安心</a></li>
     <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#shop-search">お近くの店舗</a></li>
@@ -1593,9 +1606,11 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 <!-- 10/25 FVのすぐ下に「フェアで何があるか」を3行で（今までは下の「フェアのご案内」まで読まないと分からなかった） -->
 <section id="fair-sum" class="fs">
   <!-- 10/25 Iさん：メガネのイラスト・上の横書き・流れるブランド名を消して、左に日本地図＋93.5%。変更前 _保存/sabae-fair.before-1025-fs-map.html -->
+  <!-- 10/29 Iさん「キャッチだけだと何のセクションか分からない」→ほかと同じ形の見出し「フェアの概要」を上に。キャッチは見出しの下の一言に -->
+  <div class="sec-head"><h2 class="sec-title rv">フェアの概要</h2></div>
   <div class="fs-tate rv">
     <!-- 10/29 Iさん：縦書き→横書き・文言「福井県鯖江市で作られた／上質なメガネが集まる／特別な時間」・大きくするのは福井県鯖江市。旧「鯖江で作られた／有名ブランドの／メガネが集まる／贅沢な期間」（縦書き .fs-v） -->
-    <h2 class="fs-yoko"><span class="y1"><b>福井県鯖江市</b>で作られた</span><span class="y2"><em>上質</em>な<em>メガネ</em>が集まる</span><span class="y3">特別な時間</span></h2>
+    <p class="fs-yoko"><span class="y1"><b>福井県鯖江市</b>で作られた</span><span class="y2"><em>上質</em>な<em>メガネ</em>が集まる</span><span class="y3">特別な時間</span></p>
   </div>
   <!-- 10/29 「フェアのご案内」(#corner)を合体：同じことを2回言っていたので、期間・会場・試着の一言・ボタンだけ概要の下へ（見出し・リード・店内イラストは削除）。変更前 _保存\変更前\1029\sabae-fair.before-1029-matome.html -->
   <div class="fs-info">
@@ -1835,7 +1850,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <div class="bd-thumbs"></div>
     <p class="bd-catch"></p>
     <p class="bd-desc"></p>
-    <p class="bd-note">※画像はイメージです。<br>※店舗によっては、お取り扱いのない商品があります。<br>　ご来店前に、店舗へお問い合わせください。</p>
+    <p class="bd-note"><span>※画像はイメージです。</span><span>※店舗によっては、お取り扱いのない<wbr>商品があります。ご来店前に、<wbr>店舗へお問い合わせください。</span></p>
     <div class="bd-btns">
       <a href="#shop-search" class="bd-shop" data-cta-location="brand_detail_shop">お近くの店舗を探す</a>
       <a href="#shop-search" class="bd-yoyaku" data-cta-location="brand_detail_yoyaku">来店予約をする</a>

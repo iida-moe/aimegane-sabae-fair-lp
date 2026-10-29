@@ -1438,6 +1438,8 @@ html[data-look][lang] #merit{position:relative;padding:0!important;background:#F
 .bd-catch,.bd-desc{display:none!important}
 html[data-look][lang] .bd-note{margin-top:20px}
 #brands .bg-tile .bg-catch{justify-content:flex-end;padding-right:14px}
+/* 10/29 Iさん：「そのほかの取り扱いブランド」（名前だけの23ブランド）は枠ごと出さない。ロゴが届いたら小さい帯で右へ流す形で足す（HTMLは残してある） */
+.bg-grid.is-all~.bg-names{display:none!important}
 /* 10/29 Iさん「ブランド名が詳しく見るに負けている」→少しだけ大きく・濃く（15→17px・日本語名は14→16px） */
 html[data-look][lang] #brands .bg-name{font-size:17px;font-weight:500;color:#3A3530}
 html[data-look][lang] #brands .bg-name.jp{font-size:16px} /* 10/29 Iさん：「詳しく見る ›」を右ぞろえ */

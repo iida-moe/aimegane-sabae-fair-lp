@@ -1358,6 +1358,11 @@ html[data-look][lang] #shop-search .sec-title::after{margin-left:auto;margin-rig
 .tk2.in .tk2-cus{transition-delay:.2s}
 .tk2.in .tk2-staff{transition-delay:1.2s}
 @media (prefers-reduced-motion:reduce){.tk2 .tk2-row{opacity:1;transform:none;transition:none}}
+/* 10/29 Iさん：「来店予約はこちら」を右ぞろえ・矢印を左右にゆっくり揺らす（下線は文字だけ） */
+#care .rs-link{text-align:right}
+.rs-arw{display:inline-block;margin-left:8px;animation:rsArw 1.6s ease-in-out infinite}
+@keyframes rsArw{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.rs-arw{animation:none}}
 html[data-look][lang] #merit{padding-top:80px}
 /* 10/29 Iさん：理由カードのタイトル下に点線（下の説明文と差をつける）。点線は3つの安心のカードと同じ色 */
 html[data-look][lang] #merit .mr-head h3{padding-bottom:12px;border-bottom:1px dashed #D9CDBB}
@@ -1712,7 +1717,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <div class="tk2-row tk2-staff"><img class="tk2-fig" src="images/care/sabae_care-staff-half_300_366.png" width="300" height="366" alt="" loading="lazy"><p class="tk2-bub" data-nowrap>見え方をしっかり測って、<br><b>ぴったりのレンズを<br>ご提案します。</b></p></div>
     </div>
     <p class="rs-n">※不在の日もあるため、ご予約がおすすめです</p>
-    <p class="rs-link"><a href="#shop-search" data-cta-location="reason_staff">来店予約はこちら ›</a></p>
+    <p class="rs-link"><a href="#shop-search" data-cta-location="reason_staff">来店予約はこちら<span class="rs-arw" aria-hidden="true">›</span></a></p>
   </div>
   <div class="rs rv">
     <span class="rs-no">3</span>

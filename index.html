@@ -1420,7 +1420,13 @@ html[data-look][lang] #merit{position:relative;padding:0!important;background:#F
 .mr2{position:relative;padding:56px 0 64px;background:
   linear-gradient(180deg,#F7F3E8 0%,rgba(247,243,232,.75) 10%,rgba(247,243,232,.25) 30%,rgba(247,243,232,0) 50%), /* 10/29 FVの生成りから境目なくつながるよう、上端は同じ色から始めて徐々に薄く */
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 375 600' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23D9E2E6'/%3E%3Cstop offset='1' stop-color='%23EEF0EA'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='375' height='600' fill='url(%23s)'/%3E%3Cpath d='M0 330 L60 280 L120 310 L190 250 L260 300 L320 270 L375 295 V600 H0Z' fill='%23C3CDC5'/%3E%3Cpath d='M0 380 L80 340 L150 370 L230 330 L300 365 L375 345 V600 H0Z' fill='%23A9B8AD'/%3E%3Cpath d='M0 440 L90 410 L170 430 L250 405 L375 425 V600 H0Z' fill='%23919F94'/%3E%3C/svg%3E") center/cover no-repeat}
-.mr2::after{content:"仮の背景（鯖江の風景写真に差し替え）";position:absolute;right:8px;bottom:6px;font-size:10px;color:rgba(58,53,48,.55)}
+/* 10/29 写真が入ったので仮の山並みはやめて：背景は生成り・見出しの下に写真の帯・カードを写真に少し重ねる（B案） */
+html[data-look][lang] #merit .mr2{background:#F7F3E8}
+.mr2-photo{position:relative;height:300px;margin:28px 0 -56px;overflow:hidden}
+.mr2-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.mr2-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#F7F3E8 0%,rgba(247,243,232,0) 22%,rgba(247,243,232,0) 70%,rgba(247,243,232,.6) 100%)}
+.mr2-photo+.mr2-card{position:relative}
+.mr2 .sec-head{margin-bottom:0}
 .mr2-card{margin:0 24px;padding:28px 22px 22px;background:rgba(255,253,248,.94);border:1px solid #E6DCCB;border-radius:12px;box-shadow:0 4px 18px rgba(58,53,48,.10)}
 .mr2-lead{margin:0;font-family:var(--mincho);font-size:16px;letter-spacing:.06em;color:#3A3530}
 .mr2-num{margin:2px 0 0;font-family:'Shippori Mincho B1',serif;color:#3A3530;line-height:1.1;white-space:nowrap}
@@ -1602,6 +1608,8 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <div class="sec-head">
       <h2 class="sec-title rv">鯖江のメガネが<br>選ばれる理由</h2>
     </div>
+    <!-- 10/29 写真：写真AC 35118582（鯖江駅・めがねのまちさばえの塔）。商用OK・クレジット不要・加工OK。道路と人が入らないよう上半分を切り出し -->
+    <div class="mr2-photo"><img src="images/merit/sabae_merit-station_1000_800.jpg" width="1000" height="800" alt="鯖江駅と「めがねのまちさばえ」の塔、うしろに山並み" loading="lazy"></div>
     <div class="mr2-card rv">
       <p class="mr2-lead">国産メガネフレームの</p>
       <p class="mr2-num"><b>93.5</b><small>%</small><span>が福井県産</span></p>

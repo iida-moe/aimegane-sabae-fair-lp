@@ -1379,7 +1379,9 @@ html[data-look][lang] #shop-search .shop-intro-note{margin-top:12px;padding:0 24
 #care .hs-base .hc3{margin:0!important;gap:0!important}
 #care .hs-base .hc3 li{background:none!important;border-radius:0!important;padding:14px 0!important;border-top:1px dashed #D9CDBB;grid-template-columns:62px 1fr!important;column-gap:10px!important}
 #care .hs-base .hc3 li:first-child{border-top:0}
-#care .hs-svc2{margin-top:20px;font-family:var(--sans);font-size:15px;font-weight:500;line-height:1.7;color:#3A3530;text-align:center}
+#care .hs-base+.rs-note{margin-top:10px}
+#care .hs-base+.rs-note span+span{margin-top:2px}
+#care .hs-svc2{margin-top:24px;padding-top:20px;border-top:1px dashed #D9CDBB;font-family:var(--sans);font-size:15px;font-weight:500;line-height:1.7;color:#3A3530;text-align:center}
 #care .hs-svc2 em{font-style:normal;color:#C73E3A}
 #care .hs-svc2 small{display:block;font-size:13px;color:#5A524A}
 html[data-look][lang] #merit{padding-top:80px}
@@ -1755,6 +1757,8 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
           <li><p class="hc-t">アイ情補償</p><p class="hc-n">1<small>年</small></p><p class="hc-d">うっかり破損50%引き</p></li>
         </ul>
       </div>
+      <!-- 10/29 Iさん「ここ改善して」→保証の注記はカードの最後ではなく通常保証の箱のすぐ下へ（打消し表示は強調の近く）・1文を短く分けた -->
+      <p class="rs-note"><span>※品質保証は、通常のご使用での損傷が対象です。</span><span>※交換の際は、現品をご持参ください。</span><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span><span>※くわしい条件は、店頭でご確認ください。</span></p>
       <p class="hs-lbl hs-lbl2">対象の方は、さらに</p>
       <details class="hs-item"><summary><span>キッズ＆ジュニア保証<small>中学生以下</small></span></summary>
         <p class="hs-catch">元気に遊んで<em>壊しちゃっても大丈夫</em></p>
@@ -1778,7 +1782,6 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       </details>
     </div>
     <p class="hs-svc2">メガネの点検・クリーニングは<br><em>いつでも無料</em>です<small>他店で買ったメガネも、お気軽にどうぞ</small></p><!-- 10/29 点線の箱とアイコンをやめて文字だけに -->
-    <p class="rs-note"><span>※品質保証は、通常のお取り扱いで生じた損傷が<wbr>対象です（現品と交換のため、<wbr><span class="nw" data-nowrap>ご持参ください）。</span></span><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span><span>※くわしい条件は店頭でご確認ください。</span></p>
   </div>
   <!-- 10/24 読んで気持ちが動いたところで店舗検索へ -->
   <!-- 10/27 「お近くの店舗を探す」ボタンは削除（すぐ下が同じ名前のセクション）。変更前 _保存\変更前\1027\sabae-fair.before-1027-fix5.html -->

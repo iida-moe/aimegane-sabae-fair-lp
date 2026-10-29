@@ -1464,6 +1464,11 @@ html[data-look][lang] .bd-note{margin-top:20px}
 #brands .bg-tile .bg-catch{justify-content:flex-end;padding-right:14px}
 /* 10/29 Iさん：「そのほかの取り扱いブランド」（名前だけの23ブランド）は枠ごと出さない。ロゴが届いたら小さい帯で右へ流す形で足す（HTMLは残してある） */
 .bg-grid.is-all~.bg-names{display:none!important}
+/* 10/29 商品ラインナップ＝強化ブランド8つのロゴだけ（2列・白い枠・ロゴは真ん中）。ロゴ待ちは名前を仮で表示 */
+.bl-grid{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 20px 0;padding:0}
+.bl-item{display:flex;align-items:center;justify-content:center;aspect-ratio:3/2;padding:14px 16px;background:#fff;border:1px solid #E6DED0;border-radius:10px}
+.bl-item img{display:block;max-width:86%;max-height:70%;width:auto;height:auto;object-fit:contain}
+.bl-item.is-wait span{font-family:'Shippori Mincho B1',serif;font-size:min(15px,3.9vw);font-weight:500;letter-spacing:.02em;color:#6E665D;text-align:center;white-space:nowrap}
 #brands .bg-more-line{margin:22px 24px 0;font-family:var(--mincho);font-size:16px;font-weight:500;line-height:1.8;letter-spacing:.06em;color:#3A3530;text-align:center}
 /* 10/29 Iさん「ブランド名が詳しく見るに負けている」→少しだけ大きく・濃く（15→17px・日本語名は14→16px） */
 html[data-look][lang] #brands .bg-name{font-size:17px;font-weight:500;color:#3A3530}
@@ -1656,101 +1661,18 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <p class="rv">アイメガネ各店に、鯖江のメガネを<br>約40ブランド取り揃えています。</p>
   </div>
   <!-- 10/22 並びは1段ごとに写真どうし・フレームどうし（変更前 _保存/sabae-fair.before-1022-order.html）。10/20 PICK UP 6ブランド（B案）のタイル→押すと全画面の詳細（#brand-detail）。残りは下にブランド名だけ。変更前 _保存/sabae-fair.before-1020-pickup.html -->
-  <ul class="bg-grid">
-    <li><button type="button" class="bg-tile" data-brand="yohji" aria-label="Yohji Yamamotoの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">Yohji Yamamoto</span>
-      <span class="bg-img is-photo" style="aspect-ratio:606/860"><img src="images/brands/sabae_brand-yohji_606_860.jpg" alt="" width="606" height="860" loading="lazy"></span>
-      <span class="bg-catch">モードな多角形とスクエア</span>
-    </button></li>
-    <li><button type="button" class="bg-tile" data-brand="hanaemori" aria-label="HANAE MORIの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">HANAE MORI</span>
-      <span class="bg-img is-photo" style="aspect-ratio:595/842"><img src="images/brands/sabae_brand-hanaemori_595_842.jpg" alt="" width="595" height="842" loading="lazy"></span>
-      <span class="bg-catch">やわらかなオーバル</span>
-    </button></li>
-    <!-- 10/29 Iさん：PICK UPの3枚目はラインアート→トニーセイムに入れかえ（ラインアートは「すべてのブランド」の中へ） -->
-    <li><button type="button" class="bg-tile" data-brand="tonysame" aria-label="tonysameの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">tonysame</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-tonysame_860_370.jpg" alt="" width="860" height="370" loading="lazy"></span>
-      <span class="bg-catch">やわらかな色と丸み</span>
-    </button></li>
-    <li><button type="button" class="bg-tile" data-brand="oriens" aria-label="ORIENSの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">ORIENS</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-oriens-f1_341_115.jpg" alt="" width="341" height="115" loading="lazy"></span>
-      <span class="bg-catch">クラシックな佇まい</span>
-    </button></li>
-    <li><button type="button" class="bg-tile" data-brand="banerina" aria-label="Banerinaの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">Banerina</span>
-      <span class="bg-img is-photo" style="aspect-ratio:860/606"><img src="images/brands/sabae_brand-banerina_860_606.jpg" alt="" width="860" height="606" loading="lazy"></span>
-      <span class="bg-catch">明るい表情を引き立てる</span>
-    </button></li>
-    <li><button type="button" class="bg-tile" data-brand="banerino" aria-label="Banerinoの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">Banerino</span>
-      <span class="bg-img is-photo" style="aspect-ratio:860/606"><img src="images/brands/sabae_brand-banerino_860_606.jpg" alt="" width="860" height="606" loading="lazy"></span>
-      <span class="bg-catch">大人の男性の毎日に</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="lanvin" aria-label="LANVINの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">LANVIN</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-lanvin_570_250.jpg" alt="" width="570" height="250" loading="lazy"></span>
-      <span class="bg-catch">曲線が描く上品さ</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="lineart" aria-label="ラインアートの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name jp">ラインアート</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-charmant-2_440_167.jpg" alt="" width="440" height="167" loading="lazy"></span>
-      <span class="bg-catch">細く、しなやかな線のフレーム</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="milaschon" aria-label="mila schönの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name jp">mila schön</span>
-      <span class="bg-img is-photo" style="aspect-ratio:606/860"><img src="images/brands/sabae_brand-milaschon_606_860.jpg" alt="" width="606" height="860" loading="lazy"></span>
-      <span class="bg-catch">細いゴールドの品のよさ</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="dupont" aria-label="S.T. Dupontの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">S.T. Dupont</span>
-      <span class="bg-img is-photo" style="aspect-ratio:606/860"><img src="images/brands/sabae_brand-dupont_606_860.jpg" alt="" width="606" height="860" loading="lazy"></span>
-      <span class="bg-catch">品のある大人の装い</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="husky" aria-label="Farben HUSKY NOISEの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">Farben HUSKY NOISE</span>
-      <span class="bg-img is-photo" style="aspect-ratio:860/606"><img src="images/brands/sabae_brand-husky_860_606.jpg" alt="" width="860" height="606" loading="lazy"></span>
-      <span class="bg-catch">華奢で軽やかな丸メガネ</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="stella" aria-label="ステラの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name jp">ステラ</span>
-      <span class="bg-img is-photo" style="aspect-ratio:860/649"><img src="images/brands/sabae_brand-stella_860_649.jpg" alt="" width="860" height="649" loading="lazy"></span>
-      <span class="bg-catch">やわらかな印象の一本</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="majesta" aria-label="マジェスタの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name jp">マジェスタ</span>
-      <span class="bg-img is-photo" style="aspect-ratio:860/573"><img src="images/brands/sabae_brand-majesta_860_573.jpg" alt="" width="860" height="573" loading="lazy"></span>
-      <span class="bg-catch">すっきり落ち着いた一本</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="titanos" aria-label="TITANOS TOKYOの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">TITANOS TOKYO</span>
-      <span class="bg-img is-photo" style="aspect-ratio:860/574"><img src="images/brands/sabae_brand-titanos_860_574.jpg" alt="" width="860" height="574" loading="lazy"></span>
-      <span class="bg-catch">チタンで描くクラシック</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="rodenstock" aria-label="RODENSTOCKの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">RODENSTOCK</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-rodenstock_570_250.jpg" alt="" width="570" height="250" loading="lazy"></span>
-      <span class="bg-catch">知的で落ち着いた印象</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="johnlennon" aria-label="JOHN LENNONの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">JOHN LENNON</span>
-      <span class="bg-img is-cut"><img src="images/brands/sabae_brand-johnlennon_860_344.jpg" alt="" width="860" height="344" loading="lazy"></span>
-      <span class="bg-catch">細いメタルの丸メガネ</span>
-    </button></li>
-    <li class="is-more"><button type="button" class="bg-tile" data-brand="ys" aria-label="Y'sの商品を見る" data-cta-location="brand_tile">
-      <span class="bg-name">Y's</span>
-      <span class="bg-img is-photo" style="aspect-ratio:606/860"><img src="images/brands/sabae_brand-ys_606_860.jpg" alt="" width="606" height="860" loading="lazy"></span>
-      <span class="bg-catch">軽やかなラウンドとボストン</span>
-    </button></li>
+  <!-- 10/29 Iさん：商品の掲載は「ロゴだけ」・強化ブランド（一覧の赤字8つ）だけに。写真タイル・詳細画面・「ほかのブランドも見る」はやめた（旧版 _保存\変更前\1029\sabae-fair.before-1029-logo.html）。
+       ロゴが届いたら is-wait の名前を <img> に差し替える（images/brands/logo/sabae_logo-xxx_W_H.png） -->
+  <ul class="bl-grid rv">
+    <li class="bl-item is-wait"><span>ORIENS</span></li>
+    <li class="bl-item is-wait"><span>アーバントレイル</span></li>
+    <li class="bl-item is-wait"><span>アンティミテ</span></li>
+    <li class="bl-item is-wait"><span>オロビアンコ</span></li>
+    <li class="bl-item is-wait"><span>丹羽雅彦</span></li>
+    <li class="bl-item is-wait"><span>Banerina</span></li>
+    <li class="bl-item is-wait"><span>マサキマツシマ</span></li>
+    <li class="bl-item"><img src="images/brands/logo/sabae_logo-lineart_515_211.png" width="515" height="211" alt="Line Art" loading="lazy"></li>
   </ul>
-  <!-- 10/27 取り扱いは「日本製ブランド一覧」（Iさん支給）に載っているものだけ。画像のないブランドは名前だけ（一覧の表記のまま）。Chopard・TUMI・エクラージュは一覧にないので削除、CHARMANT は一覧の「ラインアート」に。変更前 _保存\変更前\1027\sabae-fair.before-1027-brands.html -->
-  <!-- 10/27 赤字＝強化ブランド（Iさん支給の正しい一覧）。画像のある強化（ラインアート・ORIENS・バネリーナ）はPICK UPへ、画像のない強化5つは先頭＋藍の枠 -->
-  <div class="bg-names">
-    <p class="bg-names-t">そのほかの取り扱いブランド</p>
-    <ul><li class="is-k">アーバントレイル</li><li class="is-k">アンティミテ</li><li class="is-k">オロビアンコ</li><li class="is-k">丹羽雅彦</li><li class="is-k">マサキマツシマ</li><li>BALANCER</li><li>EIGHTER</li><li>GROK</li><li>HAMAMOTO</li><li>JKIDS</li><li>REEGO</li><li>SABIO</li><li>アクアリバティ</li><li>グラシックジュニア</li><li>サムライショウ</li><li>ダックス</li><li>ヒロココシノ</li><li>ミルフィーユ</li><li>メンズマーク</li><li>モダンタイムス</li><li>ユキコハナイ</li><li>ユミ・カツラ</li><li>リンカーン</li></ul>
-  </div>
-  <button type="button" class="bg-all" aria-expanded="false" data-cta-location="brand_all">ほかのブランドも見る</button>
   <!-- 10/29 Iさん：名前だけの枠は出さず、「ほかにもある」ことを1行で -->
   <p class="bg-more-line">このほかにも、鯖江のメガネを<br>数多く取り揃えています。</p>
   <p class="bg-note">※店舗によっては、お取り扱いのないブランド・商品があります。<br>ご来店前に、店舗へお問い合わせください。</p>

@@ -1415,6 +1415,25 @@ html[data-look][lang] #shop-search .shop-search-box{margin-top:28px}
 html[data-look][lang] #care .rs-h-staff{justify-content:flex-start;padding-left:8px}
 /* 10/29 Iさん「同じサイズ同じ位置？」→盾56px・メダル60pxで文字が4pxずれていた。盾も60px幅にして文字の頭をそろえる */
 html[data-look][lang] #care .rs-shield{width:60px}
+/* 10/29 選ばれる理由を作り直し：風景写真（今は仮の山並み）を背景に、白いカードに93.5%とチェック3つ */
+html[data-look][lang] #merit{position:relative;padding:0!important;background:#F7F3E8}
+.mr2{position:relative;padding:56px 0 64px;background:
+  linear-gradient(180deg,rgba(247,243,232,.55) 0%,rgba(247,243,232,.15) 35%,rgba(247,243,232,0) 60%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 375 600' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23D9E2E6'/%3E%3Cstop offset='1' stop-color='%23EEF0EA'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='375' height='600' fill='url(%23s)'/%3E%3Cpath d='M0 330 L60 280 L120 310 L190 250 L260 300 L320 270 L375 295 V600 H0Z' fill='%23C3CDC5'/%3E%3Cpath d='M0 380 L80 340 L150 370 L230 330 L300 365 L375 345 V600 H0Z' fill='%23A9B8AD'/%3E%3Cpath d='M0 440 L90 410 L170 430 L250 405 L375 425 V600 H0Z' fill='%23919F94'/%3E%3C/svg%3E") center/cover no-repeat}
+.mr2::after{content:"仮の背景（鯖江の風景写真に差し替え）";position:absolute;right:8px;bottom:6px;font-size:10px;color:rgba(58,53,48,.55)}
+.mr2-card{margin:0 24px;padding:28px 22px 22px;background:rgba(255,253,248,.94);border:1px solid #E6DCCB;border-radius:12px;box-shadow:0 4px 18px rgba(58,53,48,.10)}
+.mr2-lead{margin:0;font-family:var(--mincho);font-size:16px;letter-spacing:.06em;color:#3A3530}
+.mr2-num{margin:2px 0 0;font-family:'Shippori Mincho B1',serif;color:#3A3530;line-height:1.1;white-space:nowrap}
+.mr2-num b{font-size:min(60px,15vw);font-weight:600;letter-spacing:.01em;color:#C73E3A;font-variant-numeric:lining-nums}
+.mr2-num small{margin:0 6px 0 2px;font-size:26px;font-weight:600;color:#C73E3A}
+.mr2-num span{font-size:18px;letter-spacing:.06em}
+.mr2-sub{margin:8px 0 0;font-family:var(--mincho);font-size:16px;letter-spacing:.06em;color:#3A3530}
+.mr2-list{list-style:none;margin:20px 0 0;padding:16px 0 0;border-top:1px dashed #D9CDBB}
+.mr2-list li{position:relative;padding:6px 0 6px 32px;font-family:var(--mincho);font-size:16px;font-weight:500;letter-spacing:.04em;color:#3A3530}
+.mr2-list li::before{content:"";position:absolute;left:0;top:9px;width:20px;height:20px;border:1.5px solid #3E5573;border-radius:4px;background:#fff}
+.mr2-list li::after{content:"";position:absolute;left:6px;top:12px;width:6px;height:11px;border:solid #3E5573;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.mr2-src{margin:14px 0 0;font-family:var(--sans);font-size:11px;line-height:1.6;color:#6E665D}
+@media (max-width:359px){.mr2-list li{font-size:15px}}
 /* 10/29 Iさん：商品ラインナップの画像枠を全部同じ正方形に・画像は上下左右の真ん中に（メーカー画像は切らずに全体を表示＝余りは白） */
 #brands .bg-tile .bg-img{aspect-ratio:1/1!important;display:flex;align-items:center;justify-content:center}
 #brands .bg-tile .bg-img img{width:100%;height:100%;object-fit:contain;object-position:center}
@@ -1567,22 +1586,22 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 <!-- ③ 鯖江のメガネが選ばれる理由（10/19 日本地図→鯖江にズーム→ピン→約9割、のあとにチタンの話＋3つの理由。変更前 _保存/sabae-fair.before-1019-map.html） -->
 <section id="merit">
   <!-- 10/25 Iさん「シンプルに選ばれる理由でいい・前置きなし」→地図・問いかけ・つなぎを外し、OWNDAYSのように1理由＝1枚のカード（番号は「3つの安心」と同じ朱の丸）。変更前 _保存/sabae-fair.before-1025-merit-card.html -->
-  <div class="sec-head">
-    <h2 class="sec-title rv">鯖江のメガネが<br>選ばれる<em class="st-num">3</em>つの理由</h2>
-  </div>
-  <div class="mr">
-    <article class="mr-item rv">
-      <div class="mr-fig"><img class="mr-img" src="images/merit/sabae_merit-shokunin_1536_761.jpg" width="1536" height="761" alt="メガネの蝶番のネジを、細いドライバーで締めている手元のイラスト" loading="lazy"><span class="mr-no">1</span></div>
-      <div class="mr-head"><div><h3>顔になじむ、掛け心地</h3><p>200以上の工程を、専門の職人が<em>分担</em>。<br>精密なパーツが、ゆがみの少ない一本に。</p></div></div>
-    </article>
-    <article class="mr-item rv">
-      <div class="mr-fig"><img class="mr-img" src="images/merit/sabae_merit-cell_1042_516.jpg" width="1042" height="516" alt="セルのメガネフレームを、白い布でていねいに磨いているイラスト" loading="lazy"><span class="mr-no">2</span></div>
-      <div class="mr-head"><div><h3>長く付き合える、<br>確かな仕上げ</h3><p>職人の手で、時間をかけて<em>磨き上げる</em>。<br>セルの色に、深みとツヤが生まれます。</p></div></div>
-    </article>
-    <article class="mr-item rv">
-      <div class="mr-fig"><img class="mr-img" src="images/merit/sabae_merit-titan_995_493.jpg" width="995" height="493" alt="メガネ店で、細いチタンフレームのメガネを試着している女性のイラスト" loading="lazy"><span class="mr-no">3</span></div>
-      <div class="mr-head"><div><h3>軽くて、肌にやさしい</h3><p>1980年代、加工の難しい<em>チタン</em>を<br>世界で初めてフレームにしたのが鯖江。<br>軽く丈夫で、金属アレルギーにも安心。</p></div></div>
-    </article>
+  <!-- 10/29 Iさん：「3つの理由」のカードをやめて、鯖江の風景写真を背景に「93.5%＋チェック3つ」の形に。背景は仮（写真待ち：メーカー・観光連盟などに依頼予定）→ .mr2 の background-image を写真に差し替える。旧カード版は _保存\変更前\1029\sabae-fair.before-1029-merit.html -->
+  <div class="mr2">
+    <div class="sec-head">
+      <h2 class="sec-title rv">鯖江のメガネが<br>選ばれる理由</h2>
+    </div>
+    <div class="mr2-card rv">
+      <p class="mr2-lead">国産メガネフレームの</p>
+      <p class="mr2-num"><b>93.5</b><small>%</small><span>が福井県産</span></p>
+      <p class="mr2-sub">その中心が、鯖江です。</p>
+      <ul class="mr2-list">
+        <li>専門の職人による確かな技術</li>
+        <li>顔にフィットするかけ心地</li>
+        <li>磨き上げた、美しい仕上げ</li>
+      </ul>
+      <p class="mr2-src">※経済産業省「2023年経済構造実態調査」<br>（眼鏡枠の出荷額・2022年）</p>
+    </div>
   </div>
 </section>
 

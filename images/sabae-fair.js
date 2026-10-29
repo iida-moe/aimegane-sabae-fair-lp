@@ -36,7 +36,7 @@ wrapPhrases(document.body);
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
 }, { threshold:.1 });
-document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+document.querySelectorAll('.rv,.tk2').forEach(el => obs.observe(el)); // 10/29 .tk2＝技能士の会話（お客さま→スタッフの順にふわっと出す）
 
 // 店舗検索（10/16 ザセールLPと同じ仕組みを移植）
 const SHOPS = [

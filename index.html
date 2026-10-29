@@ -1352,6 +1352,12 @@ html[data-look][lang] #shop-search .sec-title::after{margin-left:auto;margin-rig
 #care .rs-note{word-break:keep-all}
 #care .rs-note span{display:block;padding-left:1em;text-indent:-1em}
 #care .rs-note span.nw{display:inline;padding:0;text-indent:0;white-space:nowrap}
+/* 10/29 Iさん「ここ動きつけれる？」→会話のように、お客さまの吹き出し→少し間をおいてスタッフの返事、の順にふわっと表示 */
+.tk2 .tk2-row{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.tk2.in .tk2-row{opacity:1;transform:none}
+.tk2.in .tk2-cus{transition-delay:.2s}
+.tk2.in .tk2-staff{transition-delay:1.2s}
+@media (prefers-reduced-motion:reduce){.tk2 .tk2-row{opacity:1;transform:none;transition:none}}
 html[data-look][lang] #merit{padding-top:80px}
 /* 10/29 Iさん：理由カードのタイトル下に点線（下の説明文と差をつける）。点線は3つの安心のカードと同じ色 */
 html[data-look][lang] #merit .mr-head h3{padding-bottom:12px;border-bottom:1px dashed #D9CDBB}

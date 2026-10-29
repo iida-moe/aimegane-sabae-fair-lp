@@ -1328,6 +1328,9 @@ html[data-look][lang] .fs-yoko .y3{margin-top:2px}
 html[data-look][lang] .fs-yoko .y3{font-size:21px;letter-spacing:.1em}
 html[data-look][lang] .fs{padding-top:16px}
 html[data-look][lang] .fs-info{margin-top:28px} /* Iさん「カードと離れすぎ」48→28 */
+/* 10/29 構成変更：概要は商品の次へ→上下の余白をほかのセクションと同じ80に・理由はFV直後なので上を少し広く */
+html[data-look][lang] .fs{padding-top:80px;padding-bottom:80px}
+html[data-look][lang] #merit{padding-top:80px}
 /* 10/29 期間・会場のカードに「内容 鯖江のメガネ 約40ブランド」（数字はラインナップのリード文と同じ） */
 html[data-look][lang] .cn-info dd.cn-brand{font-size:17px}
 html[data-look][lang] .cn-info dd.cn-brand b{margin:0 2px;font-family:'Shippori Mincho B1',serif;font-size:24px;font-weight:600;line-height:1.4;color:#C73E3A}
@@ -1414,9 +1417,9 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 <nav class="side side-r" aria-label="ページ内メニュー">
   <ul class="side-nav">
     <li><a href="#hero">トップ</a></li>
-    <li><a href="#fair-sum">フェアのご案内</a></li>
     <li><a href="#merit">鯖江のメガネが選ばれる理由</a></li>
     <li><a href="#brands">商品ラインナップ</a></li>
+    <li><a href="#fair-sum">フェアのご案内</a></li>
     <li><a href="#care">アイメガネで買う安心</a></li>
     <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#shop-search">お近くの店舗</a></li>
@@ -1431,9 +1434,9 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 <nav class="sp-menu" id="sp-menu" aria-label="ページ内メニュー" hidden>
   <ul>
     <li><a href="#hero">トップ</a></li>
-    <li><a href="#fair-sum">フェアのご案内</a></li>
     <li><a href="#merit">鯖江のメガネが選ばれる理由</a></li>
     <li><a href="#brands">商品ラインナップ</a></li>
+    <li><a href="#fair-sum">フェアのご案内</a></li>
     <li><a href="#care">アイメガネで買う安心</a></li>
     <li><a href="#cr-lens">遠近両用も追加0円</a></li>
     <li><a href="#shop-search">お近くの店舗</a></li>
@@ -1450,24 +1453,6 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <div class="fv-v5">
       <img class="v5-img" src="images/fv/sabae_fv_1206_2240.jpg" width="1206" height="2240" alt="鯖江フェア　福井県鯖江市の技が光る上質なメガネをあなたの毎日に　10月30日（金）〜2月19日（金）">
     </div>
-  </div>
-</section>
-<!-- 10/25 FVのすぐ下に「フェアで何があるか」を3行で（今までは下の「フェアのご案内」まで読まないと分からなかった） -->
-<section id="fair-sum" class="fs">
-  <!-- 10/25 Iさん：メガネのイラスト・上の横書き・流れるブランド名を消して、左に日本地図＋93.5%。変更前 _保存/sabae-fair.before-1025-fs-map.html -->
-  <div class="fs-tate rv">
-    <!-- 10/29 Iさん：縦書き→横書き・文言「福井県鯖江市で作られた／上質なメガネが集まる／特別な時間」・大きくするのは福井県鯖江市。旧「鯖江で作られた／有名ブランドの／メガネが集まる／贅沢な期間」（縦書き .fs-v） -->
-    <h2 class="fs-yoko"><span class="y1"><b>福井県鯖江市</b>で作られた</span><span class="y2"><em>上質</em>な<em>メガネ</em>が集まる</span><span class="y3">特別な時間</span></h2>
-  </div>
-  <!-- 10/29 「フェアのご案内」(#corner)を合体：同じことを2回言っていたので、期間・会場・試着の一言・ボタンだけ概要の下へ（見出し・リード・店内イラストは削除）。変更前 _保存\変更前\1029\sabae-fair.before-1029-matome.html -->
-  <div class="fs-info">
-    <dl class="cn-info rv">
-      <div><dt>期間</dt><dd class="cn-date"><b>10/30</b><small>（金）</small><span class="cn-kara">〜</span><b>2/19</b><small>（金）</small></dd></div>
-      <div><dt>会場</dt><dd><b>アイメガネ各店</b><small class="cn-note">※本庄南大通り店を除く</small></dd></div>
-      <div><dt>内容</dt><dd class="cn-brand">鯖江のメガネ 約<b>40</b>ブランド</dd></div>
-    </dl>
-    <p class="cn-try rv"><em>試着だけ</em>のご来店も、歓迎です。</p>
-    <div class="care-cta cn-cta rv"><a href="#shop-search" class="fcta-btn" data-cta-location="corner">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>
   </div>
 </section>
 <!-- 10/16 FV下の文字（SABAE EYEWEAR FAIR／眼鏡の聖地、鯖江から。／ブランドを見る）と②メッセージ（HTML版）は、FV＋メッセージの画像にまとめたので削除。元は _保存/sabae-fair.before-1016-renketsu.html -->
@@ -1600,7 +1585,25 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 </section>
 
 
-<!-- ④ フェアのご案内は 10/29 FV下の概要(#fair-sum)に合体 -->
+<!-- ④ フェア概要（10/29 Iさん：構成を FV→3つの理由→商品→フェア概要→安心→店舗 に。FV直後から商品の次へ移動） -->
+<!-- 10/25 FVのすぐ下に「フェアで何があるか」を3行で（今までは下の「フェアのご案内」まで読まないと分からなかった） -->
+<section id="fair-sum" class="fs">
+  <!-- 10/25 Iさん：メガネのイラスト・上の横書き・流れるブランド名を消して、左に日本地図＋93.5%。変更前 _保存/sabae-fair.before-1025-fs-map.html -->
+  <div class="fs-tate rv">
+    <!-- 10/29 Iさん：縦書き→横書き・文言「福井県鯖江市で作られた／上質なメガネが集まる／特別な時間」・大きくするのは福井県鯖江市。旧「鯖江で作られた／有名ブランドの／メガネが集まる／贅沢な期間」（縦書き .fs-v） -->
+    <h2 class="fs-yoko"><span class="y1"><b>福井県鯖江市</b>で作られた</span><span class="y2"><em>上質</em>な<em>メガネ</em>が集まる</span><span class="y3">特別な時間</span></h2>
+  </div>
+  <!-- 10/29 「フェアのご案内」(#corner)を合体：同じことを2回言っていたので、期間・会場・試着の一言・ボタンだけ概要の下へ（見出し・リード・店内イラストは削除）。変更前 _保存\変更前\1029\sabae-fair.before-1029-matome.html -->
+  <div class="fs-info">
+    <dl class="cn-info rv">
+      <div><dt>期間</dt><dd class="cn-date"><b>10/30</b><small>（金）</small><span class="cn-kara">〜</span><b>2/19</b><small>（金）</small></dd></div>
+      <div><dt>会場</dt><dd><b>アイメガネ各店</b><small class="cn-note">※本庄南大通り店を除く</small></dd></div>
+      <div><dt>内容</dt><dd class="cn-brand">鯖江のメガネ 約<b>40</b>ブランド</dd></div>
+    </dl>
+    <p class="cn-try rv"><em>試着だけ</em>のご来店も、歓迎です。</p>
+    <div class="care-cta cn-cta rv"><a href="#shop-search" class="fcta-btn" data-cta-location="corner">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a></div>
+  </div>
+</section>
 
 <!-- ⑤ 購入後も、ずっと安心。（10/19 HPのアフターサービス https://www.aimegane.com/service/after/ に合わせて作り直し・選ばれる理由と同じ「アイコン＋見出し＋ひとこと」の形に。変更前 _保存/sabae-fair.before-1019-care.html） -->
 <section id="care">

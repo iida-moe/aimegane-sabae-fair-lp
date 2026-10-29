@@ -1392,6 +1392,10 @@ html[data-look][lang] #shop-search .shop-search-box{margin-top:28px}
 @media (prefers-reduced-motion:reduce){.tk2 .tk2-row{opacity:1;transform:none;transition:none}}
 /* 10/29 Iさん：「来店予約はこちら」を右ぞろえ・矢印を左右にゆっくり揺らす（下線は文字だけ） */
 #care .rs-link{text-align:right}
+/* 10/29 技能士カードの予約ボタンは朱の塗り（予約＝朱のルール） */
+html[data-look][lang] #care .rs-cta{margin-top:20px}
+html[data-look][lang] #care .rs-cta .fcta-btn{background:#C73E3A;color:#fff;border-color:#C73E3A;box-shadow:0 4px 12px rgba(199,62,58,.2)}
+html[data-look][lang] #care .rs-cta .fcta-btn .fc-arw{filter:brightness(0) invert(1)}
 .rs-arw{display:inline-block;margin-left:8px} /* 10/29 Iさん「ここのアニメーションもやめよう」→矢印の揺れは停止 */
 @keyframes rsArw{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 @media (prefers-reduced-motion:reduce){.rs-arw{animation:none}}
@@ -1829,7 +1833,8 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <div class="tk2-row tk2-staff"><img class="tk2-fig" src="images/care/sabae_care-staff-half_300_366.png" width="300" height="366" alt="" loading="lazy"><p class="tk2-bub" data-nowrap>見え方をしっかり測って、<br>ぴったりのレンズを<br>ご提案します。</p><!-- 10/29 Iさん「太さ違くない？」→2・3行目の太字をやめて全部同じ太さに --></div>
     </div>
     <p class="rs-n">※不在の日もあるため、ご予約がおすすめです</p>
-    <p class="rs-link"><a href="#shop-search" data-cta-location="reason_staff">来店予約はこちら<span class="rs-arw" aria-hidden="true">›</span></a></p>
+    <!-- 10/29 Iさん：文字のリンク→カード内に朱のボタン（PC右の「来店予約はこちら」と同じ見た目） -->
+    <div class="care-cta rs-cta"><a href="#shop-search" class="fcta-btn" data-cta-location="reason_staff">来店予約はこちら<span class="fc-arw" aria-hidden="true"></span></a></div>
   </div>
   <div class="rs rv">
     <span class="rs-no">3</span>

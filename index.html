@@ -1389,6 +1389,7 @@ html[data-look][lang] #shop-search .shop-intro-note{margin-top:16px;line-height:
 /* 10/29 Iさん「充実の保証が技能士より右寄り」→中央寄せだと文字の短い保証が右にずれる。アイコンの左端を2枚とも同じ位置にそろえる */
 html[data-look][lang] #care .rs-h-staff{justify-content:flex-start;padding-left:8px}
 #care .hs-notes>.rs-note{margin-top:0}
+#care .hs-notes>.rs-note span+span{margin-top:2px}
 #care .hs-caution>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:500;color:#3E5573}
 #care .hs-caution>summary>span{text-decoration:underline;text-underline-offset:4px} /* 下線は文字だけ（＋の丸には引かない） */
 #care .hs-caution>summary::-webkit-details-marker{display:none}
@@ -1797,10 +1798,8 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     </div>
     <!-- 10/29 Iさん：注記は「ご注意事項」の開閉に・全保証（通常・キッズ・白内障）の説明の下にまとめる。お客さまに不利な条件（併用不可）だけは外に出しておく（打消し表示を隠さない） -->
     <div class="hs-notes">
-      <p class="rs-note"><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span></p>
-      <details class="hs-caution"><summary><span>ご注意事項</span></summary>
-        <p class="rs-note"><span>※品質保証は、通常のご使用での損傷が対象です。</span><span>※交換の際は、現品をご持参ください。</span><span>※くわしい条件は、店頭でご確認ください。</span></p>
-      </details>
+      <!-- 10/29 Iさん「全部出しといていい」→ご注意事項の開閉をやめて4つとも表示 -->
+      <p class="rs-note"><span>※品質保証は、通常のご使用での損傷が対象です。</span><span>※交換の際は、現品をご持参ください。</span><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span><span>※くわしい条件は、店頭でご確認ください。</span></p>
     </div>
     <!-- 10/29 点検・クリーニングの一言はIさん「消して」で削除（元：メガネの点検・クリーニングは いつでも無料です／他店で買ったメガネも、お気軽にどうぞ） -->
   </div>

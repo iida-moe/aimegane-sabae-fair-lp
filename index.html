@@ -1354,7 +1354,8 @@ html[data-look][lang] #care .lt-rh .cr-lens-ttl{justify-content:flex-start}
 html[data-look][lang] .cn-info>div{align-items:start}
 html[data-look][lang] .cn-info dd b{display:inline-block}
 html[data-look][lang] .cn-info>div:first-child dt{margin-top:calc((24px*1.4 - 1.6em - 4px)/2)}
-html[data-look][lang] .cn-info>div:last-child dt{margin-top:calc((17px*1.6 - 1.6em - 4px)/2)}
+html[data-look][lang] .cn-info>div:nth-child(2) dt{margin-top:calc((17px*1.6 - 1.6em - 4px)/2)} /* 10/29 内容の行を足したので last-child→2行目（会場）に */
+html[data-look][lang] .cn-info>div:nth-child(3) dt{margin-top:calc((24px*1.4 - 1.6em - 4px)/2)} /* 内容：「40」が24pxなので期間と同じ */
 html[data-look][lang] .cn-info dd.cn-date .cn-kara{margin:0 4px 0 -4px} /* 「）」の後ろの空きぶん、〜を左へ */
 html[data-look][lang] .cn-try{margin-top:20px;text-align:center}
 html[data-look][lang] .cn-cta{margin-top:28px}

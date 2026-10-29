@@ -1338,6 +1338,13 @@ html[data-look][lang] .fs-yoko .y1{font-size:15px}
 html[data-look][lang] .fs-yoko .y1 b{font-size:24px}
 html[data-look][lang] .fs-yoko :is(.y2,.y3){font-size:18px}
 html[data-look][lang] .fs-yoko em{font-size:21px}
+/* 10/29 Iさん「どれがセクションタイトルか分からない」→キャッチはほかのセクションのリード文と同じ16px・1種類の大きさに（強調は朱の色だけ）。大きさの段を減らして見出し28pxとの差をはっきり */
+html[data-look][lang] .fs-yoko{font-family:var(--sans);line-height:2;letter-spacing:.04em}
+html[data-look][lang] .fs-yoko span{display:inline}
+html[data-look][lang] .fs-yoko :is(.y1,.y1 b,.y2,.y3,em){font-size:16px;font-weight:500;letter-spacing:.04em;margin:0}
+html[data-look][lang] .fs-yoko .y1::after{content:"\A";white-space:pre}
+html[data-look][lang] .fs-yoko em{font-weight:600}
+html[data-look][lang] .fs .sec-head{margin-bottom:20px}
 html[data-look][lang] #merit{padding-top:80px}
 /* 10/29 Iさん：理由カードのタイトル下に点線（下の説明文と差をつける）。点線は3つの安心のカードと同じ色 */
 html[data-look][lang] #merit .mr-head h3{padding-bottom:12px;border-bottom:1px dashed #D9CDBB}
@@ -1610,7 +1617,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <div class="sec-head"><h2 class="sec-title rv">フェアの概要</h2></div>
   <div class="fs-tate rv">
     <!-- 10/29 Iさん：縦書き→横書き・文言「福井県鯖江市で作られた／上質なメガネが集まる／特別な時間」・大きくするのは福井県鯖江市。旧「鯖江で作られた／有名ブランドの／メガネが集まる／贅沢な期間」（縦書き .fs-v） -->
-    <p class="fs-yoko"><span class="y1"><b>福井県鯖江市</b>で作られた</span><span class="y2"><em>上質</em>な<em>メガネ</em>が集まる</span><span class="y3">特別な時間</span></p>
+    <p class="fs-yoko"><span class="y1"><b>福井県鯖江市</b>で作られた</span><span class="y2"><em>上質</em>な<em>メガネ</em>が集まる、</span><span class="y3">特別な時間です。</span></p>
   </div>
   <!-- 10/29 「フェアのご案内」(#corner)を合体：同じことを2回言っていたので、期間・会場・試着の一言・ボタンだけ概要の下へ（見出し・リード・店内イラストは削除）。変更前 _保存\変更前\1029\sabae-fair.before-1029-matome.html -->
   <div class="fs-info">

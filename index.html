@@ -1403,6 +1403,8 @@ html[data-look][lang] #shop-search .shop-search-box{margin-top:28px}
 #care .hs-notes{margin-top:14px;text-align:left}
 /* 10/29 Iさん「充実の保証が技能士より右寄り」→中央寄せだと文字の短い保証が右にずれる。アイコンの左端を2枚とも同じ位置にそろえる */
 html[data-look][lang] #care .rs-h-staff{justify-content:flex-start;padding-left:8px}
+/* 10/29 Iさん「同じサイズ同じ位置？」→盾56px・メダル60pxで文字が4pxずれていた。盾も60px幅にして文字の頭をそろえる */
+html[data-look][lang] #care .rs-shield{width:60px}
 #care .hs-notes>.rs-note{margin-top:0}
 #care .hs-notes>.rs-note span+span{margin-top:2px}
 #care .hs-caution>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:500;color:#3E5573}

@@ -1392,7 +1392,7 @@ html[data-look][lang] #shop-search .shop-search-box{margin-top:28px}
 @media (prefers-reduced-motion:reduce){.tk2 .tk2-row{opacity:1;transform:none;transition:none}}
 /* 10/29 Iさん：「来店予約はこちら」を右ぞろえ・矢印を左右にゆっくり揺らす（下線は文字だけ） */
 #care .rs-link{text-align:right}
-.rs-arw{display:inline-block;margin-left:8px;animation:rsArw 1.6s ease-in-out infinite}
+.rs-arw{display:inline-block;margin-left:8px} /* 10/29 Iさん「ここのアニメーションもやめよう」→矢印の揺れは停止 */
 @keyframes rsArw{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 @media (prefers-reduced-motion:reduce){.rs-arw{animation:none}}
 /* 10/29 Iさん（B案）：「あなたに合うレンズを見つけよう」の＋をゆっくり脈打たせて押せることを伝える。開いたら止める */

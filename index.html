@@ -1470,7 +1470,10 @@ html[data-look][lang] .bd-note{margin-top:20px}
 .bl-item img{display:block;max-width:94%;max-height:66%;width:auto;height:auto;object-fit:contain} /* 横に長いロゴ（Masaki Matsushima・intimité）が小さくなりすぎないよう幅を広めに */
 .bl-item{padding:12px 8px}
 .bl-item.is-heavy img{max-width:68%}
-.bl-item{aspect-ratio:1/1} /* 10/29 Iさん：ロゴの枠を正方形に */ /* ORIENSは文字が太く大きいので、ほかと見た目の強さをそろえて少し小さめに */
+.bl-item{aspect-ratio:1/1} /* 10/29 Iさん：ロゴの枠を正方形に */
+/* 10/29 Iさん（参考画像）：角丸なし・すき間なしの正方形。区切りは細い線だけ */
+.bl-grid{gap:1px;background:#EAE2D5;border:1px solid #EAE2D5}
+.bl-item{border:0;border-radius:0;background:#fff} /* ORIENSは文字が太く大きいので、ほかと見た目の強さをそろえて少し小さめに */
 .bl-item.is-wait span{font-family:'Shippori Mincho B1',serif;font-size:min(15px,3.9vw);font-weight:500;letter-spacing:.02em;color:#6E665D;text-align:center;white-space:nowrap}
 #brands .bg-more-line{margin:22px 24px 0;font-family:var(--mincho);font-size:16px;font-weight:500;line-height:1.8;letter-spacing:.06em;color:#3A3530;text-align:center}
 /* 10/29 Iさん「ブランド名が詳しく見るに負けている」→少しだけ大きく・濃く（15→17px・日本語名は14→16px） */
@@ -1667,8 +1670,10 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <!-- 10/29 Iさん：商品の掲載は「ロゴだけ」・強化ブランド（一覧の赤字8つ）だけに。写真タイル・詳細画面・「ほかのブランドも見る」はやめた（旧版 _保存\変更前\1029\sabae-fair.before-1029-logo.html）。
        ロゴが届いたら is-wait の名前を <img> に差し替える（images/brands/logo/sabae_logo-xxx_W_H.png） -->
   <ul class="bl-grid rv">
+    <!-- 10/29 Iさん：一旦ORIENSを抜いて6枚に・アーバントレイルはロゴが届いたら追加
     <li class="bl-item is-heavy"><img src="images/brands/logo/sabae_logo-oriens_600_127.png" width="600" height="127" alt="ORIENS" loading="lazy"></li>
     <li class="bl-item is-wait"><span>アーバントレイル</span></li>
+    -->
     <li class="bl-item"><img src="images/brands/logo/sabae_logo-intimite_390_77.png" width="390" height="77" alt="intimité（アンティミテ）" loading="lazy"></li>
     <li class="bl-item"><img src="images/brands/logo/sabae_logo-orobianco_183_72.png" width="183" height="72" alt="Orobianco（オロビアンコ）" loading="lazy"></li>
     <li class="bl-item"><img src="images/brands/logo/sabae_logo-niwa_536_120.png" width="536" height="120" alt="丹羽雅彦" loading="lazy"></li>

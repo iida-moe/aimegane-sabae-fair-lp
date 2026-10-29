@@ -1431,6 +1431,10 @@ html[data-look][lang] #merit .mr2{background:#F7F3E8}
 .mr2-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
 .mr2-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#F7F3E8 0%,rgba(247,243,232,0) 22%,rgba(247,243,232,0) 55%,rgba(247,243,232,.85) 85%,#F7F3E8 100%)} /* 10/29 Iさん「切れてるのが気になる」→写真の下端は生成りに完全になじませる */
 .mr2-photo+.mr2-card{position:relative;background:#FFFDF8} /* カードは透けないように */
+/* 10/29 Iさん（A案）：カードをやめて、写真が生成りに溶けた下に文字を直接置く（比較 _保存\比較画像\選ばれる理由_カードあり・なし_1029.png） */
+html[data-look][lang] .mr2-photo{margin-bottom:0}
+html[data-look][lang] .mr2-photo::after{background:linear-gradient(180deg,#F7F3E8 0%,rgba(247,243,232,0) 22%,rgba(247,243,232,0) 60%,#F7F3E8 100%)}
+html[data-look][lang] .mr2 .mr2-card{background:none;border:0;box-shadow:none;border-radius:0;padding:8px 24px 0;margin:0}
 .mr2 .sec-head{margin-bottom:0}
 .mr2-card{margin:0 24px;padding:28px 22px 22px;background:rgba(255,253,248,.94);border:1px solid #E6DCCB;border-radius:12px;box-shadow:0 4px 18px rgba(58,53,48,.10)}
 .mr2-lead{margin:0;font-family:var(--mincho);font-size:16px;letter-spacing:.06em;color:#3A3530}

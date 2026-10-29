@@ -1383,7 +1383,10 @@ html[data-look][lang] #shop-search .shop-intro-note{margin-top:12px;padding:0 24
 #care .hs-base+.rs-note span+span{margin-top:2px}
 /* ご注意事項（下線のリンク風・開閉） */
 #care .hs-caution{margin-top:6px}
-#care .hs-caution>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:500;color:#3E5573;text-decoration:underline;text-underline-offset:4px}
+#care .hs-notes{margin-top:14px;text-align:left}
+#care .hs-notes>.rs-note{margin-top:0}
+#care .hs-caution>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:500;color:#3E5573}
+#care .hs-caution>summary>span{text-decoration:underline;text-underline-offset:4px} /* 下線は文字だけ（＋の丸には引かない） */
 #care .hs-caution>summary::-webkit-details-marker{display:none}
 #care .hs-caution>summary::after{content:"+";display:inline-block;width:16px;height:16px;border:1px solid #3E5573;border-radius:50%;font-size:13px;line-height:14px;text-align:center;text-decoration:none}
 #care .hs-caution[open]>summary::after{content:"−"}
@@ -1766,11 +1769,6 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
         </ul>
       </div>
       <!-- 10/29 Iさん「ここ改善して」→保証の注記はカードの最後ではなく通常保証の箱のすぐ下へ（打消し表示は強調の近く）・1文を短く分けた -->
-      <!-- 10/29 Iさん：注記は「ご注意事項」の開閉に。お客さまに不利な条件（併用不可）だけは外に出しておく（打消し表示を隠さない） -->
-      <p class="rs-note"><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span></p>
-      <details class="hs-caution"><summary>ご注意事項</summary>
-        <p class="rs-note"><span>※品質保証は、通常のご使用での損傷が対象です。</span><span>※交換の際は、現品をご持参ください。</span><span>※くわしい条件は、店頭でご確認ください。</span></p>
-      </details>
       <p class="hs-lbl hs-lbl2">対象の方は、さらに</p>
       <details class="hs-item"><summary><span>キッズ＆ジュニア保証<small>中学生以下</small></span></summary>
         <p class="hs-catch">元気に遊んで<em>壊しちゃっても大丈夫</em></p>
@@ -1793,7 +1791,14 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
         <p class="hs-note">※手術を受けた方は、ご購入時にスタッフへお伝えください<br>※当社指定レンズが対象です</p>
       </details>
     </div>
-    <p class="hs-svc2">メガネの点検・クリーニングは<br><em>いつでも無料</em>です<small>他店で買ったメガネも、お気軽にどうぞ</small></p><!-- 10/29 点線の箱とアイコンをやめて文字だけに -->
+    <!-- 10/29 Iさん：注記は「ご注意事項」の開閉に・全保証（通常・キッズ・白内障）の説明の下にまとめる。お客さまに不利な条件（併用不可）だけは外に出しておく（打消し表示を隠さない） -->
+    <div class="hs-notes">
+      <p class="rs-note"><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span></p>
+      <details class="hs-caution"><summary><span>ご注意事項</span></summary>
+        <p class="rs-note"><span>※品質保証は、通常のご使用での損傷が対象です。</span><span>※交換の際は、現品をご持参ください。</span><span>※くわしい条件は、店頭でご確認ください。</span></p>
+      </details>
+    </div>
+    <!-- 10/29 点検・クリーニングの一言はIさん「消して」で削除（元：メガネの点検・クリーニングは いつでも無料です／他店で買ったメガネも、お気軽にどうぞ） -->
   </div>
   <!-- 10/24 読んで気持ちが動いたところで店舗検索へ -->
   <!-- 10/27 「お近くの店舗を探す」ボタンは削除（すぐ下が同じ名前のセクション）。変更前 _保存\変更前\1027\sabae-fair.before-1027-fix5.html -->

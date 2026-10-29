@@ -1469,6 +1469,7 @@ html[data-look][lang] .bd-note{margin-top:20px}
 .bl-item{display:flex;align-items:center;justify-content:center;aspect-ratio:3/2;padding:14px 16px;background:#fff;border:1px solid #E6DED0;border-radius:10px}
 .bl-item img{display:block;max-width:94%;max-height:66%;width:auto;height:auto;object-fit:contain} /* 横に長いロゴ（Masaki Matsushima・intimité）が小さくなりすぎないよう幅を広めに */
 .bl-item{padding:12px 8px}
+.bl-item.is-heavy img{max-width:68%} /* ORIENSは文字が太く大きいので、ほかと見た目の強さをそろえて少し小さめに */
 .bl-item.is-wait span{font-family:'Shippori Mincho B1',serif;font-size:min(15px,3.9vw);font-weight:500;letter-spacing:.02em;color:#6E665D;text-align:center;white-space:nowrap}
 #brands .bg-more-line{margin:22px 24px 0;font-family:var(--mincho);font-size:16px;font-weight:500;line-height:1.8;letter-spacing:.06em;color:#3A3530;text-align:center}
 /* 10/29 Iさん「ブランド名が詳しく見るに負けている」→少しだけ大きく・濃く（15→17px・日本語名は14→16px） */
@@ -1665,11 +1666,11 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
   <!-- 10/29 Iさん：商品の掲載は「ロゴだけ」・強化ブランド（一覧の赤字8つ）だけに。写真タイル・詳細画面・「ほかのブランドも見る」はやめた（旧版 _保存\変更前\1029\sabae-fair.before-1029-logo.html）。
        ロゴが届いたら is-wait の名前を <img> に差し替える（images/brands/logo/sabae_logo-xxx_W_H.png） -->
   <ul class="bl-grid rv">
-    <li class="bl-item is-wait"><span>ORIENS</span></li>
+    <li class="bl-item is-heavy"><img src="images/brands/logo/sabae_logo-oriens_600_127.png" width="600" height="127" alt="ORIENS" loading="lazy"></li>
     <li class="bl-item is-wait"><span>アーバントレイル</span></li>
     <li class="bl-item"><img src="images/brands/logo/sabae_logo-intimite_390_77.png" width="390" height="77" alt="intimité（アンティミテ）" loading="lazy"></li>
-    <li class="bl-item is-wait"><span>オロビアンコ</span></li>
-    <li class="bl-item is-wait"><span>丹羽雅彦</span></li>
+    <li class="bl-item"><img src="images/brands/logo/sabae_logo-orobianco_183_72.png" width="183" height="72" alt="Orobianco（オロビアンコ）" loading="lazy"></li>
+    <li class="bl-item"><img src="images/brands/logo/sabae_logo-niwa_536_120.png" width="536" height="120" alt="丹羽雅彦" loading="lazy"></li>
     <li class="bl-item"><img src="images/brands/logo/sabae_logo-banerina_600_207.png" width="600" height="207" alt="Banerina" loading="lazy"></li>
     <li class="bl-item"><img src="images/brands/logo/sabae_logo-masaki_600_134.png" width="600" height="134" alt="Masaki Matsushima" loading="lazy"></li>
     <li class="bl-item"><img src="images/brands/logo/sabae_logo-lineart_515_211.png" width="515" height="211" alt="Line Art" loading="lazy"></li>

@@ -1381,6 +1381,14 @@ html[data-look][lang] #shop-search .shop-intro-note{margin-top:12px;padding:0 24
 #care .hs-base .hc3 li:first-child{border-top:0}
 #care .hs-base+.rs-note{margin-top:10px}
 #care .hs-base+.rs-note span+span{margin-top:2px}
+/* ご注意事項（下線のリンク風・開閉） */
+#care .hs-caution{margin-top:6px}
+#care .hs-caution>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:500;color:#3E5573;text-decoration:underline;text-underline-offset:4px}
+#care .hs-caution>summary::-webkit-details-marker{display:none}
+#care .hs-caution>summary::after{content:"+";display:inline-block;width:16px;height:16px;border:1px solid #3E5573;border-radius:50%;font-size:13px;line-height:14px;text-align:center;text-decoration:none}
+#care .hs-caution[open]>summary::after{content:"−"}
+#care .hs-caution .rs-note{margin-top:6px}
+#care .hs-caution .rs-note span+span{margin-top:2px}
 #care .hs-svc2{margin-top:24px;padding-top:20px;border-top:1px dashed #D9CDBB;font-family:var(--sans);font-size:15px;font-weight:500;line-height:1.7;color:#3A3530;text-align:center}
 #care .hs-svc2 em{font-style:normal;color:#C73E3A}
 #care .hs-svc2 small{display:block;font-size:13px;color:#5A524A}
@@ -1758,7 +1766,11 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
         </ul>
       </div>
       <!-- 10/29 Iさん「ここ改善して」→保証の注記はカードの最後ではなく通常保証の箱のすぐ下へ（打消し表示は強調の近く）・1文を短く分けた -->
-      <p class="rs-note"><span>※品質保証は、通常のご使用での損傷が対象です。</span><span>※交換の際は、現品をご持参ください。</span><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span><span>※くわしい条件は、店頭でご確認ください。</span></p>
+      <!-- 10/29 Iさん：注記は「ご注意事項」の開閉に。お客さまに不利な条件（併用不可）だけは外に出しておく（打消し表示を隠さない） -->
+      <p class="rs-note"><span>※アイ情補償の50%引きは、<wbr>ほかの割引と併用できません。</span></p>
+      <details class="hs-caution"><summary>ご注意事項</summary>
+        <p class="rs-note"><span>※品質保証は、通常のご使用での損傷が対象です。</span><span>※交換の際は、現品をご持参ください。</span><span>※くわしい条件は、店頭でご確認ください。</span></p>
+      </details>
       <p class="hs-lbl hs-lbl2">対象の方は、さらに</p>
       <details class="hs-item"><summary><span>キッズ＆ジュニア保証<small>中学生以下</small></span></summary>
         <p class="hs-catch">元気に遊んで<em>壊しちゃっても大丈夫</em></p>

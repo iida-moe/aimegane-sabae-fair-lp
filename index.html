@@ -1450,7 +1450,9 @@ html[data-look][lang] .bd-note{margin-top:20px}
 /* 10/29 Iさん「ブランド名が詳しく見るに負けている」→少しだけ大きく・濃く（15→17px・日本語名は14→16px） */
 html[data-look][lang] #brands .bg-name{font-size:17px;font-weight:500;color:#3A3530}
 html[data-look][lang] #brands .bg-name.jp{font-size:16px} /* 10/29 Iさん：「詳しく見る ›」を右ぞろえ */
-.mr2 :is(.mr2-lead,.mr2-num,.mr2-sub){text-align:center} /* 10/29 Iさん：93.5%のかたまりだけ中央ぞろえ（チェックと出典は左のまま） */
+.mr2 :is(.mr2-town,.mr2-lead,.mr2-num,.mr2-sub){text-align:center}
+.mr2-sub[data-nowrap]{white-space:nowrap;font-size:min(16px,4.1vw);letter-spacing:.02em}
+.mr2-town{margin:0 0 12px;font-family:'Shippori Mincho B1',serif;font-size:22px;font-weight:600;letter-spacing:.1em;color:#3A3530} /* 10/29 Iさん：93.5%のかたまりだけ中央ぞろえ（チェックと出典は左のまま） */
 /* 10/29 Iさん：商品ラインナップの画像枠を全部同じ正方形に・画像は上下左右の真ん中に（メーカー画像は切らずに全体を表示＝余りは白） */
 #brands .bg-tile .bg-img{aspect-ratio:1/1!important;display:flex;align-items:center;justify-content:center}
 #brands .bg-tile .bg-img img{width:100%;height:100%;object-fit:contain;object-position:center}
@@ -1611,15 +1613,17 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <!-- 10/29 写真：写真AC 35118582（鯖江駅・めがねのまちさばえの塔）。商用OK・クレジット不要・加工OK。道路と人が入らないよう上半分を切り出し -->
     <div class="mr2-photo"><img src="images/merit/sabae_merit-station_1000_800.jpg" width="1000" height="800" alt="鯖江駅と「めがねのまちさばえ」の塔、うしろに山並み" loading="lazy"></div>
     <div class="mr2-card rv">
+      <!-- 10/29 Iさん：言い方をA案に（旧：国産メガネフレームの／93.5%が福井県産／その中心が、鯖江です。）。93.5%は福井県全体の出荷額の割合なので「鯖江市が93.5%」とは書かない -->
+      <p class="mr2-town">メガネの町、鯖江。</p>
       <p class="mr2-lead">国産メガネフレームの</p>
-      <p class="mr2-num"><b>93.5</b><small>%</small><span>が福井県産</span></p>
-      <p class="mr2-sub">その中心が、鯖江です。</p>
+      <p class="mr2-num"><b>93.5</b><small>%</small><span>を生む</span></p>
+      <p class="mr2-sub" data-nowrap>福井県の、ものづくりの中心地です。</p>
       <ul class="mr2-list">
         <li>専門の職人による確かな技術</li>
         <li>顔にフィットするかけ心地</li>
         <li>磨き上げた、美しい仕上げ</li>
       </ul>
-      <p class="mr2-src">※経済産業省「2023年経済構造実態調査」<br>（眼鏡枠の出荷額・2022年）</p>
+      <p class="mr2-src">※93.5%：経済産業省<br>「2023年経済構造実態調査」<br>（眼鏡枠の出荷額・2022年）</p>
     </div>
   </div>
 </section>

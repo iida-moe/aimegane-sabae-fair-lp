@@ -1347,7 +1347,12 @@ html[data-look][lang] .fs-yoko em{font-weight:600}
 html[data-look][lang] .fs .sec-head{margin-bottom:20px}
 /* 10/29 Iさん：見出しの下に朱の線（比較 _保存\比較画像\見出し_朱の線の大きさ_1029.png のB案 56×3px）。全セクションの見出しで共通 */
 html[data-look][lang] .sec-title::after{content:"";display:block;width:56px;height:3px;margin-top:16px;background:#C73E3A}
-html[data-look][lang] #shop-search .sec-title::after{margin-left:auto;margin-right:auto} /* 店舗検索だけ見出しが中央なので線も中央 */
+/* 10/29 店舗検索も見出し・リード・注記を左ぞろえに（Iさん「見づらい」：中央と左がまざっていた） */
+html[data-look][lang] #shop-search .sec-head{text-align:left}
+html[data-look][lang] #shop-search .shop-intro{text-align:left;padding:0 24px;margin-top:24px}
+html[data-look][lang] #shop-search .shop-intro-note{margin-top:12px;padding:0 24px}
+#shop-search .shop-intro-note>span{display:block;padding-left:1em;text-indent:-1em}
+#shop-search .shop-intro-note>span+span{margin-top:2px}
 /* 10/29 保証の注記「ご／持参ください」の途中改行→1項目ずつ※ぶら下げ・言葉の途中で切らない */
 #care .rs-note{word-break:keep-all}
 #care .rs-note span{display:block;padding-left:1em;text-indent:-1em}
@@ -1787,8 +1792,9 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <div class="sec-head">
       <h2 class="sec-title rv">お近くの店舗を探す</h2>
     </div>
-    <p class="shop-intro">現在地、または郵便番号(上3桁)で<br>お近くの店舗を探せます</p>
-    <p class="shop-intro-note">※WEB予約は、本日から3日後以降の日程で<span data-nowrap>お取りいただけます。</span><br>お急ぎの場合はお電話にてお問い合わせください。</p>
+    <!-- 10/29 Iさん「見づらい」→見出し・リード・注記をほかのセクションと同じ左ぞろえに／注記は※ごとに分けてぶら下げ -->
+    <p class="shop-intro">現在地、または郵便番号（上3桁）で<br>お近くの店舗を探せます。</p>
+    <p class="shop-intro-note"><span>※WEB予約は、本日から3日後以降の日程で<wbr><span data-nowrap>お取りいただけます。</span></span><span>※お急ぎの場合は、お電話でお問い合わせください。</span></p>
 
     <div class="shop-search-box">
       <div class="shop-geo-wrap">

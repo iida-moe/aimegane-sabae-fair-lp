@@ -1437,7 +1437,10 @@ html[data-look][lang] #merit{position:relative;padding:0!important;background:#F
 /* 10/29 Iさん：ブランド詳細のキャッチと説明文は全ブランドで出さない（仮の紹介文だったため・JSのデータは残してある） */
 .bd-catch,.bd-desc{display:none!important}
 html[data-look][lang] .bd-note{margin-top:20px}
-#brands .bg-tile .bg-catch{justify-content:flex-end;padding-right:14px} /* 10/29 Iさん：「詳しく見る ›」を右ぞろえ */
+#brands .bg-tile .bg-catch{justify-content:flex-end;padding-right:14px}
+/* 10/29 Iさん「ブランド名が詳しく見るに負けている」→少しだけ大きく・濃く（15→17px・日本語名は14→16px） */
+html[data-look][lang] #brands .bg-name{font-size:17px;font-weight:500;color:#3A3530}
+html[data-look][lang] #brands .bg-name.jp{font-size:16px} /* 10/29 Iさん：「詳しく見る ›」を右ぞろえ */
 .mr2 :is(.mr2-lead,.mr2-num,.mr2-sub){text-align:center} /* 10/29 Iさん：93.5%のかたまりだけ中央ぞろえ（チェックと出典は左のまま） */
 /* 10/29 Iさん：商品ラインナップの画像枠を全部同じ正方形に・画像は上下左右の真ん中に（メーカー画像は切らずに全体を表示＝余りは白） */
 #brands .bg-tile .bg-img{aspect-ratio:1/1!important;display:flex;align-items:center;justify-content:center}

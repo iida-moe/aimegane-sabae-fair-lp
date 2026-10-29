@@ -1435,6 +1435,15 @@ html[data-look][lang] #merit .mr2{background:#F7F3E8}
 html[data-look][lang] .mr2-photo{margin-bottom:0}
 html[data-look][lang] .mr2-photo::after{background:linear-gradient(180deg,#F7F3E8 0%,rgba(247,243,232,0) 22%,rgba(247,243,232,0) 60%,#F7F3E8 100%)}
 html[data-look][lang] .mr2 .mr2-card{background:none;border:0;box-shadow:none;border-radius:0;padding:8px 24px 0;margin:0}
+/* 10/29 Iさん「もう少し修正できる？」→参考画像の学び（大きさの段を減らす・下の線をそろえる・字間を広げすぎない）：
+   見出し24px／それ以外の文字は全部16px・字間.04em・行の間を詰めて1つのかたまりに。数字だけ大きく朱 */
+html[data-look][lang] .mr2-town{margin:0 0 14px;font-size:24px;letter-spacing:.06em}
+html[data-look][lang] .mr2 :is(.mr2-lead,.mr2-sub,.mr2-num span){font-size:16px;letter-spacing:.04em;line-height:1.6}
+html[data-look][lang] .mr2-lead{margin:0}
+html[data-look][lang] .mr2-num{margin:0;line-height:1}
+html[data-look][lang] .mr2-num b{font-size:min(64px,16vw);letter-spacing:-.01em}
+html[data-look][lang] .mr2-num small{margin:0 6px 0 1px;font-size:28px}
+html[data-look][lang] .mr2-sub{margin:4px 0 0}
 .mr2 .sec-head{margin-bottom:0}
 .mr2-card{margin:0 24px;padding:28px 22px 22px;background:rgba(255,253,248,.94);border:1px solid #E6DCCB;border-radius:12px;box-shadow:0 4px 18px rgba(58,53,48,.10)}
 .mr2-lead{margin:0;font-family:var(--mincho);font-size:16px;letter-spacing:.06em;color:#3A3530}

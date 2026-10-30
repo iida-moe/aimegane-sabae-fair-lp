@@ -1559,6 +1559,7 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 .bl-btn img{display:block;max-width:94%;max-height:66%;width:auto;height:auto;object-fit:contain}
 .bl-item.is-heavy .bl-btn img{max-width:68%}
 .bm{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:20px}
+.bm[hidden]{display:none} /* 10/30 これがないと閉じていても透明な幕がページ全体にかぶって、どこも押せなくなる */
 .bm-bg{position:absolute;inset:0;background:rgba(58,53,48,.5);opacity:0;transition:opacity .3s ease}
 .bm-card{position:relative;width:100%;max-width:360px;max-height:calc(100svh - 48px);overflow-y:auto;padding:44px 20px 28px;background:#FFFDF8;border-radius:12px;text-align:center;opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s ease}
 .bm.is-open .bm-bg{opacity:1}
@@ -2033,6 +2034,6 @@ html[data-look][lang] .bm .bm-btn .fc-arw{filter:brightness(0) invert(1)}
   </div>
 </div>
 
-<script src="images/sabae-fair.js?v=202610301535"></script>
+<script src="images/sabae-fair.js?v=202610301544"></script>
 </body>
 </html>

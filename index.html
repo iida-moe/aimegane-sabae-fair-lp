@@ -1554,10 +1554,10 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 .bl-item{transition:border-color .2s}
 .bl-item:has(.bl-btn:hover){border-color:var(--ai)} /* 10/30 Iさん「きもい」：背景を変えるとロゴ画像の白い四角が浮くので、背景はそのまま・枠を藍に */
 .bl-btn::after{transition:right .2s}
-.bl-btn:hover::after{right:9px}
-.bl-btn{position:relative;padding:12px 28px}
-.bl-btn img{max-width:100%} /* 10/30 Iさん：押せると分かるよう右端に › （ロゴが真ん中のままになるよう左右の余白は同じ） */
-.bl-btn::after{content:"";position:absolute;right:12px;top:50%;width:7px;height:7px;border-top:1.5px solid var(--ai);border-right:1.5px solid var(--ai);transform:translateY(-50%) rotate(45deg)}
+.bl-btn:hover::after{right:13px}
+.bl-btn{position:relative}
+/* 10/30 Iさん：押せると分かるよう › を付ける→ロゴの横ではなくタイルの右下に（ロゴの大きさは元のまま） */
+.bl-btn::after{content:"";position:absolute;right:16px;bottom:16px;width:7px;height:7px;border-top:1.5px solid var(--ai);border-right:1.5px solid var(--ai);transform:rotate(45deg)}
 .bl-btn:focus-visible{outline:2px solid var(--ai);outline-offset:-4px}
 .bl-btn img{display:block;max-width:94%;max-height:66%;width:auto;height:auto;object-fit:contain}
 .bl-item.is-heavy .bl-btn img{max-width:68%}
@@ -2037,6 +2037,6 @@ html[data-look][lang] .bm .bm-btn .fc-arw{filter:brightness(0) invert(1)}
   </div>
 </div>
 
-<script src="images/sabae-fair.js?v=202610301546"></script>
+<script src="images/sabae-fair.js?v=202610301547"></script>
 </body>
 </html>

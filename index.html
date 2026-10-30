@@ -1548,6 +1548,32 @@ html[data-look][lang] .cn-cta .fcta-btn:hover{background:#EEF1F5}
 /* 10/27 日付の書き方を「10/30（金）」にそろえた（下の固定バー・最終CTAは「10.30 金」だった）。かっこに空きがあるので左右の余白は詰める */
 html[data-look][lang] .fc-date small{margin:0}
 html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
+/* 10/30 Iさん：ロゴを押せるように（枠いっぱいがボタン）→ロゴとブランド説明の小さい画面（.bm） */
+.bl-item{padding:0;overflow:hidden}
+.bl-btn{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:12px 8px;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .2s}
+.bl-btn:hover{background:#FAF6EE}
+.bl-btn:focus-visible{outline:2px solid var(--ai);outline-offset:-4px}
+.bl-btn img{display:block;max-width:94%;max-height:66%;width:auto;height:auto;object-fit:contain}
+.bl-item.is-heavy .bl-btn img{max-width:68%}
+.bm{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:20px}
+.bm-bg{position:absolute;inset:0;background:rgba(58,53,48,.5);opacity:0;transition:opacity .3s ease}
+.bm-card{position:relative;width:100%;max-width:360px;max-height:calc(100svh - 48px);overflow-y:auto;padding:44px 20px 28px;background:#FFFDF8;border-radius:12px;text-align:center;opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s ease}
+.bm.is-open .bm-bg{opacity:1}
+.bm.is-open .bm-card{opacity:1;transform:none}
+.bm-x{position:absolute;top:8px;right:8px;width:40px;height:40px;border:0;background:none;cursor:pointer}
+.bm-x::before,.bm-x::after{content:"";position:absolute;top:50%;left:50%;width:18px;height:1.5px;background:#3A3530;transform:translate(-50%,-50%) rotate(45deg)}
+.bm-x::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.bm-x:focus{outline:none}
+.bm-x:focus-visible{outline:2px solid var(--ai);outline-offset:-4px;border-radius:50%}
+.bm-logo{display:flex;align-items:center;justify-content:center;height:120px;padding:0 16px;background:#fff;border:1px solid #E6DED0;border-radius:10px}
+.bm-logo img{display:block;max-width:80%;max-height:56px;width:auto;height:auto;object-fit:contain}
+.bm-name{margin:16px 0 0;font-family:'Shippori Mincho B1',serif;font-size:14px;font-weight:500;letter-spacing:.1em;color:#6E665D}
+.bm-name:empty{display:none}
+.bm-desc{margin:16px 0 0;padding-top:16px;border-top:1px dashed #D9CDBB;font-family:var(--sans);font-size:16px;line-height:1.8;letter-spacing:.04em;color:#3A3530;text-align:left;word-break:keep-all;overflow-wrap:break-word}
+.bm-note{margin:12px 0 0;font-family:var(--sans);font-size:13px;line-height:1.7;color:#4A433D;text-align:left;word-break:keep-all;overflow-wrap:break-word}
+.bm-btn{margin-top:24px}
+html[data-look][lang] .bm .bm-btn{background:#3E5573;color:#fff;border-color:#3E5573;box-shadow:0 4px 12px rgba(62,85,115,.2)}
+html[data-look][lang] .bm .bm-btn .fc-arw{filter:brightness(0) invert(1)}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F7F3E8; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -1677,12 +1703,16 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
     <li class="bl-item is-heavy"><img src="images/brands/logo/sabae_logo-oriens_600_127.png" width="600" height="127" alt="ORIENS" loading="lazy"></li>
     <li class="bl-item is-wait"><span>アーバントレイル</span></li>
     -->
-    <li class="bl-item"><img src="images/brands/logo/sabae_logo-intimite_390_77.png" width="390" height="77" alt="intimité（アンティミテ）" loading="lazy"></li>
-    <li class="bl-item"><img src="images/brands/logo/sabae_logo-orobianco_183_72.png" width="183" height="72" alt="Orobianco（オロビアンコ）" loading="lazy"></li>
-    <li class="bl-item"><img src="images/brands/logo/sabae_logo-niwa_536_120.png" width="536" height="120" alt="丹羽雅彦" loading="lazy"></li>
-    <li class="bl-item"><img src="images/brands/logo/sabae_logo-banerina_600_207.png" width="600" height="207" alt="Banerina" loading="lazy"></li>
-    <li class="bl-item"><img src="images/brands/logo/sabae_logo-masaki_600_134.png" width="600" height="134" alt="Masaki Matsushima" loading="lazy"></li>
-    <li class="bl-item"><img src="images/brands/logo/sabae_logo-lineart_515_211.png" width="515" height="211" alt="Line Art" loading="lazy"></li>
+    <!-- 10/30 Iさん：ロゴを押すと、ロゴとブランドの説明が出る（#brand-modal・説明文はJSの BM） -->
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="intimite" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-intimite_390_77.png" width="390" height="77" alt="intimité（アンティミテ）" loading="lazy"></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="orobianco" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-orobianco_183_72.png" width="183" height="72" alt="Orobianco（オロビアンコ）" loading="lazy"></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="niwa" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-niwa_536_120.png" width="536" height="120" alt="丹羽雅彦" loading="lazy"></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="banerina" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-banerina_600_207.png" width="600" height="207" alt="Banerina" loading="lazy"></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="masaki" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-masaki_600_134.png" width="600" height="134" alt="Masaki Matsushima" loading="lazy"></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="lineart" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-lineart_515_211.png" width="515" height="211" alt="Line Art" loading="lazy"></button></li>
+    <!-- 10/30 Iさん：トニーセイムはロゴと公式コンセプト文あり（JSの BM に説明文あり）。今は6枚のままにするので外しておく
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="tonysame" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-tonysame_524_100.jpg" width="524" height="100" alt="tonysame（トニーセイム）" loading="lazy"></button></li>
+    -->
   </ul>
   <!-- 10/29 Iさん：名前だけの枠は出さず、「ほかにもある」ことを1行で -->
   <p class="bg-more-line">このほかにも、鯖江のメガネを<br>数多く取り揃えています。</p>
@@ -1961,6 +1991,19 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
       <a href="#shop-search" class="bd-yoyaku" data-cta-location="brand_detail_yoyaku">来店予約をする</a>
     </div>
     <nav class="bd-pn" aria-label="ほかのブランド"><button type="button" class="bd-pn-prev"><small>前のブランド</small><b></b></button><button type="button" class="bd-pn-next"><small>次のブランド</small><b></b></button></nav>
+  </div>
+</div>
+
+<!-- 10/30 商品ラインナップのロゴを押すと開く（ロゴ＋ブランドの説明だけの小さい画面） -->
+<div class="bm" id="brand-modal" role="dialog" aria-modal="true" aria-labelledby="bm-name" hidden>
+  <div class="bm-bg" data-close></div>
+  <div class="bm-card">
+    <button type="button" class="bm-x" data-close aria-label="閉じる"></button>
+    <div class="bm-logo"><img alt=""></div>
+    <h3 class="bm-name" id="bm-name"></h3>
+    <p class="bm-desc"></p>
+    <p class="bm-note">※店舗によっては、お取り扱いのない<wbr>商品があります。</p>
+    <a href="#shop-search" class="fcta-btn bm-btn" data-cta-location="brand_modal_shop">お近くの店舗を探す<span class="fc-arw" aria-hidden="true"></span></a>
   </div>
 </div>
 </main>

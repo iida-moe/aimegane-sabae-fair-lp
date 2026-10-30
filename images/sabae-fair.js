@@ -511,6 +511,39 @@ window.addEventListener('scroll',()=>{
   document.addEventListener('keydown',e=>{ if(d.hidden)return; if(e.key==='Escape')close(); if(e.key==='ArrowRight')next.click(); if(e.key==='ArrowLeft')prev.click(); });
 })();
 
+// 10/30 商品ラインナップのロゴを押すと、ロゴとブランドの説明を出す（#brand-modal）
+// ※丹羽雅彦・トニーセイムは公式のコンセプト文から（10/30 Iさん支給）。ほかは仮（公式の紹介文が届いたら差し替え）
+// 1行16字以内で改行位置を手で決めている（360px幅でも折り返さない）
+(()=>{
+  const BM={
+    tonysame:{name:'トニーセイム',desc:['2010年、「共感」を','コンセプトに生まれたブランド。','使う人の目線で、ニーズを','超えるメガネを形にしています。','快適なかけ心地に、','顔なじみのよいレンズシェイプと','カラフルな色づかいが特徴です。']},
+    intimite:{name:'アンティミテ',desc:['やわらかな雰囲気で、','毎日の装いになじむフレーム。','肌なじみのよい色と、','上品なデザインがそろいます。']},
+    orobianco:{name:'オロビアンコ',desc:['イタリア・ミラノ近郊で','生まれたブランド。','大人の男性の装いに合う、','端正なデザインのフレームです。']},
+    niwa:{name:'',desc:['昭和初期のヴィンテージフレームを','クラシックフレームの権威である','職人が完全復刻。','最新素材と職人技が見事に','融合した逸品です。','昔ながらの手法で一本一本','作りあげるからこそ、','味のあるレトロな風合いも','生きています。']},
+    banerina:{name:'バネリーナ',desc:['軽やかなメタルの、','丸みのあるフレーム。','明るい表情を引き立てる、','女性向けのデザインです。']},
+    masaki:{name:'マサキマツシマ',desc:['ファッションデザイナー・','松島正樹のブランド。','シャープで洗練された、','モードなデザインのフレームです。']},
+    lineart:{name:'ラインアート',desc:['線のように細いつるが','印象的なフレーム。','上品なメタルのラウンドから、','すっきりしたスクエアまで','そろいます。']}
+  };
+  const m=document.getElementById('brand-modal'), btns=document.querySelectorAll('.bl-btn');
+  if(!m||!btns.length)return;
+  const $=s=>m.querySelector(s), lg=$('.bm-logo img');
+  let last=null;
+  const open=btn=>{
+    const b=BM[btn.dataset.brand], src=btn.querySelector('img'); if(!b||!src)return;
+    last=btn;
+    lg.src=src.src; lg.width=src.width; lg.height=src.height; lg.alt=src.alt;
+    $('.bm-name').textContent=b.name;
+    $('.bm-desc').innerHTML=b.desc.join('<br>');
+    m.hidden=false; document.body.classList.add('menu-open');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{ m.classList.add('is-open'); $('.bm-x').focus(); }));
+  };
+  const close=()=>{ m.classList.remove('is-open'); document.body.classList.remove('menu-open'); setTimeout(()=>{ m.hidden=true; },300); if(last)last.focus({preventScroll:true}); };
+  btns.forEach(b=>b.addEventListener('click',()=>open(b)));
+  m.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',close));
+  $('.bm-btn').addEventListener('click',close);
+  document.addEventListener('keydown',e=>{ if(!m.hidden&&e.key==='Escape')close(); });
+})();
+
 // PCサイドナビ：いま見ているセクションを朱で表示
 (()=>{
   const links=[...document.querySelectorAll(".side-nav a")];

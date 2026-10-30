@@ -1551,10 +1551,13 @@ html[data-look][lang] #fcta .fcta-period .fcta-dw{margin:0}
 /* 10/30 Iさん：ロゴを押せるように（枠いっぱいがボタン）→ロゴとブランド説明の小さい画面（.bm） */
 .bl-item{padding:0;overflow:hidden}
 .bl-btn{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:12px 8px;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .2s}
-.bl-item{transition:border-color .2s}
-.bl-item:has(.bl-btn:hover){border-color:var(--ai)} /* 10/30 Iさん「きもい」：背景を変えるとロゴ画像の白い四角が浮くので、背景はそのまま・枠を藍に */
-.bl-btn::after{transition:right .2s}
-.bl-btn:hover::after{right:13px}
+/* 10/30 Iさん：カーソルを合わせたら、タイル全体に半透明のグレー＋白でブランド名（参考画像の形）。背景色を変えるとロゴ画像の白い四角が浮くので、上に重ねる。スマホ（hoverなし）では出さない */
+.bl-hov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(58,53,48,.6);color:#fff;font-family:'Shippori Mincho B1',serif;font-size:17px;font-weight:600;letter-spacing:.06em;line-height:1.4;text-align:center;opacity:0;transition:opacity .25s;pointer-events:none}
+.bl-btn::after{z-index:1;transition:right .2s,border-color .25s}
+@media (hover:hover){
+  .bl-btn:hover .bl-hov{opacity:1}
+  .bl-btn:hover::after{right:13px;border-color:#fff}
+}
 .bl-btn{position:relative}
 /* 10/30 Iさん：押せると分かるよう › を付ける→ロゴの横ではなくタイルの右下に（ロゴの大きさは元のまま） */
 .bl-btn::after{content:"";position:absolute;right:16px;bottom:16px;width:7px;height:7px;border-top:1.5px solid var(--ai);border-right:1.5px solid var(--ai);transform:rotate(45deg)}
@@ -1711,14 +1714,14 @@ html[data-look][lang] .bm .bm-btn .fc-arw{filter:brightness(0) invert(1)}
     <li class="bl-item is-wait"><span>アーバントレイル</span></li>
     -->
     <!-- 10/30 Iさん：ロゴを押すと、ロゴとブランドの説明が出る（#brand-modal・説明文はJSの BM） -->
-    <li class="bl-item"><button type="button" class="bl-btn" data-brand="intimite" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-intimite_390_77.png" width="390" height="77" alt="intimité（アンティミテ）" loading="lazy"></button></li>
-    <li class="bl-item"><button type="button" class="bl-btn" data-brand="orobianco" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-orobianco_183_72.png" width="183" height="72" alt="Orobianco（オロビアンコ）" loading="lazy"></button></li>
-    <li class="bl-item"><button type="button" class="bl-btn" data-brand="niwa" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-niwa_536_120.png" width="536" height="120" alt="丹羽雅彦" loading="lazy"></button></li>
-    <li class="bl-item"><button type="button" class="bl-btn" data-brand="banerina" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-banerina_600_207.png" width="600" height="207" alt="Banerina" loading="lazy"></button></li>
-    <li class="bl-item"><button type="button" class="bl-btn" data-brand="masaki" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-masaki_600_134.png" width="600" height="134" alt="Masaki Matsushima" loading="lazy"></button></li>
-    <li class="bl-item"><button type="button" class="bl-btn" data-brand="lineart" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-lineart_515_211.png" width="515" height="211" alt="Line Art" loading="lazy"></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="intimite" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-intimite_390_77.png" width="390" height="77" alt="intimité（アンティミテ）" loading="lazy"><span class="bl-hov" aria-hidden="true">intimité</span></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="orobianco" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-orobianco_183_72.png" width="183" height="72" alt="Orobianco（オロビアンコ）" loading="lazy"><span class="bl-hov" aria-hidden="true">Orobianco</span></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="niwa" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-niwa_536_120.png" width="536" height="120" alt="丹羽雅彦" loading="lazy"><span class="bl-hov" aria-hidden="true">丹羽雅彦</span></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="banerina" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-banerina_600_207.png" width="600" height="207" alt="Banerina" loading="lazy"><span class="bl-hov" aria-hidden="true">Banerina</span></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="masaki" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-masaki_600_134.png" width="600" height="134" alt="Masaki Matsushima" loading="lazy"><span class="bl-hov" aria-hidden="true">Masaki Matsushima</span></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="lineart" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-lineart_515_211.png" width="515" height="211" alt="Line Art" loading="lazy"><span class="bl-hov" aria-hidden="true">Line Art</span></button></li>
     <!-- 10/30 Iさん：トニーセイムはロゴと公式コンセプト文あり（JSの BM に説明文あり）。今は6枚のままにするので外しておく
-    <li class="bl-item"><button type="button" class="bl-btn" data-brand="tonysame" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-tonysame_524_100.jpg" width="524" height="100" alt="tonysame（トニーセイム）" loading="lazy"></button></li>
+    <li class="bl-item"><button type="button" class="bl-btn" data-brand="tonysame" data-cta-location="brand_logo"><img src="images/brands/logo/sabae_logo-tonysame_524_100.jpg" width="524" height="100" alt="tonysame（トニーセイム）" loading="lazy"><span class="bl-hov" aria-hidden="true">tonysame</span></button></li>
     -->
   </ul>
   <!-- 10/29 Iさん：名前だけの枠は出さず、「ほかにもある」ことを1行で -->
@@ -2037,6 +2040,6 @@ html[data-look][lang] .bm .bm-btn .fc-arw{filter:brightness(0) invert(1)}
   </div>
 </div>
 
-<script src="images/sabae-fair.js?v=202610301547"></script>
+<script src="images/sabae-fair.js?v=202610301549"></script>
 </body>
 </html>
